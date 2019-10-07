@@ -95,11 +95,16 @@ var MongoStore = require("connect-mongo")(session);
 
 var indexRouter = require("./routes/index");
 var userRoutes = require("./routes/user");
+var mongoURI = require("./config/keys")(keys.mongoURI);
 
 var app = express();
 
 // Connect to database
-mongoose.connect("mongodb://localhost:27017/video-game-shop", {
+// mongoose.connect("mongodb://localhost:27017/video-game-shop", {
+//   useNewUrlParser: true
+// });
+
+mongoose.connect(mongoURI, {
   useNewUrlParser: true
 });
 
