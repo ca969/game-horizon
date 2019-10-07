@@ -460,8 +460,9 @@ router.post("/checkout", isLoggedIn, function(req, res, next) {
 
   var cart = new Cart(req.session.cart);
   const keys = require("../config/keys");
+  console.log(keys);
   const stripe = require("stripe")(
-   keys.stripeSecretKey
+    'sk_test_nspRAlz13uIp4m0daf5giZcI00Ew5Z2wro'
   );
 
   // Token is created using Checkout or Elements!
