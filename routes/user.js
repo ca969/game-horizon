@@ -44,7 +44,7 @@ router.get("/profile", isLoggedIn, function(req, res, next) {
     }
     console.log(libraries)
     var favorite;
-    test.libraries.forEach(function(library) {
+    libraries.forEach(function(library) {
       // console.log(library.favorite.items)
       favorite = new Favorite(library.favorite)
       library.favorite.items.forEach(function(each) {
@@ -57,7 +57,7 @@ router.get("/profile", isLoggedIn, function(req, res, next) {
     console.log(favoriteArray);
   });
  
-  res.render('user/profile', {orders: orderArray, favorites: favoriteArray});
+  res.render('/user/profile', {orders: orderArray, favorites: favoriteArray});
 });
 
 /* LOGOUT */
