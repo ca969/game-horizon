@@ -57,7 +57,7 @@ router.get("/profile", isLoggedIn, function(req, res, next) {
     console.log(favoriteArray);
   });
  
-  res.render('/user/profile', {orders: orderArray, favorites: favoriteArray});
+  res.render('user/profile', {orders: orderArray, favorites: favoriteArray});
 });
 
 /* LOGOUT */
