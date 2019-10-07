@@ -13,19 +13,7 @@ var ObjectId = require("mongodb").ObjectID;
 /* GET home page. */
 router.get("/", function(req, res, next) {
   var successMsg = req.flash("success")[0];
-  // Product.find(function(err, docs) {
-  //   var productChunks = [];
-  //   var chunkSize = 1;
-  //   for (var i = 0; i < docs.length; i += chunkSize) {
-  //     productChunks.push(docs.slice(i, i + chunkSize));
-  //   }
-  //   res.render("shop/index", {
-  //     title: "Shopping Cart",
-  //     products: productChunks,
-  //     successMsg: successMsg,
-  //     noMessages: !successMsg
-  //   });
-  // });
+ 
   Product.find(function(err, docs) {
     var homeProductChunks = [];
     var homeChunkSize = 1;
@@ -69,19 +57,7 @@ router.get("/", function(req, res, next) {
     });
   });
 
-  // homeProduct.find(function(err, docs) {
-  //   var productChunks = [];
-  //   var chunkSize = 1;
-  //   for (var i = 0; i < docs.length; i += chunkSize) {
-  //     productChunks.push(docs.slice(i, i + chunkSize));
-  //   }
-  //   res.render("shop/index", {
-  //     title: "Shopping Cart",
-  //     homeProduct: productChunks,
-  //     successMsg: successMsg,
-  //     noMessages: !successMsg
-  //   });
-  // });
+  
 });
 
 /* GET shop page */
@@ -114,7 +90,7 @@ router.get("/shop/:name", function(req, res, next) {
     console.log(newestProduct);
     console.log(productArray);
     res.render("shop/product-index", { productInfo: productArray });
-    // res.status(200).json({ message: "success" });
+   
   });
 });
 
@@ -164,12 +140,12 @@ router.get("/add-to-fav/:id", isFavLoggedIn, function(req, res, next) {
           res.status(200).json({ message: "Item added to favorites" });
           console.log("success");
 
-          // console.log(err)
+         
         } else {
           var matched = false;
 
           docs.favorite.items.forEach(function(single, index) {
-            // var inventory = single.element.item._id;
+            
             var inventory = single._id;
             var incoming = productId;
 
@@ -187,7 +163,7 @@ router.get("/add-to-fav/:id", isFavLoggedIn, function(req, res, next) {
             favorite.add(product, product.id);
 
             req.session.favorite = favorite;
-            // console.log(favorite);
+          
 
             Library.updateOne(
               { user: req.user._id },
@@ -217,8 +193,7 @@ router.get("/add-to-fav/:id", isFavLoggedIn, function(req, res, next) {
 /* REMOVE from fav. */
 router.post("/remove-fav/:index/:id", isFavLoggedIn, function(req, res, next) {
   var itemIndex = req.params.index;
-  // console.log(itemIndex);
-  // console.log(typeof itemIndex);
+ 
 
   var productId = req.params.id;
 
@@ -247,87 +222,10 @@ router.post("/remove-fav/:index/:id", isFavLoggedIn, function(req, res, next) {
     }
   );
 
-  // var favorite = new Favorite(req.session.favorite ? req.session.favorite : {});
 
-  // Product.findById(productId, function(err, product) {
-  //   if (err) {
-  //     console.log("error");
-  //     return res.redirect("/");
-  //   } else {
-
-  // Library.update({ user: req.user._id }, function(err, docs) {
-  // //   console.log("-----------DOCS------------");
-  // //   console.log(docs);
-  // //   console.log("-----------------------");
-
-  // //   console.log(  docs.favorite.items[itemIndex]);
-
-  // //   // docs.favorite.items.splice(itemIndex, 1);
-  // //   console.log(docs.favorite.items);
-
-  //   // if (!docs) {
-  //   //   favorite.add(product, product.id);
-
-  //   //   req.session.favorite = favorite;
-
-  //   //   var library = new Library({
-  //   //     user: req.user,
-  //   //     favorite: favorite
-  //   //   });
-  //   //   library.save();
-  //   //   res.status(200).json({ message: "Item added to favorites" });
-  //   //   console.log("success");
-
-  //   //   // console.log(err)
-  //   // } else {
-  //   //   var matched = false;
-
-  //   //   docs.favorite.items.forEach(function(single, index) {
-  //   //     var inventory = single.element.item._id;
-  //   //     var incoming = productId;
-
-  //   //     console.log(JSON.stringify(inventory) === JSON.stringify(incoming));
-  //   //     if (JSON.stringify(inventory) === JSON.stringify(incoming)) {
-  //   //       matched = true;
-  //   //     }
-  //   //   });
-
-  //   //   if (matched) {
-  //   //     return res
-  //   //       .status(409)
-  //   //       .json({ message: "Item already added to favorites" });
-  //   //   } else {
-  //   //     favorite.add(product, product.id);
-
-  //   //     req.session.favorite = favorite;
-  //   //     // console.log(favorite);
-
-  //   //     Library.updateOne(
-  //   //       { user: req.user._id },
-  //   //       {
-  //   //         $push: {
-  //   //           "favorite.items": favorite.items
-  //   //         }
-  //   //       },
-  //   //       { multi: true },
-  //   //       function(err, affected) {
-  //   //         if (err) {
-  //   //           console.log(err);
-  //   //         } else {
-  //   //           return res
-  //   //             .status(200)
-  //   //             .json({ message: "Item added to favorites" });
-  //   //         }
-  //   //       }
-  //   //     );
-  //   //   }
-
-  //   // }
-  // });
 });
 
-//   });
-// });
+
 
 /* ADD to shopping cart. */
 router.get("/add-to-cart/:id", function(req, res, next) {
@@ -459,10 +357,12 @@ router.post("/checkout", isLoggedIn, function(req, res, next) {
   }
 
   var cart = new Cart(req.session.cart);
-  const keys = require("../config/keys");
+
   console.log(keys);
+  const keys = require("../config/keys");
+  const secretKey = keys.stripeSecretKey;
   const stripe = require("stripe")(
-    'sk_test_nspRAlz13uIp4m0daf5giZcI00Ew5Z2wro'
+    secretKey
   );
 
   // Token is created using Checkout or Elements!
