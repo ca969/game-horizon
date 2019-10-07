@@ -107,7 +107,7 @@ var app = express();
 //   useNewUrlParser: true
 // });
 
-mongoose.connect(keys.mongoURI, {
+mongoose.connect(keys.mongoURI || "mongodb://localhost:27017/video-game-shop", {
   useNewUrlParser: true
 });
 
