@@ -31,7 +31,7 @@ var app = express();
   useNewUrlParser: true
 });
 
-var db = mongoose.connection;
+// var db = mongoose.connection;
 
 // Load passport.js
 require("./config/passport");

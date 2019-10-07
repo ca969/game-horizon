@@ -8,12 +8,13 @@ var Cart = require("../models/cart");
 var Order = require('../models/order');
 var Favorite = require("../models/favorite");
 var Library = require("../models/library");
-var mongoose = require("mongoose");
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true
-});
 
-var db = mongoose.connection;
+// var mongoose = require("mongoose");
+// mongoose.connect(process.env.MONGODB_URI, {
+//   useNewUrlParser: true
+// });
+
+// var db = mongoose.connection;
 
 
 var csrfProtection = csrf();
