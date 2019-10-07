@@ -1,0 +1,6615 @@
+// GENERAL FONT
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,900&display=swap");
+
+// GAME PRICE
+@import url("https://fonts.googleapis.com/css?family=Oxygen&display=swap");
+
+// SLIDE SHOW
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css");
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/flickity/2.0.5/flickity.min.css");
+
+// KEYFRAMES ANIMATION
+@keyframes slideLeft {
+	0%, 85% {
+		transform: translate3d(100%, 0, 0);
+	}
+	10%, 90% {
+		transform: translate3d(-2rem, 0, 0);
+	}
+}
+
+
+// FONTS
+
+$font: "Raleway", sans-serif;
+$game-price: "Oxygen", sans-serif;
+
+// COLORS
+$full-black: #000;
+$black: #0f0f0f;
+$orange: #f28a02;
+$special-green: #11ed11;
+$green: #2b9b41;
+$vivid-green: #00ff00;
+$discount-green: #58f216;
+$gray: #808080;
+$white: #fff;
+$ps4-black: #000000;
+$xbox-green: #008000;
+$pc-blue: #0066cc;
+$stable-red: #b00000;
+$active-red: #ff0000;
+$stable-green: #00b500;
+$active-green: #00ff00;
+
+// RESPONSIVE DESIGN BREAKPOINTS
+$desktop: 1000px;
+$normal-desktop: 1224px;
+$large-desktop: 1600px;
+$tablet-min: 768px;
+$tablet-max: 979px;
+$ipad-pro: 1024px;
+
+// MIXINS
+
+@mixin tablet {
+  @media (min-width: #{$tablet-min}) {
+    @content;
+  }
+}
+
+@mixin ipadpro {
+  @media (min-width: #{$ipad-pro}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin normal-desktop {
+  @media (min-width: #{$normal-desktop}) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (min-width: #{$large-desktop}) {
+    @content;
+  }
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+$font-family-primary: "Montserrat", sans-serif;
+$font-family-secondary: "Roboto Slab", serif;
+
+// body {
+//   background-color: #000;
+//   #loading {
+//     width: 100%;
+//     height: 100%;
+//     top: 0;
+//     left: 0;
+//     position: fixed;
+//     display: block;
+//     opacity: 0.7;
+//     background-color: #fff;
+//     z-index: 99;
+//     text-align: center;
+//   }
+
+//   #loading-image {
+//     position: absolute;
+//     top: 50%;
+//     left: 50%;
+//     z-index: 100;
+//   }
+// }
+
+body {
+  font-family: sans-serif;
+
+  .display-message {
+    font-family: $font;
+    transform: translate3d(100%, 0, 0);
+    animation: slideLeft 6s 0.4s  0.9 cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    @include tablet {
+      width: 30vw !important;
+    }
+
+    @include tablet {
+      width: 30vw !important;
+    }
+
+    @include normal-desktop {
+      width: 20vw !important;
+     
+    }
+
+    @include large-desktop {
+      font-size: 2rem !important;
+    }
+  }
+}
+
+.carousel {
+  background: #eee;
+}
+
+.carousel-cell {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+  background: #8c8;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(carousel-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+// HEADER STYLING
+.mega-header {
+  font-family: $font;
+  position: fixed;
+  width: 100%;
+  height: 100px;
+
+  z-index: 999;
+  top: 0;
+  left: 0;
+
+  @include normal-desktop {
+    height: 56px;
+  }
+  .main-header {
+    display: grid;
+    // grid-template-columns: 5% repeat(3, 1fr) 5%;
+    // grid-template-columns: 1fr 2fr 2fr 1fr;
+
+    // background: $black;
+    background: transparent;
+    color: $white;
+    height: 56px;
+    // padding: 10px;
+    transition: 0.3s ease-in-out;
+    &.black {
+      background: $full-black;
+    }
+
+    @include normal-desktop {
+      // height: 12vmin;
+      height: 56px;
+      padding: 0;
+      grid-template-rows: 1fr;
+    }
+
+    .main-row {
+      display: grid;
+      grid-template-columns: 1fr;
+
+      position: relative;
+
+      @include ipadpro {
+        grid-template-columns: 1fr 4fr;
+        height: 56px;
+      }
+      @include normal-desktop {
+        grid-template-columns: 1fr 4fr;
+        height: 56px;
+      }
+
+      .logo {
+        margin: 0 auto;
+        font-size: 5vmin;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+        @include desktop {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          // height: 12vmin;
+          height: 56px;
+          font-size: 3.1vmin;
+        }
+        a {
+          text-decoration: none;
+
+          @include desktop {
+            padding: 15px;
+          }
+          h2 {
+            color: $white;
+            font-size: 5vmin;
+            font-weight: 400;
+            font-weight: bold;
+
+            @include ipadpro {
+              font-size: 2vmin;
+            }
+
+            @include normal-desktop {
+              font-size: 3.4vmin;
+            }
+
+            @include large-desktop {
+              font-size: 3vmin;
+            }
+
+            span {
+              color: $green;
+              padding-left: 1vmin;
+            }
+          }
+        }
+      }
+
+      .nav-toggle {
+        position: absolute;
+        right: 5%;
+        top: 33%;
+        display: none;
+
+        @include ipadpro {
+          display: none;
+        }
+      }
+
+      .icon {
+        position: absolute;
+        right: 5%;
+        top: 33%;
+        cursor: pointer;
+        z-index: 6000;
+        @include ipadpro {
+          display: none;
+        }
+
+        .hamburger {
+          width: 50px;
+          height: 50px;
+
+          span {
+            width: 32px;
+            height: 2px;
+            background: #fff;
+            display: block;
+            margin-bottom: 6px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            transition: 0.5s;
+          }
+
+          &.active span:nth-child(2) {
+            transform: translateX(-50px);
+            opacity: 0;
+          }
+
+          &.active span:nth-child(1) {
+            transform: rotateY(180deg) rotateZ(45deg) translate(5.5px, 5.5px);
+          }
+          &.active span:nth-child(3) {
+            transform: rotateY(180deg) rotateZ(-45deg) translate(5.5px, -5.5px);
+          }
+        }
+      }
+
+      .nav-toggle:checked ~ .navigation {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        position: absolute;
+        top: 84%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 100%;
+        padding: 15px;
+        border-radius: 5px;
+
+        @include tablet {
+          width: 70%;
+        }
+      }
+
+      //
+
+      .navigation {
+        display: none;
+        // transition: opacity 2.0s ease-in;
+        // transition: height 1s ease;
+        // overflow: hidden;
+
+        background: $black;
+
+        @include ipadpro {
+          background: transparent;
+        }
+
+        @include ipadpro {
+          display: grid;
+          grid-template-columns: 1fr 2fr 1fr;
+        }
+
+        @include normal-desktop {
+          display: grid;
+          grid-template-columns: 1fr 0.5fr 1fr;
+        }
+
+        @include large-desktop {
+          display: grid;
+          grid-template-columns: 0.9fr 0.5fr 1fr;
+        }
+
+        .search-row {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 56px;
+
+          @include desktop {
+            // position: absolute;
+            // left: 25%;
+            // top: -1%;
+            // // height: 100%;
+            // width: 43%;
+            // height: 56px;
+            width: 95%;
+          }
+          .search-bar {
+            width: 100%;
+            height: 100%;
+            @include desktop {
+              width: 75%;
+            }
+            .search {
+              width: 100%;
+              height: 100%;
+              position: relative;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 0 5px;
+              @include desktop {
+                padding: 0;
+              }
+              input[type="search"]::-webkit-search-decoration,
+              input[type="search"]::-webkit-search-cancel-button,
+              input[type="search"]::-webkit-search-results-button,
+              input[type="search"]::-webkit-search-results-decoration {
+                -webkit-appearance: none;
+              }
+              .search-input {
+                border: solid 3px #fff;
+                box-sizing: border-box;
+                font-size: 15px;
+                height: 30px;
+                border-radius: 5px;
+                outline: solid #000 0;
+                padding: 0.5em;
+                // transition:all 0.5s ease-in;
+                width: 100%;
+                z-index: 1;
+
+                @include large-desktop {
+                  font-size: 25px;
+                }
+
+                &:focus {
+                  border: solid 3px #000;
+                  outline: solid rgba(0, 0, 0, 0.5) 2000px;
+
+                
+                }
+
+                // @include desktop {
+                //   height: 34%;
+                // }
+
+                // &::placeholder {
+                //   font-size: 2.2vmin;
+                //   line-height: 3;
+                // }
+              }
+              .search-button {
+                position: absolute;
+                top: 30%;
+                left: 5%;
+                width: 10%;
+                background: transparent;
+                border: none;
+                i {
+                  color: #fff;
+                  font-size: 4.5vmin;
+
+                  @include desktop {
+                    font-size: 1vmin;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        ::-webkit-scrollbar {
+          width: 0px;
+          background: transparent; /* make scrollbar transparent */
+        }
+
+        .result-container {
+          display: none;
+          // display: block;
+          background: rgba($full-black, 0.8);
+          border-radius: 5px;
+          position: fixed;
+          width: 100%;
+          // height: 100%;
+          height: 76vh;
+          left: 0;
+          top: 44%;
+         
+          flex-direction: column;
+          align-items: center;
+          overflow-y: scroll;
+          font-size: 20px;
+          z-index: 6666;
+
+          @include large-desktop {
+            font-size: 35px;
+          }
+
+          @include tablet {
+            height: 800px;
+            flex-wrap: wrap;
+          }
+
+          @include ipadpro {
+            height: 1000px;
+            top: 6%;
+            flex-direction: row;
+            justify-content: center;
+          }
+
+          @include normal-desktop {
+            height: 89vh;
+            top: 10%;
+           width: 78%;
+           margin: 0 11%;
+          //  padding: 0 30px;
+          }
+
+          a {
+          
+            @include ipadpro {
+              width: 33%;
+            }
+
+            @include normal-desktop {
+              width: 21%;
+            }
+            img {
+              border-radius: 5px;
+
+              @include ipadpro {
+                width: 100% !important;
+              }
+            }
+
+            p {
+              text-align: center;
+              font-size: 13px;
+              padding: 10px;
+
+              @include ipadpro {
+                font-size: 19px;
+                height: 60px;
+              }
+
+              @include ipadpro {
+                height: 50px;
+              }
+
+              @include large-desktop {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+        .menu {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          font-family: $font;
+
+          @include desktop {
+            height: 56px;
+          }
+          .nav-list {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            list-style-type: none;
+            margin: 0 auto;
+            padding: 0;
+            position: relative;
+            height: 100%;
+            width: 100%;
+
+            @include desktop {
+              height: 56px;
+              align-items: center;
+              justify-content: center;
+            }
+            @include large-desktop {
+              font-size: 2vmin;
+            }
+
+            .menu-item {
+              display: inline-block;
+
+              a {
+                i {
+                  display: none;
+
+                  @include ipadpro {
+                    display: block;
+                  }
+                }
+              }
+
+              @include desktop {
+                &:hover {
+                  .sub-nav-list {
+                    display: block;
+                    border-radius: 5px;
+                  }
+                }
+              }
+
+              .sub-nav-list {
+                color: $white;
+                border: 0px solid #000000;
+                overflow: hidden;
+                font-family: $font;
+                width: 100%;
+                outline: none;
+                display: block;
+
+                @include desktop {
+                  position: absolute;
+                  display: none;
+                  background: $white;
+                  border-radius: 25px;
+                  color: $full-black;
+                  box-shadow: 0px 7px 10px rgba(black, 0.5);
+                  min-width: 150px;
+                  width: 65px;
+                }
+                .sub-menu-item {
+                  position: relative;
+                  display: block;
+                  // background: #e3e3e3;
+                  transition: 0.2s ease-in;
+
+                  &:hover {
+                    background: $black;
+                    color: $white;
+                  }
+
+                  a {
+                    color: $white;
+                    @include desktop {
+                      color: $black;
+
+                      &:hover {
+                        color: $white;
+                        text-align: center;
+                        // font-weight: bold;
+                        opacity: 1;
+
+                        // i {
+                        //   display: block;
+                        //   margin-right: 5px;
+                        //   font-size: 18px;
+                        // }
+                      }
+
+                      i {
+                        display: none;
+                      }
+                    }
+
+                    i {
+                      display: none;
+                    }
+                  }
+                }
+              }
+
+              .sub-games-list {
+                left: 14%;
+                top: 95%;
+
+                @include ipadpro {
+                  left: 22%;
+                }
+
+                @include normal-desktop {
+                  left: 14%;
+                }
+
+                @include large-desktop {
+                  left: 17%;
+                }
+              }
+
+              .sub-platform-list {
+                left: 44%;
+                top: 95%;
+
+                @include normal-desktop {
+                  left: 43%;
+                }
+
+                @include large-desktop {
+                  left: 47%;
+                }
+              }
+
+              a {
+                color: $white;
+                text-decoration: none;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                padding: 8px;
+                @include desktop {
+                  padding: 15px;
+
+                  &:hover {
+                    opacity: 0.5;
+                  }
+
+                  i {
+                    padding-left: 5px;
+                  }
+                }
+              }
+            }
+          }
+
+          // .hamburger {
+          //   font-size: 5vmin;
+          //   display: block;
+          //   color: $green;
+
+          //   @include desktop {
+          //     display: none;
+          //   }
+          // }
+        }
+
+        .account-container {
+          height: 56px;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          @include large-desktop {
+            font-size: 2vmin;
+          }
+          .profile {
+            // padding: 10px;
+            display: flex;
+
+            justify-content: flex-end;
+            align-items: center;
+            font-size: 5vmin;
+            // @include desktop {
+            //   display: grid;
+            //   grid-template-columns: 1fr 2fr;
+            // }
+
+            @include tablet {
+              font-size: 3vmin;
+            }
+
+            @include ipadpro {
+              font-size: 3vmin;
+            }
+
+            @include desktop {
+              height: 56px;
+            }
+
+            .profile-links {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              justify-content: space-evenly;
+              align-items: center;
+              font-size: 19px;
+              @include desktop {
+                display: flex;
+                // flex-direction: column;
+                align-items: center;
+                height: 56px;
+                width: 100%;
+                font-size: 2vmin;
+              }
+
+              @include large-desktop {
+                // width: 65%;
+                width: 80%;
+              }
+              .account-link {
+                background: $green;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 1rem;
+                text-decoration: none;
+                color: $white;
+                padding: 10px;
+                margin-right: 3px;
+
+                @include desktop {
+                  // font-size: 2vmin;
+                  // height: 56px;
+                }
+
+                @include large-desktop {
+                  font-size: 1.2rem;
+                }
+              }
+
+              .logout-link {
+                cursor: pointer;
+                font-size: 1rem;
+                text-decoration: none;
+                color: $white;
+                background: $green;
+                border-radius: 5px;
+                padding: 10px;
+
+                @include large-desktop {
+                  font-size: 1.2rem;
+                }
+              }
+
+              .signup-link {
+                display: none;
+              }
+              .login-link {
+                cursor: pointer;
+                text-decoration: none;
+                color: $white;
+                // font-size: 3vmin;
+                background: $green;
+                border-radius: 5px;
+                // margin: 10px;
+                padding: 8px;
+                width: 100%;
+                height: 71%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @include desktop {
+                  font-size: 16px;
+                  height: 40px;
+                  border-radius: 5px;
+                  width: 100%;
+                  // height: 100%;
+                  // padding: 8px;
+                }
+
+                @include large-desktop {
+                  font-size: 2vmin;
+                }
+
+                .fa-user {
+                  padding-right: 5px;
+                  @include desktop {
+                    font-size: 16px;
+                  }
+                  @include large-desktop {
+                    font-size: 2vmin;
+                  }
+                }
+              }
+            }
+          }
+          .cart {
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            font-size: 5vmin;
+
+            @include desktop {
+              height: 56px;
+            }
+
+            @include normal-desktop {
+              width: 75%;
+            }
+
+            span {
+              font-size: 2vmin;
+            }
+
+            .cart-link {
+              text-decoration: none;
+              color: $white;
+              position: relative;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              height: 100%;
+              // background: $green;
+              border-radius: 5px;
+              border: 1px solid $white;
+
+              @include desktop {
+                width: 100%;
+                border: 1px solid $white;
+                height: 40px;
+                border-radius: 5px;
+              }
+
+              @include ipadpro {
+                padding: 15px;
+              }
+
+              @include normal-desktop {
+                padding: 0;
+              }
+
+              @include large-desktop {
+                width: 90%;
+              }
+
+              .fa-shopping-cart {
+                // padding: 20px;
+                font-size: 5vmin;
+                padding-right: 15px;
+                @include tablet {
+                  font-size: 19px;
+                }
+
+                @include ipadpro {
+                  font-size: 16px;
+                  padding-right: 0;
+                }
+
+                @include normal-desktop {
+                  padding-right: 15px;
+                }
+                @include large-desktop {
+                  font-size: 2vmin;
+                }
+              }
+
+              .cart-badge {
+                position: absolute;
+                background: $green;
+                font-size: 11px;
+                padding: 3px 7px;
+
+                color: $white;
+                border-radius: 50%;
+
+                left: 21%;
+                top: 5%;
+
+                @include tablet {
+                  left: 32%;
+                }
+                @include ipadpro {
+                  left: 46%;
+                  top: 11%;
+                  font-size: 11px;
+                  padding: 3px 7px;
+                }
+                @include normal-desktop {
+                  left: 20%;
+                  top: 11%;
+                  font-size: 11px;
+                  padding: 3px 7px;
+                }
+
+                @include large-desktop {
+                  left: 22%;
+                  font-size: 18px;
+                  top: 0%;
+                  padding: 1px 7px;
+                }
+              }
+
+              .my-cart {
+                font-size: 5vmin;
+                @include tablet {
+                  font-size: 19px;
+                }
+                // @include desktop {
+                //   font-size: 16px;
+                // }
+
+                @include ipadpro {
+                  display: none;
+                }
+
+                @include normal-desktop {
+                  display: block;
+                  font-size: 16px;
+                }
+                @include large-desktop {
+                  font-size: 2vmin;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// .sub-header {
+//   // display: grid;
+//   // grid-template-columns:  5% repeat(4, 1fr) 5%;
+//   background: rgba(15, 15, 15, 1);
+//   opacity: 0.7;
+//   height: 10vmin;
+//   font-size: 5vmin;
+
+//   @include desktop {
+//     height: 7vmin;
+//   }
+
+//   .sub-menu {
+//     display: grid;
+//     grid-template-columns: 5% repeat(4, 1fr) 5%;
+//     height: 100%;
+//     width: 100%;
+//     align-items: center;
+//     position: relative;
+//     color: $white;
+
+//     @include desktop {
+//       font-size: 3.5vmin;
+//     }
+
+//     input[type="radio"]:checked + label {
+//       color: #00ff00;
+//       border-top: 5px solid #00ff00;
+//     }
+
+//     input[type="radio"] + label {
+//       height: 100%;
+//       display: flex;
+//       align-items: center;
+//     }
+
+//     .home {
+//       grid-column: 2 / 3;
+//       margin: 0 auto;
+//       list-style-type: none;
+
+//       height: 100%;
+
+//       a {
+//         text-decoration: none;
+//         // color: #66ff00;
+//         // color: #00ff00;
+//         color: $white;
+//         font-weight: bold;
+//         height: 100%;
+
+//         .nav-menu-toggle {
+//           display: none;
+//         }
+//       }
+//     }
+
+//     .games {
+//       grid-column: 3 / 4;
+//       margin: 0 auto;
+//       list-style-type: none;
+//       height: 100%;
+
+//       .nav-menu-toggle {
+//         display: none;
+//       }
+
+//       .games-label {
+//         height: 100%;
+//       }
+
+//       .games-menu {
+//         opacity: 0;
+//         position: absolute;
+//         left: 0;
+//         top: 10vmin;
+//         height: 100%;
+//         width: 100%;
+//         display: flex;
+//         align-items: center;
+//         background: $black;
+//         font-size: 4vmin;
+
+//         @include desktop {
+//           top: 7vmin;
+//           font-size: 3vmin;
+//         }
+
+//         a {
+//           text-decoration: none;
+//           color: $white;
+//           height: 100%;
+//           .nav-item-toggle {
+//             display: none;
+//           }
+
+//           input[type="radio"]:checked + label {
+//             color: #00ff00;
+//             border-top: 5px solid #00ff00;
+//           }
+
+//           input[type="radio"] + label {
+//             height: 100%;
+//             display: flex;
+//             align-items: center;
+//           }
+//         }
+//       }
+
+//       .nav-menu-toggle:checked ~ nav {
+//         transform: scale(1, 1);
+//         display: flex;
+//         justify-content: space-around;
+//         z-index: 100;
+//         transition: opacity 250ms ease-in-out 250ms;
+//         opacity: 1;
+//       }
+//     }
+
+//     .console {
+//       grid-column: 4 / 5;
+//       margin: 0 auto;
+//       list-style-type: none;
+//       height: 100%;
+
+//       .nav-menu-toggle {
+//         display: none;
+//       }
+
+//       .console-label {
+//         height: 100%;
+//       }
+
+//       .console-menu {
+//         opacity: 0;
+//         position: absolute;
+//         left: 0;
+//         top: 10vmin;
+//         height: 100%;
+//         width: 100%;
+//         display: flex;
+//         align-items: center;
+//         background: $black;
+//         font-size: 4vmin;
+
+//         @include desktop {
+//           top: 7vmin;
+//           font-size: 3vmin;
+//         }
+
+//         a {
+//           text-decoration: none;
+//           color: $white;
+//           height: 100%;
+
+//           .nav-item-toggle {
+//             display: none;
+//           }
+
+//           input[type="radio"]:checked + label {
+//             color: #00ff00;
+//             border-top: 5px solid #00ff00;
+//           }
+
+//           input[type="radio"] + label {
+//             height: 100%;
+//             display: flex;
+//             align-items: center;
+//           }
+//         }
+//       }
+
+//       .nav-menu-toggle:checked ~ nav {
+//         transform: scale(1, 1);
+//         display: flex;
+//         justify-content: space-around;
+//         z-index: 100;
+//         transition: opacity 250ms ease-in-out 250ms;
+//         opacity: 1;
+//       }
+//     }
+
+//     .shop {
+//       grid-column: 5 / 6;
+//       margin: 0 auto;
+//       list-style-type: none;
+//       height: 100%;
+
+//       a {
+//         text-decoration: none;
+//         color: $white;
+//         height: 100%;
+
+//         .nav-menu-toggle {
+//           display: none;
+//         }
+//       }
+//     }
+//   }
+// }
+// }
+
+// HOME PAGE
+
+section#home {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  .btn-index {
+    display: inline-block;
+    padding: 13px 20px;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    background: transparent;
+    border: 1px solid #e1e1e1;
+    // font: 12px/1.2 "Oswald", sans-serif;
+    letter-spacing: 0.4em;
+    font-size: 3vmin;
+    text-align: center;
+    text-indent: 2px;
+    text-transform: uppercase;
+    transition: color 0.1s linear 0.05s;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: #e1e1e1;
+      z-index: 1;
+      opacity: 0;
+      transition: height 0.2s ease, top 0.2s ease, opacity 0s linear 0.2s;
+    }
+
+    &::after {
+      transition: border 0.1s linear 0.05s;
+    }
+
+    .btn-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    &:hover {
+      color: #373737;
+      transition: color 0.1s linear 0s;
+
+      &::before {
+        top: 0;
+        height: 100%;
+        opacity: 1;
+        transition: height 0.2s ease, top 0.2s ease, opacity 0s linear 0s;
+      }
+
+      &::after {
+        border-color: #373737;
+        transition: border 0.1s linear 0s;
+      }
+    }
+  }
+
+  .slideshow {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+
+    .slideshow-inner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .slides {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .slide {
+      display: none;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+
+      &:nth-child(3) {
+        .image-container {
+          .image {
+            width: 250%;
+
+            @include tablet {
+              width: 211%;
+            }
+
+            @include normal-desktop {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      &.is-active {
+        display: block;
+      }
+
+      &.is-loaded {
+        opacity: 1;
+      }
+
+      .slide-content {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-family: $font;
+        .caption {
+          // padding: 0 100px;
+          margin-bottom: 18%;
+          @include ipadpro {
+            margin-bottom: 18%;
+          }
+
+          @include normal-desktop {
+            margin-bottom: 7%;
+          }
+
+          @include large-desktop {
+            margin-bottom: 9%;
+          }
+
+          .title {
+            font-size: 6vmin;
+            font-family: $font;
+
+            @include ipadpro {
+              font-size: 4vmin;
+            }
+          }
+
+          .btn-index {
+            font-size: 3.5vmin;
+
+            @include tablet {
+              font-size: 2.5vmin;
+            }
+
+            @include ipadpro {
+              font-size: 2vmin;
+            }
+          }
+        }
+      }
+
+      .image-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        z-index: 1;
+        background-size: cover;
+        overflow: hidden;
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      .image {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+
+        @include normal-desktop {
+          height: 125%;
+        }
+
+        @include large-desktop {
+          height: 100%;
+        }
+      }
+
+      &-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        color: #fff;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .title {
+        margin: 0 auto 15px;
+        max-width: 1000px;
+
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+      }
+
+      .text {
+        margin: 0 auto;
+        max-width: 1000px;
+        font-size: 18px;
+        line-height: 1.4;
+      }
+
+      .btn-index {
+        margin: 15px 0 0;
+        border-color: #fff;
+
+        @include ipadpro {
+          margin: 50px 0 0;
+        }
+
+        &::before {
+          background: #fff;
+        }
+      }
+    }
+
+    .pagination {
+      position: absolute;
+      bottom: 35px;
+      left: 0;
+      width: 100%;
+      height: 12px;
+      cursor: default;
+      z-index: 2;
+      text-align: center;
+
+      @include tablet {
+        bottom: 9%;
+      }
+
+      @include ipadpro {
+        bottom: 8%;
+      }
+
+      .item {
+        display: inline-block;
+        padding: 15px 5px;
+        position: relative;
+        width: 46px;
+        height: 32px;
+        cursor: pointer;
+        text-indent: -999em;
+        z-index: 1;
+
+        + .page {
+          margin-left: -2px;
+        }
+
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 15px;
+          left: 5px;
+          width: 36px;
+          height: 2px;
+          background: rgba(255, 255, 255, 0.5);
+          transition: background 0.2s ease;
+        }
+
+        &::after {
+          width: 0;
+          background: #fff;
+          z-index: 2;
+          transition: width 0.2s ease;
+        }
+
+        &:hover::before,
+        &.is-active::before {
+          background-color: #fff;
+        }
+      }
+    }
+
+    .arrows {
+      .arrow {
+        margin: -33px 0 0;
+        padding: 20px;
+        position: absolute;
+        top: 50%;
+        cursor: pointer;
+        z-index: 3;
+      }
+
+      .prev {
+        left: 30px;
+
+        &:hover .svg {
+          left: -10px;
+        }
+      }
+
+      .next {
+        right: 30px;
+
+        &:hover .svg {
+          left: 10px;
+        }
+      }
+
+      .svg {
+        position: relative;
+        left: 0;
+        width: 14px;
+        height: 26px;
+        fill: #fff;
+        transition: left 0.2s ease;
+      }
+    }
+  }
+
+  .slideshow {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    .slider {
+      width: 100vw;
+      height: 100vw;
+      z-index: 2;
+
+      * {
+        outline: none;
+      }
+
+      .item {
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+        overflow: hidden;
+        border: none;
+
+        .text {
+          display: none;
+        }
+
+        img {
+          min-width: 101%;
+          min-height: 101%;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+          @include desktop {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+
+    .slick-dots {
+      position: fixed;
+      z-index: 100;
+      width: 40px;
+      height: auto;
+      bottom: auto;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      left: auto;
+      color: #fff;
+      display: block;
+
+      li {
+        display: block;
+        width: 100%;
+        height: auto;
+
+        & button {
+          position: relative;
+          width: 20px;
+          height: 15px;
+          text-align: center;
+
+          &:before {
+            content: "";
+            background: #fff;
+            color: #fff;
+            height: 2px;
+            width: 20px;
+            border-radius: 0;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            left: auto;
+            transform: translateY(-50%);
+            transition: all 0.3s ease-in-out;
+            opacity: 0.6;
+          }
+        }
+
+        &.slick-active {
+          button {
+            &:before {
+              width: 40px;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+    &.slideshow-right {
+      left: 0;
+      z-index: 1;
+      width: 50vw;
+      pointer-events: none;
+
+      .slider {
+        left: 0;
+        position: absolute;
+      }
+    }
+  }
+}
+
+section#special-offers {
+  min-height: 100vh;
+  width: 100vw;
+  position: relative;
+  background: #000;
+  display: grid;
+  grid-template-rows: 0.3fr 1fr;
+  // flex-direction: column;
+  // justify-content: center;
+  // align-items: center;
+
+  @include desktop {
+    min-height: 950px;
+  }
+
+  @include large-desktop {
+    min-height: 1000px;
+  }
+  .offer-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include ipadpro {
+      align-items: flex-end;
+    }
+    h3 {
+      font-size: 8vmin;
+      font-family: $font;
+      text-transform: uppercase;
+      font-weight: 400;
+      color: $white;
+
+      @include ipadpro {
+        font-size: 4rem;
+      }
+
+      @include normal-desktop {
+        font-size: 3rem;
+      }
+
+      @include large-desktop {
+        font-size: 4rem;
+      }
+    }
+  }
+
+  .carousel {
+    background: #000;
+    // background: red;
+
+    .flickity-viewport {
+      height: 100% !important;
+      // height: 1050px !important;
+
+      .carousel-cell {
+        width: 90%;
+        height: 77%;
+        margin-left: 5%;
+        margin-right: 5%;
+        border-radius: 5%;
+        background: $black;
+        box-shadow: 0px 7px 10px rgba(black, 0.5);
+
+        @include tablet {
+          width: 35%;
+          height: 54%;
+          margin-top: 16%;
+          margin-left: 10px;
+          margin-right: 0;
+        }
+
+        @include ipadpro {
+          margin-top: 9%;
+        }
+
+        @include normal-desktop {
+          margin-top: 3%;
+          margin-left: 5%;
+          width: 23%;
+          border-radius: 5%;
+        }
+
+        @include large-desktop {
+          width: 21%;
+          height: 71%;
+        }
+
+        &::before {
+          display: none !important;
+          content: none;
+        }
+
+        // position: relative;
+
+        .thumbnail-container {
+          position: relative;
+          height: 39%;
+
+          .discount {
+            border-top-right-radius: 25%;
+            position: absolute;
+            top: 0%;
+            right: 0%;
+            font-size: 5vmin;
+            background: $discount-green;
+
+            padding: 10px;
+            color: $white;
+            z-index: 50;
+            font-family: $game-price;
+
+            @include tablet {
+              font-size: 2vmin;
+            }
+          }
+          .image-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            img {
+              border-top-left-radius: 5%;
+              border-top-right-radius: 5%;
+              position: absolute;
+              // object-fit: contain;
+              left: 0;
+              top: 0;
+
+              // width: 100%;
+              // display: none;
+            }
+          }
+        }
+
+        .content-container {
+          height: 55%;
+          grid-template-rows: 2fr 2fr 1fr;
+
+          .content-header {
+            height: 28%;
+            font-size: 5vmin;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            margin: 15px;
+            padding-left: 15px;
+
+            .content-title {
+              display: flex;
+              justify-content: flex-start;
+              // padding-top: 20px;
+
+              @include tablet {
+                padding-top: 0;
+              }
+
+              .header-text {
+                width: 100%;
+                font-size: 6vmin;
+                color: $white;
+
+                @include tablet {
+                  font-size: 2.5vmin;
+                }
+              }
+            }
+
+            .price {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              font-family: $game-price;
+              .old-price {
+                font-size: 5vmin;
+                color: rgba(255, 255, 255, 0.5);
+                text-decoration: line-through;
+
+                @include tablet {
+                  font-size: 2vmin;
+                }
+
+                @include desktop {
+                  font-size: 1.8vmin;
+                }
+
+                @include normal-desktop {
+                  font-size: 2vmin;
+                }
+              }
+
+              .new-price {
+                font-size: 7vmin;
+                color: $white;
+
+                @include tablet {
+                  font-size: 3vmin;
+                }
+
+                @include desktop {
+                  font-size: 2.5vmin;
+                }
+
+                @include normal-desktop {
+                  font-size: 3vmin;
+                }
+              }
+            }
+            // .content-fav {
+            //   display: flex;
+            //   justify-content: center;
+            //   align-items: flex-start;
+            //   padding-top: 20px;
+
+            //   @include tablet {
+            //     padding-top: 0;
+            //   }
+            //   .add-to-fav {
+            //     display: flex;
+            //     align-items: flex-start;
+            //     a {
+            //       text-decoration: none;
+            //       color: $vivid-green;
+            //       font-size: 8vmin;
+
+            //       @include tablet {
+            //         font-size: 4vmin;
+            //       }
+            //     }
+            //   }
+            // }
+          }
+
+          .content-middle {
+            height: 51%;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            margin: 15px;
+            padding-left: 15px;
+
+            .info {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-around;
+              .genre {
+                margin-bottom: 10px;
+                .genre-header {
+                  p {
+                    color: $white;
+                    font-size: 5vmin;
+
+                    @include tablet {
+                      font-size: 2vmin;
+                    }
+                  }
+                }
+
+                .genre-content {
+                  .genre-text {
+                    font-size: 5vmin;
+                    color: $vivid-green;
+
+                    @include tablet {
+                      font-size: 2vmin;
+                    }
+                  }
+                }
+              }
+
+              .platform {
+                .platform-header {
+                  p {
+                    color: $white;
+                    font-size: 5vmin;
+
+                    @include tablet {
+                      font-size: 2vmin;
+                    }
+                  }
+                }
+
+                .platform-flags {
+                  display: flex;
+                  justify-content: flex-start;
+                  color: $white;
+
+                  .xbox-flag {
+                    clip-path: circle(40% at 50% 50%);
+
+                    background: $xbox-green;
+                    width: 7vmin;
+                    height: 9vmin;
+                    display: flex;
+                    justify-content: center;
+
+                    @include tablet {
+                      width: 5vmin;
+                      height: 5vmin;
+                    }
+
+                    @include desktop {
+                      width: 4vmin;
+                      height: 4vmin;
+                    }
+
+                    @include normal-desktop {
+                      width: 5vmin;
+                      height: 5vmin;
+                    }
+
+                    i {
+                      padding-top: 2.7vmin;
+                      font-size: 3vmin;
+
+                      @include tablet {
+                        padding-top: 1.7vmin;
+                        font-size: 2vmin;
+                      }
+
+                      @include desktop {
+                        padding-top: 1vmin;
+                        font-size: 1.5vmin;
+                      }
+
+                      @include normal-desktop {
+                        padding-top: 1.7vmin;
+                        font-size: 2vmin;
+                      }
+                      @include large-desktop {
+                        padding-top: 1.4vmin;
+                      }
+                    }
+                  }
+
+                  .ps4-flag {
+                    clip-path: circle(40% at 50% 50%);
+                    background: $ps4-black;
+                    width: 7vmin;
+                    height: 9vmin;
+                    display: flex;
+                    justify-content: center;
+                    @include tablet {
+                      width: 5vmin;
+                      height: 5vmin;
+                    }
+
+                    @include desktop {
+                      width: 4vmin;
+                      height: 4vmin;
+                    }
+
+                    @include normal-desktop {
+                      width: 5vmin;
+                      height: 5vmin;
+                    }
+
+                    i {
+                      padding-top: 2.7vmin;
+                      font-size: 3vmin;
+
+                      @include tablet {
+                        padding-top: 1.7vmin;
+                        font-size: 2vmin;
+                      }
+
+                      @include desktop {
+                        padding-top: 1vmin;
+                        font-size: 1.5vmin;
+                      }
+
+                      @include normal-desktop {
+                        padding-top: 1.7vmin;
+                        font-size: 2vmin;
+                      }
+
+                      @include large-desktop {
+                        padding-top: 1.4vmin;
+                      }
+                    }
+                  }
+
+                  .pc-flag {
+                    clip-path: circle(40% at 50% 50%);
+                    background: $pc-blue;
+                    width: 7vmin;
+                    height: 9vmin;
+                    display: flex;
+                    justify-content: center;
+                    @include tablet {
+                      width: 5vmin;
+                      height: 5vmin;
+                    }
+
+                    @include desktop {
+                      width: 4vmin;
+                      height: 4vmin;
+                    }
+
+                    @include normal-desktop {
+                      width: 5vmin;
+                      height: 5vmin;
+                    }
+                    i {
+                      padding-top: 2.7vmin;
+                      font-size: 3vmin;
+                      @include tablet {
+                        padding-top: 1.7vmin;
+                        font-size: 2vmin;
+                      }
+
+                      @include desktop {
+                        padding-top: 1vmin;
+                        font-size: 1.5vmin;
+                      }
+
+                      @include normal-desktop {
+                        padding-top: 1.7vmin;
+                        font-size: 2vmin;
+                      }
+                      @include large-desktop {
+                        padding-top: 1.4vmin;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            // .price {
+            //   display: flex;
+            //   flex-direction: column;
+            //   align-items: center;
+            //   font-family: $game-price;
+            //   .old-price {
+            //     font-size: 5vmin;
+            //     color: rgba(255, 255, 255, 0.5);
+            //     text-decoration: line-through;
+
+            //     @include tablet {
+            //       font-size: 2vmin;
+            //     }
+            //   }
+
+            //   .new-price {
+            //     font-size: 7vmin;
+            //     color: $white;
+
+            //     @include tablet {
+            //       font-size: 3vmin;
+            //     }
+            //   }
+            // }
+
+            .content-button {
+              display: grid;
+              // justify-content: center;
+              // align-items: flex-start;
+              grid-template-rows: 1fr 1fr;
+              padding-top: 20px;
+
+              @include tablet {
+                padding-top: 0;
+              }
+              .add-to-fav {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                a {
+                  text-decoration: none;
+                  color: $vivid-green;
+                  font-size: 8vmin;
+                  transition: all 0.5s ease;
+                  &:hover {
+                    color: $orange;
+                  }
+                  @include tablet {
+                    font-size: 4vmin;
+                  }
+
+                  @include desktop {
+                    font-size: 3vmin;
+                  }
+
+                  @include normal-desktop {
+                    font-size: 4vmin;
+                  }
+                }
+              }
+
+              .buy-button {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                a {
+                  text-decoration: none;
+                  color: $vivid-green;
+                  font-size: 8vmin;
+                  transition: all 0.5s ease;
+                  &:hover {
+                    color: $orange;
+                  }
+                  @include tablet {
+                    font-size: 4vmin;
+                  }
+
+                  @include desktop {
+                    font-size: 3vmin;
+                  }
+
+                  @include normal-desktop {
+                    font-size: 4vmin;
+                  }
+                }
+              }
+            }
+          }
+
+          // .content-footer {
+          //   height: 27%;
+          //   display: grid;
+          //   grid-template-columns: 1fr;
+          //   justify-items: center;
+          //   align-items: center;
+
+          //   .buy-button {
+          //     width: 100%;
+          //     height: 100%;
+          //     border-radius: 0px 0px 29px 29px;
+          //     background: $vivid-green;
+
+          //     display: flex;
+          //     justify-content: center;
+          //     align-items: center;
+
+          //     .add-to-cart {
+          //       border-bottom-left-radius: 5%;
+          //       border-bottom-right-radius: 5%;
+          //       font-size: 5vmin;
+          //       color: $black;
+          //       text-decoration: none;
+          //       text-transform: uppercase;
+          //       font-weight: 900;
+          //       font-family: $font;
+
+          //       @include tablet {
+          //         font-size: 3vmin;
+          //       }
+          //     }
+          //   }
+          // }
+        }
+      }
+    }
+    .flickity-prev-next-button {
+      top: 94%;
+      width: 13vmin;
+      height: 10vmin;
+      border-radius: 48px;
+      background: transparent;
+      background: $black;
+      z-index: 500;
+
+      @include tablet {
+        top: 84%;
+
+        width: 11vmin;
+        height: 6vmin;
+      }
+
+      @include normal-desktop {
+        top: 70%;
+      }
+
+      @include large-desktop {
+        top: 90%;
+      }
+
+      &.previous {
+        @include tablet {
+          left: 13vmin;
+        }
+
+        @include normal-desktop {
+          left: 47vmin;
+        }
+      }
+
+      &.next {
+        @include tablet {
+          right: 13vmin;
+        }
+
+        @include normal-desktop {
+          right: 47vmin;
+        }
+      }
+      .arrow {
+        fill: $vivid-green;
+      }
+    }
+
+    .flickity-page-dots {
+      margin-left: 26%;
+      // width: 48%;
+      // bottom: 5%;
+      display: flex;
+      justify-content: space-around;
+      margin-left: 16%;
+      width: 69%;
+      bottom: 5%;
+
+      @include tablet {
+        margin-left: 25%;
+        width: 50%;
+        bottom: 15%;
+      }
+
+      @include normal-desktop {
+        top: 69%;
+        width: 32%;
+        margin-left: 34%;
+      }
+
+      @include large-desktop {
+        top: 89%;
+        width: 26%;
+        margin-left: 37%;
+      }
+
+      .dot {
+        width: 3vmin;
+        height: 3vmin;
+        border-radius: 48px;
+        transition: 0.4s ease-in-out;
+        background: $white;
+        opacity: 0.75;
+        color: $white;
+
+        @include tablet {
+          width: 2vmin;
+          height: 2vmin;
+        }
+        &.is-selected {
+          opacity: 1;
+          width: 7vmin;
+          height: 3vmin;
+          background: $white;
+
+          @include tablet {
+            width: 6vmin;
+            height: 2vmin;
+          }
+        }
+      }
+    }
+  }
+}
+
+section#game-trends {
+  min-height: 100vh;
+
+  width: 100vw;
+  position: relative;
+  background: #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
+  .tab {
+    padding-top: 50px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    width: 100%;
+    margin: 0 auto;
+    font-family: "Roboto", sans-serif;
+    font-size: 5vmin;
+    line-height: 1.5;
+    font-weight: 300;
+    color: #888;
+    -webkit-font-smoothing: antialiased;
+    // height: 1000px;
+
+    @include normal-desktop {
+      // width: 65%;
+      width: 95%;
+      border-radius: 5px;
+      padding-top: 0;
+    }
+  }
+
+  .tabs {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+    @include normal-desktop {
+      justify-content: center;
+    }
+
+    .tab-headers {
+      float: left;
+      line-height: 11vmin;
+      overflow: hidden;
+      padding: 0;
+      position: relative;
+      width: 33vmin;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $black;
+
+      @include normal-desktop {
+
+
+        &:first-child {
+          border-radius: 5px 0px 0px 0px;
+        }
+
+
+        &:last-child {
+          border-radius: 0px 5px 0px 0px;
+        }
+        
+       
+      }
+
+      .tab-element {
+        border-bottom: 1px solid #fff;
+
+        font-weight: 500;
+        display: block;
+        letter-spacing: 0;
+        outline: none;
+
+        text-decoration: none;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        border-bottom: 2px solid lime;
+        font-size: 3.5vmin;
+
+        color: $white;
+
+        @include ipadpro {
+          font-size: 3.4vmin;
+          padding: 0 20px;
+        }
+
+        @include normal-desktop {
+          font-size: 2.5vmin;
+        }
+
+        // .element-text {
+        //   display: none;
+        // }
+      }
+    }
+
+    .current .tab-element {
+      color: lime;
+    }
+  }
+
+  .tab-content {
+    display: flex;
+    flex-direction: column;
+    background: $black;
+
+    @include normal-desktop {
+      border-radius: 5px;
+    }
+    .tabs-item {
+      display: none;
+      padding: 30px 0;
+
+      .content-container {
+        display: flex;
+        flex-direction: column;
+        @include normal-desktop {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .tabs-item-content {
+        display: grid;
+        grid-template-columns: 1.5fr 2fr 1fr;
+        margin-bottom: 3vmin;
+        background: $black;
+        position: relative;
+        cursor: pointer;
+        .content-image {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            float: left;
+
+            width: 86%;
+            margin-right: 0px;
+            height: 14vmin;
+          }
+
+          .first-image {
+            width: 86%;
+            margin-right: 0px;
+            height: 14vmin;
+          }
+        }
+
+        .content-text {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          .text-name {
+            font-weight: bold;
+            width: 152px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: lime;
+            font-size: 3.5vmin;
+
+            @include tablet {
+              width: 338px;
+              font-size: 2.5vmin;
+            }
+
+            @include ipadpro {
+              width: 460px;
+            }
+
+            @include normal-desktop {
+              width: 250px;
+            }
+          }
+
+          .platform {
+            font-size: 3vmin;
+
+            @include tablet {
+              font-size: 2.5vmin;
+            }
+            i {
+              padding: 5px;
+            }
+          }
+          .text-genre {
+            font-size: 3.5vmin;
+            width: 160px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+
+            @include tablet {
+              font-size: 2.5vmin;
+              width: 310px;
+            }
+
+            @include normal-desktop {
+              width: 100%;
+              font-size: 2.5vmin;
+            }
+          }
+        }
+
+        .content-price {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          .top-discount {
+            background: $discount-green;
+            color: $black;
+            position: absolute;
+            top: 36%;
+            right: 20%;
+            font-size: 3vmin;
+            padding: 0 3px;
+
+            @include normal-desktop {
+              font-size: 2vmin;
+            }
+          }
+
+          .top-old-price {
+            font-size: 3vmin;
+            text-decoration: line-through;
+
+            @include normal-desktop {
+              font-size: 2vmin;
+            }
+          }
+
+          .price {
+            color: $white;
+            font-size: 4vmin;
+
+            @include tablet {
+              font-size: 3.5vmin;
+            }
+
+            @include ipadpro {
+              font-size: 3.3vmin;
+            }
+
+            @include normal-desktop {
+              font-size: 3vmin;
+            }
+          }
+        }
+      }
+      &:first-child {
+        display: block;
+
+        @include normal-desktop {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+    }
+  }
+}
+
+// SIGN UP PAGE
+.signup-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: $font;
+  background: $black;
+
+  .signup-header {
+    margin-bottom: 2vmin;
+    h1 {
+      font-size: 10vmin;
+      text-transform: uppercase;
+      font-family: $font;
+      color: $white;
+      font-weight: bold;
+
+      @include desktop {
+        font-size: 7vmin;
+      }
+    }
+  }
+
+  .signup-form-container {
+    width: 100%;
+    height: 40%;
+
+    @include tablet {
+      height: 50%;
+    }
+
+    @include desktop {
+      width: 40%;
+    }
+    .signup-form {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .form-group {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        label {
+          font-size: 6vmin;
+          color: $white;
+
+          @include tablet {
+            font-size: 5vmin;
+          }
+
+          @include desktop {
+            font-size: 3vmin;
+          }
+        }
+        input {
+          width: 86%;
+          height: 12vmin;
+          margin: 15px;
+
+          @include tablet {
+            height: 8vmin;
+          }
+
+          @include desktop {
+            height: 6vmin;
+          }
+        }
+      }
+      button {
+        padding: 20px;
+        font-size: 5vmin;
+        margin: 15px;
+        margin-top: 6vmin;
+        width: 79%;
+        color: $vivid-green;
+        background: $black;
+        text-transform: uppercase;
+
+        @include tablet {
+          width: 78%;
+        }
+
+        @include desktop {
+          padding: 12px;
+          font-size: 3vmin;
+        }
+      }
+    }
+  }
+
+  .login-link {
+    color: $white;
+    padding: 10px;
+    width: 79%;
+
+    @include tablet {
+      display: flex;
+      justify-content: center;
+    }
+
+    @include desktop {
+      width: 34%;
+    }
+    p {
+      font-size: 4vmin;
+
+      // @include tablet {
+      //   font-size: 3vmin;
+      // }
+
+      @include desktop {
+        font-size: 3vmin;
+      }
+      a {
+        text-decoration: none;
+        color: $vivid-green;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// LOGIN PAGE
+
+.login-main-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: $font;
+  background: $full-black;
+
+  .login-sub-container {
+    height: 72%;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    border-radius: 5px;
+    box-shadow: 0px 7px 10px rgba(black, 0.5);
+    background: $black;
+    overflow: hidden;
+
+    @include tablet {
+      width: 68%;
+    }
+
+    @include normal-desktop {
+      width: 35%;
+    }
+
+    @include large-desktop {
+      height: 62%;
+    }
+
+    .login-header {
+      // margin-bottom: 60px;
+      height: 10%;
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+      margin-top: 8%;
+      h1 {
+        font-size: 11vmin;
+        text-transform: uppercase;
+
+        font-family: $font;
+        color: $white;
+        font-weight: bold;
+
+        @include tablet {
+          font-size: 8vmin;
+        }
+
+        @include normal-desktop {
+          font-size: 6vmin;
+        }
+
+        @include large-desktop {
+          font-size: 5vmin;
+        }
+      }
+    }
+
+    .error-messages {
+      // margin-top: 5%;
+      position: absolute;
+      top: 19%;
+
+      @include normal-desktop {
+        top: 21%;
+      }
+      p {
+        color: $active-red;
+        font-weight: bold;
+
+        @include tablet {
+          font-size: 4vmin;
+        }
+
+        @include ipadpro {
+          font-size: 3vmin;
+        }
+
+        @include normal-desktop {
+          font-size: 20px;
+        }
+
+        @include large-desktop {
+          font-size: 23px;
+        }
+      }
+    }
+
+    .login-form-container {
+      // width: 100%;
+      // height: 40%;
+      // height: 72%;
+      // width: 95%;
+      width: 100%;
+      height: 68%;
+      overflow: hidden;
+
+      padding: 10px;
+      @include tablet {
+        height: 50%;
+      }
+      @include ipadpro {
+        width: 80%;
+      }
+      // @include desktop {
+      //   width: 40%;
+      // }
+      .login-form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        @include large-desktop {
+          width: 90%;
+          margin: 0 auto;
+        }
+        .form-group {
+          width: 90%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          border-bottom: 2px solid #adadad;
+          position: relative;
+          margin: 30px 0;
+
+          @include tablet {
+            width: 84%;
+          }
+
+          @include normal-desktop {
+            margin: 15px 0;
+          }
+
+          input {
+            // width: 86%;
+            // height: 12vmin;
+            // margin: 15px;
+            font-size: 15px;
+            color: $white;
+            border: none;
+            width: 100%;
+            outline: none;
+            background: none;
+            // padding: 0 5px;
+            height: 40px;
+            letter-spacing: 1px;
+
+            @include tablet {
+              font-size: 4vmin;
+            }
+
+            @include ipadpro {
+              font-size: 3vmin;
+            }
+
+            @include normal-desktop {
+              font-size: 17px;
+            }
+
+            // @include tablet {
+            //   height: 8vmin;
+            // }
+
+            // @include desktop {
+            //   height: 6vmin;
+            // }
+
+            // &:focus + span {
+            //   top: -5px;
+            // }
+
+            // &.focus + span {
+            //   width: 100%;
+            // }
+
+            &:focus ~ label,
+            &:valid ~ label {
+              @include tablet {
+                top: -45px;
+              }
+
+              @include normal-desktop {
+                top: -20px;
+              }
+
+              top: -15px;
+              left: 0;
+              color: $active-green;
+            }
+
+            &.focus ~ span {
+              width: 100%;
+            }
+
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover,
+            &:-webkit-autofill:focus,
+            &:-webkit-autofill:active {
+              transition: background-color 5000s ease-in-out 0s;
+              transition-delay: 9999s;
+              -webkit-text-fill-color: $white;
+            }
+          }
+
+          label {
+            position: absolute;
+            left: 0;
+            top: 14px;
+            font-size: 4vmin;
+            color: $white;
+            pointer-events: none;
+            transition: 0.5s;
+
+            @include tablet {
+              font-size: 4vmin;
+              top: -15px;
+            }
+
+            @include ipadpro {
+              font-size: 3vmin;
+            }
+
+            @include normal-desktop {
+              top: 10px;
+              font-size: 16px;
+            }
+
+            @include large-desktop {
+              font-size: 18px;
+            }
+          }
+
+          span {
+            position: absolute;
+            left: 0;
+            top: 101%;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(120deg, #4b4b4b, $active-green);
+            transition: 0.5s;
+            // &:after {
+            //   content: "";
+            //   background: blue;
+            //   width: 50px;
+            //   height: 50px;
+            //   color: $white;
+            //   // position: absolute;
+
+            //   // width: 0%;
+            //   // left: 0%;
+            //   // bottom: -4%;
+            //   // height: 5px;
+            //   // background: linear-gradient(120deg, #4b4b4b, #3ae374);
+            //   // // background: red;
+            //   // transition: 0.5s;
+            // }
+          }
+
+          // span {
+          //  color: $white;
+          //   &:before {
+          //     content: "Username";
+          //     position: absolute;
+          //     top: 50%;
+          //     left: 5px;
+          //     font-size: 50px;
+          //     color: $white;
+          //     transform: translateY(-50%);
+          //     z-index: -1;
+          //     transition: 0.5s;
+          //   }
+
+          // }
+        }
+        .login-button {
+          padding: 20px;
+          font-size: 5vmin;
+          // margin: 15px;
+          // margin-top: 6vmin;
+          display: block;
+          width: 90%;
+          color: $white;
+          // background: $black;
+          text-transform: uppercase;
+          border: none;
+          background: linear-gradient(120deg, #4b4b4b, $vivid-green, #4b4b4b);
+          background-size: 200%;
+          outline: none;
+          cursor: pointer;
+          border-radius: 5px;
+          transition: 0.5s;
+          margin: 15px 0;
+
+          &:hover {
+            background-position: right;
+          }
+          @include tablet {
+            width: 84%;
+            font-size: 4vmin;
+          }
+
+          @include normal-desktop {
+            padding: 12px;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    .signup-link {
+      color: $white;
+
+      text-align: center;
+      width: 100%;
+      padding: 10px;
+      height: 13%;
+      @include tablet {
+        display: flex;
+        justify-content: center;
+      }
+
+      @include ipadpro {
+        width: 80%;
+      }
+
+      @include normal-desktop {
+        margin-bottom: 30px;
+      }
+      // @include desktop {
+      //   width: 34%;
+      // }
+      p {
+        font-size: 4vmin;
+
+        // @include tablet {
+        //   font-size: 3vmin;
+        // }
+
+        @include tablet {
+          font-size: 2.5vmin;
+        }
+
+        @include ipadpro {
+          font-size: 2.3vmin;
+        }
+
+        @include normal-desktop {
+          font-size: 15px;
+        }
+
+        @include large-desktop {
+          font-size: 20px;
+        }
+
+        // @include desktop {
+        //   font-size: 3vmin;
+        // }
+        a {
+          text-decoration: none;
+          color: $vivid-green;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.signup-main-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: $font;
+  background: $full-black;
+
+  .signup-sub-container {
+    height: 72%;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    border-radius: 5px;
+    box-shadow: 0px 7px 10px rgba(black, 0.5);
+    background: $black;
+    overflow: hidden;
+
+    @include tablet {
+      width: 68%;
+    }
+
+    @include normal-desktop {
+      width: 35%;
+    }
+
+    @include large-desktop {
+      height: 62%;
+    }
+
+    .signup-header {
+      // margin-bottom: 60px;
+      height: 10%;
+      width: 100%;
+      padding: 10px;
+      text-align: center;
+      margin-top: 8%;
+      h1 {
+        font-size: 11vmin;
+        text-transform: uppercase;
+
+        font-family: $font;
+        color: $white;
+        font-weight: bold;
+
+        @include tablet {
+          font-size: 8vmin;
+        }
+
+        @include normal-desktop {
+          font-size: 6vmin;
+        }
+
+        @include large-desktop {
+          font-size: 5vmin;
+        }
+      }
+    }
+
+    .error-messages {
+      // margin-top: 5%;
+      position: absolute;
+      top: 19%;
+
+      @include normal-desktop {
+        top: 21%;
+      }
+      p {
+        color: $active-red;
+        font-weight: bold;
+
+        @include tablet {
+          font-size: 4vmin;
+        }
+
+        @include ipadpro {
+          font-size: 3vmin;
+        }
+
+        @include normal-desktop {
+          font-size: 20px;
+        }
+
+        @include large-desktop {
+          font-size: 23px;
+        }
+      }
+    }
+
+    .signup-form-container {
+      // width: 100%;
+      // height: 40%;
+      // height: 72%;
+      // width: 95%;
+      width: 100%;
+      height: 68%;
+      overflow: hidden;
+
+      padding: 10px;
+      @include tablet {
+        height: 50%;
+      }
+      @include ipadpro {
+        width: 80%;
+      }
+      // @include desktop {
+      //   width: 40%;
+      // }
+      .signup-form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        @include large-desktop {
+          width: 90%;
+          margin: 0 auto;
+        }
+        .form-group {
+          width: 90%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          border-bottom: 2px solid #adadad;
+          position: relative;
+          margin: 30px 0;
+
+          @include tablet {
+            width: 84%;
+          }
+
+          @include normal-desktop {
+            margin: 15px 0;
+          }
+
+          input {
+            // width: 86%;
+            // height: 12vmin;
+            // margin: 15px;
+            font-size: 15px;
+            color: $white;
+            border: none;
+            width: 100%;
+            outline: none;
+            background: none;
+            // padding: 0 5px;
+            height: 40px;
+            letter-spacing: 1px;
+
+            @include tablet {
+              font-size: 4vmin;
+            }
+
+            @include ipadpro {
+              font-size: 3vmin;
+            }
+
+            @include normal-desktop {
+              font-size: 17px;
+            }
+
+            // @include tablet {
+            //   height: 8vmin;
+            // }
+
+            // @include desktop {
+            //   height: 6vmin;
+            // }
+
+            // &:focus + span {
+            //   top: -5px;
+            // }
+
+            // &.focus + span {
+            //   width: 100%;
+            // }
+
+            &:focus ~ label,
+            &:valid ~ label {
+              @include tablet {
+                top: -45px;
+              }
+
+              @include normal-desktop {
+                top: -20px;
+              }
+
+              top: -15px;
+              left: 0;
+              color: $active-green;
+            }
+
+            &.focus ~ span {
+              width: 100%;
+            }
+
+            &:-webkit-autofill,
+            &:-webkit-autofill:hover,
+            &:-webkit-autofill:focus,
+            &:-webkit-autofill:active {
+              transition: background-color 5000s ease-in-out 0s;
+              transition-delay: 9999s;
+              -webkit-text-fill-color: $white;
+            }
+          }
+
+          label {
+            position: absolute;
+            left: 0;
+            top: 14px;
+            font-size: 4vmin;
+            color: $white;
+            pointer-events: none;
+            transition: 0.5s;
+
+            @include tablet {
+              font-size: 4vmin;
+              top: -15px;
+            }
+
+            @include ipadpro {
+              font-size: 3vmin;
+            }
+
+            @include normal-desktop {
+              top: 10px;
+              font-size: 16px;
+            }
+
+            @include large-desktop {
+              font-size: 18px;
+            }
+          }
+
+          span {
+            position: absolute;
+            left: 0;
+            top: 101%;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(120deg, #4b4b4b, $active-green);
+            transition: 0.5s;
+            // &:after {
+            //   content: "";
+            //   background: blue;
+            //   width: 50px;
+            //   height: 50px;
+            //   color: $white;
+            //   // position: absolute;
+
+            //   // width: 0%;
+            //   // left: 0%;
+            //   // bottom: -4%;
+            //   // height: 5px;
+            //   // background: linear-gradient(120deg, #4b4b4b, #3ae374);
+            //   // // background: red;
+            //   // transition: 0.5s;
+            // }
+          }
+
+          // span {
+          //  color: $white;
+          //   &:before {
+          //     content: "Username";
+          //     position: absolute;
+          //     top: 50%;
+          //     left: 5px;
+          //     font-size: 50px;
+          //     color: $white;
+          //     transform: translateY(-50%);
+          //     z-index: -1;
+          //     transition: 0.5s;
+          //   }
+
+          // }
+        }
+        .signup-button {
+          padding: 20px;
+          font-size: 5vmin;
+          // margin: 15px;
+          // margin-top: 6vmin;
+          display: block;
+          width: 90%;
+          color: $white;
+          // background: $black;
+          text-transform: uppercase;
+          border: none;
+          background: linear-gradient(120deg, #4b4b4b, $vivid-green, #4b4b4b);
+          background-size: 200%;
+          outline: none;
+          cursor: pointer;
+          border-radius: 5px;
+          transition: 0.5s;
+          margin: 15px 0;
+
+          &:hover {
+            background-position: right;
+          }
+          @include tablet {
+            width: 84%;
+            font-size: 4vmin;
+          }
+
+          @include normal-desktop {
+            padding: 12px;
+            font-size: 20px;
+          }
+        }
+      }
+    }
+
+    .login-link {
+      color: $white;
+
+      text-align: center;
+      width: 100%;
+      padding: 10px;
+      height: 13%;
+      @include tablet {
+        display: flex;
+        justify-content: center;
+      }
+
+      @include ipadpro {
+        width: 80%;
+      }
+
+      @include normal-desktop {
+        margin-bottom: 30px;
+      }
+      // @include desktop {
+      //   width: 34%;
+      // }
+      p {
+        font-size: 4vmin;
+
+        // @include tablet {
+        //   font-size: 3vmin;
+        // }
+
+        @include tablet {
+          font-size: 2.5vmin;
+        }
+
+        @include ipadpro {
+          font-size: 2.3vmin;
+        }
+
+        @include normal-desktop {
+          font-size: 15px;
+        }
+
+        @include large-desktop {
+          font-size: 18px;
+        }
+
+        // @include desktop {
+        //   font-size: 3vmin;
+        // }
+        a {
+          text-decoration: none;
+          color: $vivid-green;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+// SHOPPING CART
+.cart-info {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  background: $full-black;
+  font-family: $font;
+
+  @include tablet {
+    font-size: 25px;
+  }
+
+  @include ipadpro {
+    font-size: 30px;
+  }
+
+  a {
+    cursor: pointer;
+    margin-top: 5%;
+    text-decoration: none;
+    color: $vivid-green;
+    border: 1px solid $vivid-green;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.2s ease;
+
+    &:hover {
+      background: $vivid-green;
+      color: $black;
+    }
+  }
+}
+.shopping-cart-container {
+  display: grid;
+  grid-template-rows: 0.5fr 2fr;
+  height: 100vh;
+  font-family: $font;
+  font-size: 5vmin;
+  background: #0a0a0a;
+  color: $white;
+
+  @include normal-desktop {
+    grid-template-rows: 1fr 2fr;
+  }
+
+  .cart-header-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    @include normal-desktop {
+      margin-top: auto;
+    }
+  }
+  .shopping-cart-content {
+    width: 100%;
+
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    overflow: hidden;
+
+    @include normal-desktop {
+      grid-template-columns: 2.5fr 1fr;
+      grid-template-rows: 1fr;
+    }
+
+    ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent; /* make scrollbar transparent */
+    }
+
+    .shopping-cart {
+      display: flex;
+      flex-direction: column;
+
+      align-items: center;
+      overflow: scroll;
+
+      @include normal-desktop {
+        height: 90%;
+      }
+
+      .order-info {
+        margin: 0 auto;
+        width: 90%;
+        background: $black;
+        padding: 20px;
+        margin: 10px;
+        border-radius: 10px;
+        box-shadow: 0px 7px 10px rgba(black, 0.5);
+
+        // @include desktop {
+        //   width: 89%;
+        //   height: 20%;
+        // }
+
+        .order-content {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 0.5fr;
+          // grid-column-start: 1;
+          // grid-column-end: 5;
+
+          .order-header {
+            .order-title {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              font-size: 4vmin;
+              width: 100%;
+              height: 100%;
+              word-break: break-word;
+              @include desktop {
+                font-size: 3vmin;
+              }
+            }
+          }
+
+          .order-quantity-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .order-action-container {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              .order-decrement {
+                margin-right: 10px;
+                @include tablet {
+                  font-size: 32px;
+                }
+                .minus {
+                  a {
+                    text-decoration: none;
+
+                    cursor: auto;
+                    i {
+                      color: $stable-green;
+                      transition: 0.2s ease-in-out;
+                      cursor: pointer;
+
+                      &:hover {
+                        color: $active-green;
+                      }
+                      @include normal-desktop {
+                        font-size: 3vmin;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .order-increment {
+                margin-left: 10px;
+                @include tablet {
+                  font-size: 32px;
+                }
+                .plus {
+                  a {
+                    text-decoration: none;
+
+                    cursor: auto;
+                    i {
+                      color: $stable-green;
+                      cursor: pointer;
+                      transition: 0.2s ease-in-out;
+                      &:hover {
+                        color: $active-green;
+                      }
+                      @include normal-desktop {
+                        font-size: 3vmin;
+                      }
+                    }
+                  }
+                }
+              }
+
+              .order-quantity {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                span {
+                  font-family: $game-price;
+                  font-size: 15px;
+
+                  @include tablet {
+                    font-size: 30px;
+                  }
+
+                  @include normal-desktop {
+                    font-size: 20px;
+                  }
+
+                  @include large-desktop {
+                    font-size: 29px;
+                  }
+                }
+              }
+            }
+          }
+
+          .order-price {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: $game-price;
+            font-size: 13px;
+
+            @include tablet {
+              font-size: 3.5vmin;
+            }
+
+            .price {
+              color: $white;
+              @include desktop {
+                font-size: 3vmin;
+              }
+              padding: 3px;
+
+              .amount {
+                @include desktop {
+                  font-size: 3.5vmin;
+                }
+              }
+            }
+          }
+
+          .order-removal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @include tablet {
+              font-size: 32px;
+            }
+            .remove-all {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              span {
+                a {
+                  text-decoration: none;
+                  cursor: auto;
+                  i {
+                    color: $stable-red;
+                    transition: 0.2s ease-in-out;
+                    cursor: pointer;
+
+                    &:hover {
+                      color: $active-red;
+                    }
+                    @include normal-desktop {
+                      font-size: 3vmin;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .order-checkout-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include normal-desktop {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      .order-summary {
+        width: 97%;
+        height: 94%;
+        // padding: 20px;
+        // margin: 10px;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        font-weight: bold;
+        padding-bottom: 10px;
+
+        @include normal-desktop {
+          width: 65%;
+          height: 40%;
+        }
+        .order-text-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: $font;
+          font-size: 20px;
+
+          @include tablet {
+            font-size: 40px;
+          }
+
+          @include normal-desktop {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 3.5vmin;
+          }
+        }
+        .total-price-container {
+          width: 90%;
+          margin-left: 5%;
+          margin-right: 5%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          @include normal-desktop {
+            width: 100%;
+            margin: 0;
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+          }
+
+          .total-price {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .total {
+              font-size: 5vmin;
+              width: 100%;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              @include tablet {
+                font-size: 4.5vmin;
+              }
+
+              @include normal-desktop {
+                font-size: 2.5vmin;
+                justify-content: flex-start;
+              }
+
+              .total-text {
+                margin-right: 10px;
+              }
+
+              .total-money {
+                font-family: $game-price;
+                font-size: 5.5vmin;
+
+                // @include tablet {
+                //   font-size: 5vmin;
+                // }
+
+                @include tablet {
+                  font-size: 4.5vmin;
+                }
+                @include normal-desktop {
+                  font-size: 3.5vmin;
+                }
+              }
+            }
+          }
+        }
+
+        .checkout-button-container {
+          width: 90%;
+          height: 90%;
+          margin-left: 5%;
+          margin-right: 5%;
+          border-radius: 5px;
+          border: 1px solid $vivid-green;
+
+          @include tablet {
+            width: 60%;
+            margin: 0 auto;
+          }
+
+          @include normal-desktop {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            border: none;
+            margin-top: 2vmin;
+            width: 90%;
+            height: 100%;
+          }
+          .checkout-button {
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0px 7px 10px rgba(black, 0.5);
+            border-radius: 10px;
+            .checkout-link {
+              cursor: pointer;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+              height: 100%;
+              text-transform: uppercase;
+              text-decoration: none;
+              outline: none;
+              border-radius: 10px;
+              font-size: 5vmin;
+              font-weight: bold;
+              letter-spacing: 5px;
+              background: $black;
+              color: $vivid-green;
+              transition: 0.2s ease-in-out;
+
+              &:hover {
+                color: $black;
+                background: $vivid-green;
+              }
+              @include desktop {
+                font-size: 3vmin;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .cart-info {
+    margin-left: 14%;
+  }
+}
+
+// CHECKOUT
+.checkout-container {
+  height: 100vh;
+
+  // align-items: center;
+  font-family: $font;
+  // display: grid;
+  // grid-template-rows: 0.25fr 1fr;
+  display: flex;
+  flex-direction: column;
+
+  background: $black;
+
+  .checkout-header {
+    height: 38%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    color: $white;
+    .checkout-title {
+      text-transform: uppercase;
+      font-size: 6vmin;
+
+      @include tablet {
+        font-size: 7vmin;
+      }
+    }
+
+    .total {
+      font-family: $game-price;
+
+      @include tablet {
+        font-size: 3vmin;
+      }
+    }
+  }
+
+  #charge-error {
+    @include tablet {
+      font-size: 25px !important;
+    }
+  }
+
+  .checkout-form-container {
+    width: 95%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: $white;
+
+    @include normal-desktop {
+      width: 50%;
+      margin: 0 auto;
+    }
+    .checkout-form {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-rows: 1fr 0.3fr;
+
+      @include tablet {
+        width: 70%;
+        margin: 0 auto;
+      }
+
+      @include normal-desktop {
+        width: 100%;
+        grid-template-rows: 1fr 0.5fr;
+      }
+      .form-fields {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        @include normal-desktop {
+          justify-content: flex-end;
+        }
+        .full-name-inputs {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+
+          @include normal-desktop {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 30%;
+          }
+
+          @include large-desktop {
+            height: 25%;
+          }
+
+          .form-input {
+            display: flex;
+            flex-direction: column;
+            // justify-content: space-between;
+            padding: 10px;
+            font-size: 5vmin;
+
+            // @include normal-desktop {
+            //   justify-content: center;
+            // }
+            @include tablet {
+              padding: 19px;
+            }
+
+            .val-error {
+              @include tablet {
+                font-size: 20px;
+              }
+
+              @include large-desktop {
+                font-size: 25px;
+              }
+            }
+
+            .form-control {
+              border-radius: 5px;
+              border: none;
+              &:focus {
+                outline: none;
+              }
+
+              &:-webkit-autofill,
+              &:-webkit-autofill:hover,
+              &:-webkit-autofill:focus,
+              &:-webkit-autofill:active {
+                transition: background-color 5000s ease-in-out 0s;
+                transition-delay: 9999s;
+                -webkit-text-fill-color: $full-black;
+              }
+
+              @include tablet {
+                font-size: 20px;
+              }
+            }
+
+            .form-control {
+              height: 8vmin;
+              padding: 10px;
+
+              @include tablet {
+                font-size: 20px;
+              }
+
+              @include tablet {
+                height: 5vmin;
+              }
+              @include normal-desktop {
+                height: 50px;
+              }
+
+              @include large-desktop {
+                height: 70px;
+                font-size: 25px;
+              }
+            }
+          }
+        }
+        .address-name-inputs {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          @include normal-desktop {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 35%;
+          }
+
+          @include large-desktop {
+            height: 25%;
+          }
+
+          .form-input {
+            display: flex;
+            flex-direction: column;
+            // justify-content: space-between;
+            padding: 10px;
+            font-size: 5vmin;
+
+            // &:first-child {
+            //   padding-top: 0;
+            // }
+
+            @include tablet {
+              padding: 19px;
+            }
+
+            @include desktop {
+              font-size: 5vmin;
+            }
+
+            .val-error {
+              @include tablet {
+                font-size: 20px;
+              }
+
+              @include large-desktop {
+                font-size: 25px;
+              }
+            }
+
+            // label {
+            //   font-size: 5vmin;
+            //   margin-bottom: 7px;
+
+            //   @include tablet {
+            //     font-size: 3vmin;
+            //   }
+            // }
+
+            .form-control {
+              height: 8vmin;
+              padding: 10px;
+              border: none;
+              border-radius: 5px;
+
+              @include tablet {
+                font-size: 20px;
+              }
+
+              &:focus {
+                outline: none;
+              }
+
+              &:-webkit-autofill,
+              &:-webkit-autofill:hover,
+              &:-webkit-autofill:focus,
+              &:-webkit-autofill:active {
+                transition: background-color 5000s ease-in-out 0s;
+                transition-delay: 9999s;
+                -webkit-text-fill-color: $full-black;
+              }
+
+              @include tablet {
+                height: 5vmin;
+              }
+              @include normal-desktop {
+                height: 50px;
+              }
+
+              @include large-desktop {
+                height: 70px;
+                font-size: 25px;
+              }
+            }
+          }
+        }
+
+        .card-input {
+          // width: 95%;
+          // margin: 0 auto;
+          // height: 100%;
+          width: 100%;
+          padding: 10px;
+          margin: 0 auto;
+          height: 100%;
+          // margin-bottom: 5vmin;
+
+          @include tablet {
+            width: 96%;
+            height: 64%;
+          }
+
+          @include ipadpro {
+            width: 97%;
+          }
+
+          @include normal-desktop {
+            height: 32%;
+          }
+          #card-number {
+            @include tablet {
+              height: 6vmin !important;
+            }
+
+            @include normal-desktop {
+              height: 50px !important;
+            }
+
+            @include large-desktop {
+              height: 60px !important;
+            }
+          }
+
+          #card-errors {
+            font-size: 16px;
+            color: $active-red;
+            padding-top: 5px;
+            padding-left: 20px;
+
+            @include normal-desktop {
+              font-size: 20px;
+            }
+
+            @include large-desktop {
+              font-size: 27px;
+            }
+          }
+        }
+      }
+
+      .buy-button-container {
+        display: flex;
+        justify-content: center;
+        height: 13vmin;
+        margin-bottom: 15px;
+
+        @include tablet {
+          margin: 1vmin;
+          margin-bottom: 4vmin;
+          height: 11vmin;
+          width: 97%;
+        }
+        .buy-button {
+          width: 95%;
+          cursor: pointer;
+          text-decoration: none;
+          color: $vivid-green;
+          padding: 10px;
+          background: $black;
+          font-size: 6vmin;
+          font-weight: bold;
+          border: 2px solid $vivid-green;
+          border-radius: 5px;
+          transition: 0.2s;
+
+          &:hover {
+            background: $vivid-green;
+            color: $full-black;
+          }
+
+          @include tablet {
+            width: 95%;
+            font-size: 30px;
+          }
+
+          @include ipadpro {
+            width: 97%;
+          }
+        }
+      }
+    }
+  }
+}
+
+// SHOP
+
+section#shop-main-container {
+  background-image: url("../images/shop-background/shop-bg4.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #1c1c1b;
+  background-blend-mode: overlay;
+
+  @include ipadpro {
+    background-size: 500%;
+  }
+  @include desktop {
+    width: 100vw;
+    height: 100vh;
+    color: $white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  @include normal-desktop {
+    background-size: 128%;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+  }
+
+  .shop-container {
+    // background: transparent;
+    height: 100vh;
+    width: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+
+    // display: grid;
+    // grid-template-rows: 0.5fr 1fr;
+    position: relative;
+    @include normal-desktop {
+      height: 90vh;
+      // width: 83vw;
+      width: 89vw;
+      background: transparent;
+      display: grid;
+      // grid-template-columns: 0.35fr 2fr;
+      grid-template-columns: 1fr 5fr;
+    }
+
+    #filter-toggle {
+      display: none;
+    }
+
+    #filter-toggle:checked ~ .filter-list-container {
+      bottom: 80px;
+
+      @include tablet {
+        bottom: 100px;
+      }
+    }
+
+    #filter-toggle:checked ~ .filter-box {
+      #open-filter {
+        display: none;
+      }
+      #close-filter {
+        display: block;
+      }
+    }
+
+    .filter-box {
+      position: fixed;
+      bottom: 13px;
+      width: 60px;
+      left: 50%;
+      margin-left: -30px;
+      z-index: 500;
+      height: 60px;
+      text-align: center;
+      background: $black;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 1px solid $discount-green;
+      box-shadow: 0px 7px 10px rgba(black, 0.5);
+
+      @include tablet {
+        width: 80px;
+        height: 80px;
+        left: 50%;
+        margin-left: -40px;
+      }
+
+      @include normal-desktop {
+        display: none;
+      }
+      #open-filter {
+        // padding: 5px 10px;
+        font-size: 18px;
+        color: $white;
+
+        @include tablet {
+          font-size: 25px;
+        }
+      }
+
+      #close-filter {
+        display: none;
+        font-size: 21px;
+        color: $white;
+
+        @include tablet {
+          font-size: 27px;
+        }
+      }
+    }
+
+    .filter-list-container {
+      position: fixed;
+      bottom: -100%;
+      // width: 100%;
+      width: 98%;
+      left: 1%;
+      z-index: 100;
+      // display: flex;
+      background: $black;
+      border: 1px solid $discount-green;
+      box-shadow: 0px 7px 10px rgba(black, 0.5);
+      // align-items: flex-end;
+      // display: none;
+      transition: 0.5s;
+
+      @include tablet {
+        width: 60%;
+        left: 20%;
+      }
+      @include ipadpro {
+        width: 60%;
+        left: 20%;
+      }
+
+      @include normal-desktop {
+        position: static;
+        width: 100%;
+        background: transparent;
+        border: none;
+        transition: 0s;
+        box-shadow: none;
+        padding-top: 62%;
+      }
+
+      @include large-desktop {
+        padding-top: 12.4vmin;
+      }
+
+      .filter-list {
+        width: 95%;
+        margin: 0 auto;
+
+        @include desktop {
+          width: 100%;
+          height: 83%;
+
+          // background: $black;
+          background: transparent;
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        @include normal-desktop {
+          justify-content: flex-start;
+        }
+
+        .price-slider-container {
+          color: $white;
+          background: $black;
+          margin-bottom: 0;
+          padding: 10px;
+
+          @include ipadpro {
+            width: 100%;
+            height: 35%;
+            // margin-top: 73px;
+            margin-bottom: 10px;
+          }
+
+          @include normal-desktop {
+            margin-top: 0;
+            height: 30%;
+            border-radius: 10px;
+          }
+
+          @include large-desktop {
+            margin-top: 0;
+            height: 25%;
+          }
+
+          .price-slider-header {
+            margin-bottom: 9px;
+            font-size: 18px;
+            @include tablet {
+              font-size: 28px;
+            }
+
+            @include normal-desktop {
+              margin-bottom: 13px;
+              font-size: 18px;
+            }
+
+            @include large-desktop {
+              font-size: 21px;
+            }
+          }
+          span {
+            // height: 50%;
+            // background: red;
+            @include tablet {
+              font-size: 20px;
+            }
+
+            @include normal-desktop {
+              font-size: 14px;
+            }
+
+            @include large-desktop {
+              font-size: 20px;
+            }
+
+            .irs-max {
+              color: $white;
+            }
+
+            .irs-min {
+              color: $white;
+            }
+
+            .irs-bar {
+              background: $discount-green;
+            }
+
+            .irs-handle {
+              border-color: $discount-green;
+              top: 29px;
+              width: 20px;
+              height: 20px;
+              background-color: $white;
+
+              @include tablet {
+                width: 25px;
+                height: 25px;
+              }
+
+              @include normal-desktop {
+                width: 20px;
+                height: 20px;
+              }
+
+              @include large-desktop {
+                width: 25px;
+                height: 25px;
+                top: 25px;
+              }
+            }
+
+            .irs-to {
+              background-color: $discount-green;
+              color: #000;
+
+              &:before {
+                border-top-color: $discount-green;
+              }
+            }
+
+            .irs-from {
+              background-color: $discount-green;
+              color: $black;
+
+              &:before {
+                border-top-color: $discount-green;
+              }
+            }
+          }
+        }
+        .genre-platform-container {
+          @include tablet {
+            font-size: 28px;
+          }
+
+          @include ipadpro {
+            width: 100%;
+          }
+          @include normal-desktop {
+            width: 100%;
+            height: 50%;
+            font-size: 16px;
+          }
+          .genre-platform-list {
+            list-style-type: none;
+            .filters {
+              .filter-group {
+                .ui-group {
+                  .group-genre {
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    padding: 10px;
+                    background: $black;
+                    color: $white;
+
+                    margin-bottom: 0;
+
+                    @include normal-desktop {
+                      margin-bottom: 10px;
+                      border-radius: 10px;
+                    }
+
+                    .arrow {
+                      display: block;
+                      .down-arrow {
+                        display: none;
+                      }
+                      .up-arrow {
+                        display: none;
+                      }
+                    }
+
+                    &:hover {
+                      background: #030303;
+                      .down-arrow {
+                        display: block;
+                      }
+                    }
+
+                    &.selected {
+                      &:hover {
+                        .down-arrow {
+                          display: none;
+                        }
+                        .up-arrow {
+                          display: block;
+                        }
+                      }
+                    }
+
+                    i {
+                      color: $white;
+                    }
+
+                    .text {
+                      font-size: 18px;
+
+                      @include tablet {
+                        font-size: 28px;
+                      }
+
+                      @include normal-desktop {
+                        font-size: 18px;
+                      }
+                      @include large-desktop {
+                        font-size: 21px;
+                      }
+                    }
+                  }
+
+                  .group-platform {
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    width: 100%;
+                    padding: 10px;
+                    background: $black;
+                    color: $white;
+
+                    @include normal-desktop {
+                      border-radius: 10px;
+                    }
+
+                    .arrow {
+                      display: block;
+                      .down-arrow {
+                        display: none;
+                      }
+                      .up-arrow {
+                        display: none;
+                      }
+                    }
+
+                    &:hover {
+                      background: #030303;
+                      .down-arrow {
+                        display: block;
+                      }
+                    }
+
+                    &.selected {
+                      &:hover {
+                        .down-arrow {
+                          display: none;
+                        }
+                        .up-arrow {
+                          display: block;
+                        }
+                      }
+                    }
+
+                    i {
+                      color: $white;
+                    }
+
+                    .text {
+                      font-size: 18px;
+
+                      @include tablet {
+                        font-size: 28px;
+                      }
+
+                      @include normal-desktop {
+                        font-size: 18px;
+                      }
+
+                      @include large-desktop {
+                        font-size: 21px;
+                      }
+                    }
+                  }
+                  @include normal-desktop {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                  }
+
+                  .button-group {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    background: $black;
+                    flex-wrap: wrap;
+
+                    @include normal-desktop {
+                      display: flex;
+                      // flex-direction: column;
+                      // justify-content: center;
+                      // align-items: center;
+                      width: 100%;
+                      flex-wrap: wrap;
+                      background: transparent;
+                      border-radius: 10px;
+                      overflow: hidden;
+                    }
+
+                    .button {
+                      border: none;
+                      cursor: pointer;
+
+                      // text-transform: uppercase;
+                      background: $black;
+                      color: $white;
+                      font-family: $game-price;
+                      outline: none;
+                      padding: 0;
+                      text-align: left;
+
+                      padding: 5px;
+                      margin: 10px;
+                      // padding: 10px;
+
+                      @include tablet {
+                        font-size: 20px;
+                      }
+
+                      // @include normal-desktop {
+                      //   font-size: 16px;
+                      // }
+
+                      @include normal-desktop {
+                        // width: 50%;
+                        width: 33%;
+                        font-size: 13px;
+                        margin: 0;
+                        background: $full-black;
+                        // padding: 5px 0 2px 10px;
+
+                        &:first-child {
+                          width: 100%;
+                          text-align: center;
+                        }
+                      }
+
+                      @include large-desktop {
+                        font-size: 18px;
+                        // padding-left: 13px;
+                        padding-bottom: 5px;
+                      }
+                      // &:hover {
+                      //   background-color: ccc;
+                      //   text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
+                      //   color: #222;
+                      // }
+                      &:active,
+                      &.is-checked {
+                        background-color: $vivid-green;
+                        color: #000;
+                      }
+                    }
+                  }
+
+                  .platforms {
+                    @include normal-desktop {
+                      border-radius: 10px;
+                    }
+
+                    .button {
+                      @include normal-desktop {
+                        width: 33%;
+                        height: 50px;
+                        text-align: center;
+
+                        &:nth-child(1) {
+                          height: 25px;
+                        }
+                      }
+
+                      @include large-desktop {
+                        width: 33%;
+                        height: 55px;
+                        text-align: center;
+
+                        &:nth-child(1) {
+                          height: 30px;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            .genre-filter-item {
+              .form-group-genre {
+                display: flex;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    ::-webkit-scrollbar {
+      width: 0px;
+      background: transparent; /* make scrollbar transparent */
+    }
+    .products-view-container {
+      // overflow: scroll;
+      padding-top: 40%;
+      overflow: scroll;
+      overflow-x: hidden;
+      // overflow: hidden;
+      color: $black;
+
+      // ::-webkit-scrollbar {
+      //   width: 0px;
+      //   background: transparent; /* make scrollbar transparent */
+      // }
+
+      @include tablet {
+        padding-top: 14%;
+      }
+
+      @include normal-desktop {
+        padding-top: 7%;
+      }
+
+      .sort-container {
+        position: relative;
+        margin-left: 4%;
+        height: 25px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        @include tablet {
+          font-size: 42px;
+          margin-left: 8%;
+        }
+
+        @include ipadpro {
+          margin-left: 13%;
+        }
+
+        @include normal-desktop {
+          margin-left: 4%;
+          font-size: 16px;
+        }
+        // @include desktop {
+        //   width: 25%;
+        // }
+
+        @include large-desktop {
+          margin-left: 6.5%;
+        }
+
+        .sort-text {
+          color: $white;
+          display: inline;
+          font-size: 12px;
+          font-family: $game-price;
+
+          @include tablet {
+            font-size: 20px;
+          }
+
+          @include normal-desktop {
+            font-size: 12px;
+          }
+
+          @include large-desktop {
+            font-size: 17px;
+          }
+        }
+        .sort-options {
+          width: 50%;
+
+          $color: $vivid-green;
+          $timing: 0.3s;
+          .dropdown-el {
+            min-width: 12em;
+            position: absolute;
+            display: inline-block;
+            margin-right: 1em;
+            min-height: 2em;
+            max-height: 2em;
+            overflow: hidden;
+            top: 0;
+            left: 48px;
+            font-size: 12px;
+            z-index: 50;
+            cursor: pointer;
+            text-align: left;
+            white-space: nowrap;
+            color: #a3a2a2;
+            font-family: $game-price;
+            outline: none;
+            border: 0.06em solid transparent;
+            border-radius: 1em;
+            background-color: $black;
+            // border: 1px solid $vivid-green;
+            transition: $timing all ease-in-out;
+
+            @include tablet {
+              font-size: 15px;
+              margin-left: 5%;
+            }
+
+            @include ipadpro {
+              font-size: 22px;
+              margin-top: -1%;
+            }
+
+            @include normal-desktop {
+              font-size: 12px;
+              margin-top: 0;
+              margin-left: 1%;
+            }
+
+            @include large-desktop {
+              font-size: 18px;
+              margin-top: -5px;
+              margin-left: 1.5%;
+            }
+
+            input:focus + label {
+              background: #def;
+            }
+            input {
+              width: 1px;
+              height: 1px;
+              display: inline-block;
+              position: absolute;
+              opacity: 0.01;
+            }
+            label {
+              display: block;
+              height: 2em;
+              line-height: 2em;
+              padding-left: 1em;
+              padding-right: 3em;
+              cursor: pointer;
+              position: relative;
+              transition: $timing color ease-in-out;
+              &:nth-child(2) {
+                margin-top: 2em;
+              }
+            }
+            input:checked + label {
+              display: block;
+              border-top: none;
+              position: absolute;
+              top: 0;
+              width: 100%;
+
+              &:nth-child(2) {
+                margin-top: 0;
+                position: relative;
+              }
+            }
+
+            &::after {
+              content: "";
+              position: absolute;
+              right: 0.8em;
+              top: 0.9em;
+              border: 0.3em solid $color;
+              border-color: $color transparent transparent transparent;
+              transition: 0.4s all ease-in-out;
+            }
+            &.expanded {
+              border: 0.06em solid $color;
+              background: $black;
+              border-radius: 0.25em;
+              padding: 0;
+              box-shadow: rgba(0, 0, 0, 0.1) 3px 3px 5px 0px;
+              max-height: 15em;
+
+              label {
+                border-top: 0.06em solid $black;
+                &:hover {
+                  color: $color;
+                }
+              }
+              input:checked + label {
+                color: $color;
+              }
+
+              &::after {
+                transform: rotate(-180deg);
+                top: 0.55em;
+              }
+            }
+          }
+        }
+      }
+
+      .products-view {
+        width: 100% !important;
+        height: 100%;
+        display: flex;
+        // overflow-y: scroll;
+        // display: grid;
+        // grid-template-columns: 1fr 1fr 1fr;
+        // grid-template-rows: 1fr 1fr 1fr;
+        // justify-items: center;
+        // align-items: center;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        .shop-product-card,
+        .grid-sizer {
+          width: 50%;
+          @include tablet {
+            width: 50%;
+          }
+
+          @include normal-desktop {
+            width: 33%;
+          }
+        }
+
+        .shop-product-card {
+          background: $white;
+          cursor: pointer;
+          overflow: hidden;
+          // width: 34vmin;
+          // height: 39vmin;
+
+          background: $black;
+          color: $white;
+          border-radius: 10px;
+
+          box-shadow: 0px 7px 10px rgba(black, 0.5);
+          position: relative;
+          width: 47%;
+          height: 62vmin;
+
+          @include tablet {
+            width: 33%;
+            height: 39vmin;
+          }
+
+          // @include ipadpro {
+
+          // }
+
+          @include ipadpro {
+            margin: 22px;
+            width: 25%;
+            height: 301px;
+          }
+
+          @include large-desktop {
+            width: 20%;
+            height: 313px;
+          }
+
+          .discount-container {
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: $discount-green;
+            color: $full-black;
+            padding: 5px;
+          }
+
+          .thumbnail-container {
+            width: 100%;
+            // height: 70%;
+            height: 49%;
+            position: relative;
+            margin-bottom: 15px;
+
+            // @include desktop {
+            //   height: 57%;
+            // }
+
+            // @include ipadpro {
+            //   margin-bottom: 0;
+            // }
+
+            @include large-desktop {
+              height: 55%;
+            }
+
+            img {
+              position: absolute;
+              left: 0;
+              max-width: 100%;
+              height: auto;
+
+              // @include large-desktop {
+              //   left: -6%;
+              //   width: 108%;
+              // }
+            }
+          }
+
+          .content-container {
+            display: grid;
+            // grid-template-rows: 0.4fr 0.1fr;
+
+            height: 44%;
+            grid-template-rows: 1fr 2fr;
+
+            .content-header {
+              font-size: 13px;
+              padding-left: 10px;
+
+              @include tablet {
+                font-size: 20px;
+              }
+
+              .content-title {
+                .header-text {
+                  color: $white;
+
+                  @include desktop {
+                    font-size: 16px;
+                  }
+
+                  @include large-desktop {
+                    font-size: 21px;
+                  }
+                }
+              }
+            }
+            .content-middle {
+              display: grid;
+              grid-template-columns: 1.5fr 1.5fr;
+
+              @include desktop {
+                height: 10vmin;
+              }
+
+              @include large-desktop {
+                height: 5vmin;
+              }
+
+              .content-price-container {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                font-family: $game-price;
+                padding-left: 10px;
+
+                .old {
+                  opacity: 0.5;
+                  text-decoration: line-through;
+                  font-size: 13px;
+
+                  @include tablet {
+                    font-size: 20px;
+                  }
+
+                  @include desktop {
+                    font-size: 14px;
+                  }
+
+                  @include large-desktop {
+                    font-size: 1.7vmin;
+                  }
+                }
+
+                p {
+                  font-size: 14px;
+                  @include tablet {
+                    font-size: 23px;
+                  }
+
+                  @include desktop {
+                    font-size: 18px;
+                  }
+
+                  @include large-desktop {
+                    font-size: 2vmin;
+                  }
+
+                  .price {
+                    padding-left: 2px;
+                    color: $vivid-green;
+                  }
+                }
+              }
+              .content-buttons-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                .content-fav {
+                  .add-to-fav {
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .fav-button {
+                      i {
+                        color: $white;
+                        font-size: 18px;
+                        transition: 0.15s ease-in-out;
+
+                        @include tablet {
+                          font-size: 25px;
+                        }
+                        &:hover {
+                          color: $vivid-green;
+                        }
+
+                        @include large-desktop {
+                          font-size: 2.5vmin;
+                        }
+                      }
+                    }
+                  }
+                }
+                .buy-button {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  padding-right: 10px;
+                  .add-to-cart {
+                    i {
+                      color: $white;
+                      font-size: 18px;
+                      transition: 0.15s ease-in-out;
+
+                      @include tablet {
+                        font-size: 25px;
+                      }
+                      &:hover {
+                        color: $vivid-green;
+                      }
+                      @include large-desktop {
+                        font-size: 2.5vmin;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// PRODUCT INDEX
+section#product-index-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $full-black;
+  background: rgb(200, 207, 200);
+  background: linear-gradient(
+    90deg,
+    rgba(200, 207, 200, 1) 2%,
+    rgba(42, 47, 41, 1) 49%,
+    rgba(0, 0, 0, 1) 93%
+  );
+
+  .product-index {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    width: 90%;
+    height: 85%;
+
+    @include tablet {
+      width: 70%;
+    }
+    @include normal-desktop {
+      width: 70%;
+      height: 60%;
+      display: grid;
+      grid-template-columns: 1fr 0.7fr;
+      grid-template-rows: auto;
+    }
+
+    .image-column {
+      width: 100%;
+
+      .thumbnail-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        @include normal-desktop {
+          width: 100%;
+          height: 100%;
+          position: relative;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        img {
+          // margin: auto;
+          position: absolute;
+          left: 0;
+          max-width: 100%;
+          height: auto;
+          border-radius: 10px 10px 0px 0px;
+          //  object-fit: contain;
+          //  width: auto;
+          //  height: 100%;
+          // display: none;
+
+          @include normal-desktop {
+            position: absolute;
+            left: 0;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px 0px 0px 10px;
+            box-shadow: 0px 7px 10px rgba(black, 0.5);
+          }
+          @include large-desktop {
+            // position: absolute;
+            // width: 100%;
+            // top: 50%;
+            // -ms-transform: translateY(-50%);
+            // -webkit-transform: translateY(-50%);
+            // transform: translateY(-50%);
+          }
+        }
+      }
+    }
+    .content-column {
+      background: $black;
+      color: $white;
+      font-family: $font;
+      z-index: 50;
+
+      border-radius: 0px 0px 10px 10px;
+      position: relative;
+
+      @include ipadpro {
+        padding: 15px;
+      }
+      // @include desktop {
+      //   display: grid;
+      //   grid-template-rows: 0.8fr 0.5fr 0.5fr 1fr;
+
+      //   padding: 35px;
+      // }
+
+      @include normal-desktop {
+        background: $black;
+        color: $white;
+        font-family: $font;
+        z-index: 50;
+        box-shadow: 0px 7px 10px rgba(black, 0.5);
+        border-radius: 10px;
+        position: relative;
+        display: grid;
+        grid-template-rows: 0.5fr 0.5fr 0.5fr 1fr;
+
+        padding: 35px;
+      }
+
+      .title-container {
+        padding-top: 10px;
+        width: 67%;
+        padding-left: 10px;
+
+        @include tablet {
+          padding-left: 20px;
+        }
+
+        @include normal-desktop {
+          width: 100%;
+          padding-left: 0;
+          height: 100%;
+          display: flex;
+
+          align-items: center;
+        }
+
+        .title {
+          font-size: 5.5vmin;
+          @include tablet {
+            font-size: 4vmin;
+          }
+          @include desktop {
+            font-size: 4vmin;
+          }
+
+          @include normal-desktop {
+            font-size: 25px;
+          }
+
+          @include large-desktop {
+            font-size: 29px;
+          }
+        }
+      }
+
+      .price-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 18%;
+        padding-left: 10px;
+
+        @include tablet {
+          padding-left: 20px;
+        }
+
+        @include normal-desktop {
+          height: 100%;
+          padding-left: 0;
+          display: flex;
+
+          align-items: center;
+        }
+
+        .price {
+          @include tablet {
+            font-size: 3vmin;
+          }
+          @include normal-desktop {
+            font-size: 22px;
+          }
+
+          @include large-desktop {
+            font-size: 26px;
+          }
+          .amount {
+            padding-left: 3px;
+            font-family: $game-price;
+            @include tablet {
+              font-size: 3vmin;
+            }
+            @include normal-desktop {
+              font-size: 22px;
+            }
+            @include large-desktop {
+              font-size: 26px;
+            }
+          }
+        }
+        .old-price {
+          margin-left: 10px;
+          opacity: 0.5;
+          text-decoration: line-through;
+
+          @include tablet {
+            font-size: 2.8vmin;
+          }
+
+          @include desktop {
+            font-size: 19px;
+          }
+          @include large-desktop {
+            font-size: 24px;
+          }
+          .old-amount {
+            padding-left: 3px;
+            font-family: $game-price;
+            @include desktop {
+              font-size: 19px;
+            }
+
+            @include large-desktop {
+              font-size: 24px;
+            }
+          }
+        }
+
+        .discount-container {
+          margin-left: 5px;
+          background: $discount-green;
+          color: $black;
+          padding: 5px;
+          border-radius: 1px;
+          font-family: $game-price;
+
+          @include tablet {
+            font-size: 3vmin;
+          }
+
+          @include desktop {
+            font-size: 2.5vmin;
+          }
+
+          @include normal-desktop {
+            font-size: 17px;
+          }
+
+          @include large-desktop {
+            font-size: 25px;
+          }
+        }
+      }
+
+      .platform-container {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 33%;
+
+        @include normal-desktop {
+          width: 35%;
+        }
+
+        @include large-desktop {
+          width: 29%;
+        }
+
+        .platform {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+
+          @include ipadpro {
+            padding-right: 10px;
+          }
+
+          @include normal-desktop {
+            align-items: flex-start;
+          }
+          .fa-xbox {
+            background: $xbox-green;
+            width: 23px;
+            height: 46px;
+            display: flex;
+            justify-content: center;
+            padding-top: 1.7vmin;
+            font-size: 3.5vmin;
+            margin-right: 10px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 76%, 0 100%);
+
+            &::before {
+              padding-top: 5px;
+
+              @include normal-desktop {
+                padding-top: 0;
+              }
+            }
+
+            @include tablet {
+              width: 40px;
+              height: 74px;
+              margin-right: 20px;
+            }
+
+            @include ipadpro {
+              width: 46px;
+              height: 92px;
+              font-size: 3vmin;
+            }
+
+            @include normal-desktop {
+              font-size: 2vmin;
+              width: 29%;
+              height: 6.5vmin;
+            }
+            @include large-desktop {
+              width: 29%;
+              height: 6vmin;
+              font-size: 17px;
+            }
+          }
+
+          .fa-windows {
+            background: $pc-blue;
+            width: 23px;
+            height: 46px;
+            display: flex;
+            justify-content: center;
+            padding-top: 1.7vmin;
+            font-size: 3.5vmin;
+            margin-right: 10px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 76%, 0 100%);
+
+            &::before {
+              padding-top: 5px;
+
+              @include normal-desktop {
+                padding-top: 0;
+              }
+            }
+
+            @include tablet {
+              width: 40px;
+              height: 74px;
+              margin-right: 20px;
+            }
+
+            @include ipadpro {
+              width: 46px;
+              height: 92px;
+              font-size: 3vmin;
+            }
+
+            @include normal-desktop {
+              font-size: 2vmin;
+              width: 29%;
+              height: 6.5vmin;
+            }
+
+            @include large-desktop {
+              width: 29%;
+              height: 6vmin;
+              font-size: 17px;
+            }
+          }
+
+          .fa-playstation {
+            background: $ps4-black;
+            width: 23px;
+            height: 46px;
+            display: flex;
+            justify-content: center;
+            padding-top: 1.7vmin;
+            font-size: 3.5vmin;
+            margin-right: 10px;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 76%, 0 100%);
+
+            &::before {
+              padding-top: 5px;
+
+              @include normal-desktop {
+                padding-top: 0;
+              }
+            }
+
+            @include tablet {
+              width: 40px;
+              height: 74px;
+              margin-right: 20px;
+            }
+
+            @include ipadpro {
+              width: 46px;
+              height: 92px;
+              font-size: 3vmin;
+            }
+
+            @include normal-desktop {
+              font-size: 2vmin;
+              margin-right: 10px;
+              width: 29%;
+              height: 6.5vmin;
+            }
+
+            @include large-desktop {
+              width: 29%;
+              height: 6vmin;
+              font-size: 17px;
+            }
+          }
+        }
+      }
+
+      .button-container {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        padding-left: 10px;
+        height: 35%;
+
+        @include tablet {
+          padding-left: 20px;
+        }
+
+        @include normal-desktop {
+          padding-left: 0;
+          height: 100%;
+        }
+
+        .quantity-container {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          height: 100%;
+
+          @include normal-desktop {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+          }
+          .quantity {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            .quantity__minus,
+            .quantity__plus {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 35px;
+              height: 35px;
+              margin: 0;
+              background: $black;
+              text-decoration: none;
+
+              line-height: 23px;
+              border: 1px solid $white;
+              transition: 0.2s ease-in-out;
+
+              @include tablet {
+                width: 55px;
+                height: 55px;
+              }
+              @include desktop {
+                height: 5.5vmin;
+              }
+
+              @include normal-desktop {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 35px;
+
+                margin: 0;
+                background: $black;
+                text-decoration: none;
+                height: 35px;
+                line-height: 23px;
+                border: 1px solid $white;
+                transition: 0.2s ease-in-out;
+              }
+
+              @include large-desktop {
+                width: 50px;
+                height: 50px;
+              }
+
+              &:hover {
+                background: $special-green;
+
+                border: none;
+
+                span {
+                  color: $black;
+                }
+              }
+
+              span {
+                font-size: 35px;
+
+                @include tablet {
+                  font-size: 8vmin;
+                }
+                @include normal-desktop {
+                  font-size: 35px;
+                }
+
+                @include large-desktop {
+                  font-size: 45px;
+                }
+              }
+            }
+
+            .quantity__minus {
+              border-radius: 3px 0 0 3px;
+              border-right: none;
+            }
+            .quantity__plus {
+              border-radius: 0 3px 3px 0;
+              border-left: none;
+            }
+
+            .quantity__input {
+              width: 35px;
+              height: 35px;
+              margin: 0;
+              padding: 0;
+              text-align: center;
+              font-size: 25px;
+              border: 0px solid transparent;
+              border-top: 1px solid $white;
+              border-bottom: 1px solid $white;
+              outline: none;
+              background: $black;
+              color: $special-green;
+              pointer-events: none;
+
+              @include tablet {
+                width: 55px;
+                height: 55px;
+              }
+
+              @include desktop {
+                height: 5.5vmin;
+              }
+
+              @include normal-desktop {
+                width: 35px;
+                height: 35px;
+                font-size: 21px;
+              }
+
+              @include large-desktop {
+                width: 50px;
+                height: 50px;
+                font-size: 30px;
+              }
+            }
+
+            .quantity__minus:link,
+            .quantity__plus:link {
+              color: #8184a1;
+            }
+            .quantity__minus:visited,
+            .quantity__plus:visited {
+              color: #fff;
+            }
+          }
+        }
+
+        .add-fav-container {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          height: 100%;
+
+          @include ipadpro {
+            padding-right: 10px;
+          }
+
+          @include normal-desktop {
+            height: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+          }
+          .add-to-cart-button {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            @include ipadpro {
+              width: 23vmax;
+            }
+
+            @include normal-desktop {
+              width: 100%;
+            }
+
+            @include large-desktop {
+              width: 13vmax;
+            }
+
+            .buy-button {
+              background: $special-green;
+              border: none;
+              outline: none;
+              cursor: pointer;
+              font-family: $font;
+              padding: 10px 7px;
+              margin: 10px;
+              border-radius: 5px 0px 0px 5px;
+              text-transform: uppercase;
+              font-weight: bold;
+              margin-right: 1px;
+              border: 1px solid transparent;
+              transition: 0.2s ease-in-out;
+
+              font-size: 3.5vmin;
+
+              @include ipadpro {
+                font-size: 3vmin;
+                height: 5.5vmin;
+              }
+
+              @include normal-desktop {
+                height: 35px;
+                font-size: 14px;
+              }
+
+              @include large-desktop {
+                font-size: 2vmin;
+                height: 50px;
+              }
+
+              &:hover {
+                background: $black;
+                color: $special-green;
+                border: 1px solid $special-green;
+              }
+              i {
+                margin-right: 5px;
+
+                @include desktop {
+                  font-size: 2.5vmin;
+                }
+
+                @include normal-desktop {
+                  font-size: 15px;
+                }
+
+                @include large-desktop {
+                  font-size: 2vmin;
+                }
+              }
+            }
+          }
+
+          .add-to-fav-button {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            .fav-button {
+              background: $special-green;
+              border: none;
+              outline: none;
+              cursor: pointer;
+              font-family: $font;
+              padding: 8px 7px;
+              margin: 10px;
+
+              border-radius: 0px 5px 5px 0px;
+              border: 1px solid transparent;
+              transition: 0.2s ease-in-out;
+              margin-left: 0;
+              text-decoration: none;
+
+              @include tablet {
+                margin-right: 20px;
+              }
+
+              @include ipadpro {
+                height: 5.5vmin;
+                margin-right: 0;
+              }
+
+              @include normal-desktop {
+                height: 35px;
+              }
+
+              @include large-desktop {
+                font-size: 2vmin;
+                height: 50px;
+              }
+
+              &:hover {
+                background: $black;
+                border: 1px solid $special-green;
+
+                i {
+                  color: $special-green;
+                }
+              }
+
+              i {
+                color: $black;
+                font-size: 4.8vmin;
+
+                @include tablet {
+                  font-size: 4.5vmin;
+                }
+                @include ipadpro {
+                  font-size: 3.5vmin;
+                }
+
+                @include normal-desktop {
+                  font-size: 15px;
+                }
+
+                @include large-desktop {
+                  font-size: 2vmin;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .info-container {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        padding-left: 10px;
+        font-size: 3.5vmin;
+
+        @include tablet {
+          height: 20%;
+          font-size: 2.5vmin;
+          padding-left: 20px;
+        }
+        @include normal-desktop {
+          font-size: 12px;
+          padding-left: 0;
+          height: 100%;
+        }
+
+        @include large-desktop {
+          font-size: 16px;
+        }
+
+        .date-container,
+        .developer-container,
+        .genre-container {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .date-container {
+          .date-header {
+            @include normal-desktop {
+              display: flex;
+              align-items: center;
+            }
+          }
+
+          .date-text {
+            @include normal-desktop {
+              display: flex;
+              align-items: center;
+            }
+          }
+        }
+
+        .developer-container {
+          .developer-header {
+            @include normal-desktop {
+              display: flex;
+              align-items: center;
+            }
+          }
+
+          .developer-text {
+            @include normal-desktop {
+              display: flex;
+              align-items: center;
+            }
+          }
+        }
+
+        .genre-container {
+          .genre-header {
+            @include normal-desktop {
+              display: flex;
+              align-items: center;
+            }
+          }
+
+          .genre-text {
+            @include normal-desktop {
+              display: flex;
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+  }
+  // h1 {
+  //   color: $white;
+  // }
+
+  // h2 {
+  //   color: $white;
+  // }
+}
+
+// SHOPPING COMPLETED
+section#shopping-completed {
+  height: 100vh;
+  width: 100%;
+  background: $black;
+  color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $font;
+
+  .completed-container {
+    width: 95%;
+    margin: 0 auto;
+    height: 25%;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+
+    @include normal-desktop {
+      width: 41%;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px;
+      h1 {
+        font-size: 1rem;
+
+        @include tablet {
+          font-size: 2rem;
+        }
+
+        @include ipadpro {
+          font-size: 2.5rem;
+        }
+
+        @include normal-desktop {
+          font-size: 2rem;
+        }
+
+        @include large-desktop {
+          font-size: 2.4rem;
+        }
+      }
+    }
+
+    .redirect-container {
+      display: flex;
+
+      justify-content: space-evenly;
+
+      @include tablet {
+        justify-content: center;
+      }
+      .redirect-profile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        text-decoration: none;
+        background: $black;
+        color: $vivid-green;
+        border: 1px solid $vivid-green;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 10px;
+        width: 50%;
+
+        @include tablet {
+          font-size: 1.5rem;
+          width: 35%;
+          display: grid;
+          grid-template-columns: 1fr 3fr;
+        }
+
+        @include ipadpro {
+          font-size: 2.3rem;
+          width: 34%;
+        }
+
+        @include normal-desktop {
+          font-size: 1.5rem;
+          width: 50%;
+          transition: 0.5s;
+          &:hover {
+            box-shadow: 0px 7px 10px rgba($vivid-green, 0.5);
+
+            .profile-text {
+              padding-right: 10%;
+            }
+            .icon-left {
+              padding-right: 50%;
+            }
+          }
+        }
+
+        @include large-desktop {
+          font-size: 1.8rem;
+          width: 40%;
+        }
+
+        .profile-text {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: 0.2s ease;
+        }
+
+        .icon-left {
+          @include tablet {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          @include normal-desktop {
+            transition: 0.3s ease;
+          }
+        }
+      }
+
+      .redirect-shop {
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        text-decoration: none;
+        background: $vivid-green;
+        margin: 10px;
+        color: $black;
+        padding: 10px;
+        border-radius: 5px;
+        width: 50%;
+        font-weight: bold;
+
+        @include tablet {
+          font-size: 1.5rem;
+          width: 35%;
+          display: grid;
+          grid-template-columns: 3fr 1fr;
+        }
+
+        @include ipadpro {
+          font-size: 2.3rem;
+          width: 34%;
+        }
+
+        @include normal-desktop {
+          font-size: 1.5rem;
+          width: 50%;
+          transition: 0.3s;
+          border: 1px solid transparent;
+
+          &:hover {
+            // box-shadow: 0px 7px 10px rgba($vivid-green, 0.5);
+
+            .shop-text {
+              padding-left: 10%;
+            }
+            .icon-right {
+              padding-left: 50%;
+            }
+          }
+        }
+
+        @include large-desktop {
+          font-size: 1.8rem;
+          width: 40%;
+        }
+
+        .shop-text {
+          @include normal-desktop {
+            transition: 0.2s ease;
+          }
+        }
+
+        .icon-right {
+          @include tablet {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          @include normal-desktop {
+            transition: 0.3s ease;
+          }
+        }
+      }
+    }
+  }
+}
+// USER PROFILE
+section#profile {
+  height: 100vh;
+  width: 100vw;
+  color: $white;
+  background: $full-black;
+  display: grid;
+  grid-template-rows: 0.5fr 3fr;
+  overflow: scroll;
+  overflow-x: hidden;
+  padding-top: 15%;
+
+  @include normal-desktop {
+    padding-top: 8%;
+  }
+
+  .profile-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .header {
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+
+      @include tablet {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+
+      @include ipadpro {
+        font-size: 3.5rem;
+      }
+    }
+  }
+
+  .profile-content {
+    display: flex;
+    flex-direction: column;
+    // display: grid;
+    // grid-template-columns: 1fr 1fr;
+
+    @include normal-desktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .profile-orders-container {
+      margin-bottom: 25px;
+
+      @include tablet {
+        margin: 0 auto;
+        width: 85%;
+        margin-bottom: 25px;
+      }
+      .profile-orders {
+        .order-header {
+          text-align: center;
+          margin-bottom: 15px;
+
+          @include tablet {
+            font-size: 19px;
+          }
+
+          @include ipadpro {
+            font-size: 25px;
+          }
+        }
+
+        .order-history {
+          .order-elements {
+            font-family: $font;
+            .order-list {
+              width: 90%;
+              margin: 0 auto;
+              padding: 10px;
+              background: $black;
+              box-shadow: 0px 7px 10px rgba(black, 0.5);
+              border-radius: 5px;
+              list-style-type: none;
+              .list-item {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                margin: 10px 0;
+
+                .item-title-qty {
+                  display: grid;
+                  grid-template-columns: 2fr 1fr;
+
+                  .title {
+                    font-size: 16px;
+                    word-break: break-word;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    @include tablet {
+                      font-size: 21px;
+                      padding: 10px;
+                    }
+
+                    @include ipadpro {
+                      font-size: 25px;
+                    }
+
+                    @include normal-desktop {
+                      font-size: 23px;
+                    }
+                  }
+                  .qty {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    @include tablet {
+                      font-size: 21px;
+                    }
+
+                    @include ipadpro {
+                      font-size: 25px;
+                    }
+
+                    @include normal-desktop {
+                      font-size: 23px;
+                    }
+
+                    span {
+                      color: $active-red;
+                      font-weight: bold;
+                    }
+                  }
+                }
+
+                .item-price {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+
+                  .money {
+                    @include tablet {
+                      font-size: 21px;
+                    }
+
+                    @include ipadpro {
+                      font-size: 25px;
+                    }
+
+                    @include normal-desktop {
+                      font-size: 23px;
+                    }
+                    .amount {
+                      font-family: $game-price;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .order-total-price {
+            width: 90%;
+            margin: 0 auto;
+            padding: 10px;
+            font-family: $font;
+            text-transform: uppercase;
+
+            @include tablet {
+              font-size: 23px;
+            }
+
+            @include ipadpro {
+              font-size: 27px;
+            }
+
+            @include normal-desktop {
+              font-size: 25px;
+            }
+
+            p {
+              color: $active-red;
+              font-weight: bold;
+              @include tablet {
+                padding-left: 10px;
+              }
+              .money {
+                color: $white;
+                .amount {
+                  font-family: $game-price;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .profile-favorites-container {
+      .profile-favorites {
+        .favorite-header {
+          text-align: center;
+          margin-bottom: 15px;
+
+          @include tablet {
+            font-size: 19px;
+          }
+
+          @include ipadpro {
+            font-size: 25px;
+          }
+        }
+
+        .favorite-history {
+          @include tablet {
+            width: 85%;
+            margin: 0 auto;
+            margin-bottom: 25px;
+          }
+          .favorite-elements {
+            .favorite-list {
+              list-style-type: none;
+
+              @include tablet {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+              }
+
+              @include normal-desktop {
+                display: flex;
+                flex-direction: column;
+              }
+              .list-item {
+                width: 90%;
+                margin: 0 auto;
+                padding: 20px;
+                height: 75px;
+                font-family: $font;
+                margin-bottom: 5px;
+                background: $black;
+                box-shadow: 0px 7px 10px rgba(black, 0.5);
+                border-radius: 5px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                @include ipadpro {
+                  height: 95px;
+                }
+
+                .item-title {
+                  padding-right: 16px;
+
+                  @include tablet {
+                    font-size: 21px;
+                  }
+
+                  @include ipadpro {
+                    font-size: 25px;
+                  }
+
+                  @include normal-desktop {
+                    font-size: 23px;
+                  }
+
+                  @include large-desktop {
+                    font-size: 33px;
+                  }
+                }
+
+                .delete-from-favorites {
+                  .remove-fav {
+                    color: $active-red;
+                    opacity: 0.8;
+                    width: 100%;
+                    height: 100%;
+
+                    @include normal-desktop {
+                      &:hover {
+                        opacity: 1;
+                      }
+                    }
+                    i {
+                      font-size: 20px;
+
+                      @include ipadpro {
+                        font-size: 25px;
+                      }
+                      @include normal-desktop {
+                        font-size: 23px;
+                      }
+
+                      @include large-desktop {
+                        font-size: 33px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// FOOTER
+footer {
+  height: 10vh;
+  background: $black;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
+  font-family: $font;
+
+
+  @include tablet {
+    font-size: 1rem;
+  }
+
+  @include ipadpro {
+    font-size: 1.5rem;
+  }
+
+  @include normal-desktop {
+    font-size: 1rem;
+  }
+
+  @include large-desktop {
+    font-size: 1.5rem;
+  }
+  .brand {
+    margin-bottom: 10px;
+    color: $green;
+
+    @include normal-desktop {
+      margin-bottom: 0;
+    }
+  }
+}

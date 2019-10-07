@@ -1,0 +1,96 @@
+<section id="profile">
+    <div class="profile-header">
+        <h1 class="header">My Profile</h1>
+    </div>
+
+
+    <div class="profile-content">
+        <div class="profile-orders-container">
+            <div class="profile-orders">
+                <div class="order-header">
+                    <h2 class="header-text">Order History</h2>
+                </div>
+                <div class="order-history">
+                    {{# each orders}}
+                    <div class="order-elements">
+                        <ul class="order-list">
+                            {{# each this.items}}
+                            <li class="list-item" >
+                                <div class="item-title-qty">
+                                    <div class="title">
+                                        <span>{{this.item.title}}</span>
+                                    </div>
+                                    <div class="qty">
+                                        <span>{{this.qty}}</span>
+                                    </div>
+                                </div>
+                                <div class="item-price">
+                                    <span class="money">$<span class="amount">{{this.price}}</span></span>
+                                </div>
+                            </li>
+
+                            {{/each}}
+                        </ul>
+
+                    </div>
+                    <div class="order-total-price">
+
+                        <p>Total:&nbsp;<span class="money">$<span class="amount">{{this.cart.totalPrice}}</span></span>
+                        </p>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+
+
+        </div>
+        <div class="profile-favorites-container">
+            <div class="profile-favorites">
+                <div class="favorite-header">
+                    <h2 class="header-text">My Favorites</h2>
+                </div>
+                <div class="favorite-history">
+
+                    <div class="favorite-elements">
+                        <ul class="favorite-list">
+                           
+                            {{# each favorites}}
+
+
+                            <li class="list-item" id="favorite-element">
+                                <div class="item-title">
+                                    <div class="title">
+                                        <span>{{this.title}}</span>
+                                    </div>
+
+                                </div>
+
+                                <div class="delete-from-favorites">
+                                    <a href="/remove-fav/{{this._id}}" class="remove-fav" game_id="{{this._id}}">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
+
+
+                                </div>
+                                {{!-- <div class="item-price">
+                                    <span class="money">$<span class="amount">{{this.price}}</span></span>
+                                </div> --}}
+                            </li>
+
+
+                            {{/each}}
+                        </ul>
+
+                    </div>
+                    {{!-- <div class="order-total-price">
+                        <p>Total price{{this.cart.totalPrice}}</p>
+                    </div> --}}
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+

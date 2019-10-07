@@ -1,0 +1,71 @@
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<div class="checkout-container">
+    <div class="checkout-header">
+        <h1 class="checkout-title">Checkout</h1>
+
+        <div class="total">Your Total: $ <span>{{total}}</span></div>
+    </div>
+
+    <div id="charge-error"
+        style="color: red;  display:{{#if noError}}none{{/if}};  margin: 0 auto;  font-size: 14px;   width: 95%;   text-align: center;    height: 88px;"
+        class="alert alert-danger">
+
+        {{errMsg}}
+    </div>
+    <div class="checkout-form-container">
+        <form action="/checkout" method="post" id="checkout-form" class="checkout-form" onsubmit="return Validate()">
+            <div class="form-fields">
+                <div class="full-name-inputs">
+                    <div class="form-input">
+                        {{!-- <label for="name">Name</label> --}}
+                        {{!-- pattern="[A-Za-z]+"  --}}
+                        
+                        <input type="text" id="name" class="form-control" name="name" placeholder="Name">
+                        <div id="name-error" class="val-error"></div>
+                    </div>
+
+                    <div class="form-input">
+                        {{!-- <label for="surname">Surname</label> --}}
+                        <input type="text" id="surname" class="form-control" name="surname" placeholder="Surname">
+                        <div id="surname-error" class="val-error"></div>
+                    </div>
+                </div>
+                <div class="address-name-inputs">
+                    <div class="form-input">
+                        {{!-- <label for="address">Address</label> --}}
+                        <input type="text" id="address" class="form-control" name="address" placeholder="Address">
+                        <div id="address-error" class="val-error"></div>
+                    </div>
+                    <div class="form-input">
+                        {{!-- <label for="card-holder-name">Card Holder Name</label> --}}
+                        <input type="text" id="card-holder-name" class="form-control" name="card-holder-name"
+                            placeholder="Card Holder Name">
+                        <div id="card-holder-error" class="val-error"></div>
+                    </div>
+                </div>
+
+                <div class="card-input">
+                    {{!-- <label for="card-number">Credit Card Number</label> --}}
+                    <div id="card-number" style="padding: 1rem; margin-top: 7px; height: 3rem; border-radius: 5px; background: white;">
+
+                    </div>
+                    {{!-- <input type="text" id="card-number" class="form-control" required> --}}
+                    <div id="card-errors" role="alert"></div>
+                </div>
+            </div>
+            <div class="buy-button-container">
+                <button type="submit" class="buy-button">BUY NOW</button>
+            </div>
+
+        </form>
+    </div>
+
+</div>
+
+
+<script src="https://js.stripe.com/v3/"></script>
+
+
+
+
+<script src="javascripts/checkout/checkout.js"></script>

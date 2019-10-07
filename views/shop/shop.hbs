@@ -1,0 +1,184 @@
+<head>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/css/ion.rangeSlider.min.css" />
+
+
+</head>
+
+<section id="shop-main-container">
+    <div class="shop-container">
+        <input type="checkbox" id="filter-toggle" name="filter-toggle" class="filter-toggle">
+        <label class="filter-box" for="filter-toggle"><i class="fas fa-sliders-h" id="open-filter"></i><i class="fas fa-times" id="close-filter"></i></label>
+        <div class="filter-list-container">
+            <div class="filter-list">
+                <div class="price-slider-container">
+                    <p class="price-slider-header">Price</p>
+
+
+                    <input type="text" class="js-range-slider" name="price-slider" id="price-slider" value=""
+                        data-filter-group="price" />
+                </div>
+                <div class="genre-platform-container">
+                    {{!-- <h4 class="dropdown-header">Genre</h4> --}}
+                    <ul class="genre-platform-list">
+
+                        <li>
+                            <div class="filters">
+                                <div class="filter-group">
+                                    <div class="ui-group">
+                                        <div class="group-genre toggle-filters"> <span class="text">Genre</span> <span
+                                                class="arrow"><i class="fas fa-angle-down down-arrow"></i><i
+                                                    class="fas fa-angle-up up-arrow"></i></span> </div>
+                                        <div class="button-group js-radio-button-group genres" data-filter-group="genre"
+                                            style="display: none;">
+                                            <button class="button is-checked" data-filter="">All</button>
+                                            <button class="button" data-filter=".action">Action</button>
+                                            <button class="button" data-filter=".adventure">Adventure</button>
+                                            <button class="button" data-filter=".rpg">RPG</button>
+                                            <button class="button" data-filter=".sports">Sports</button>
+                                            <button class="button" data-filter=".racing">Racing</button>
+                                            <button class="button" data-filter=".indie">Indie</button>
+                                            <button class="button" data-filter=".horror">Horror</button>
+                                            <button class="button" data-filter=".survival">Survival</button>
+                                            <button class="button" data-filter=".platform">Platform</button>
+                                            <button class="button" data-filter=".strategy">Strategy</button>
+                                            <button class="button" data-filter=".simulation">Simulation</button>
+                                            <button class="button" data-filter=".mmo">MMO</button>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="ui-group">
+                                        <div class="group-platform toggle-filters"> <span class="text">Platform</span>
+                                            <span class="arrow"><i class="fas fa-angle-down down-arrow"></i><i
+                                                    class="fas fa-angle-up up-arrow"></i></span> </div>
+                                        <div class="button-group js-radio-button-group platforms"
+                                            data-filter-group="platform" style="display: none;">
+                                            <button class="button is-checked" data-filter="">All</button>
+                                            <button class="button" data-filter=".xbox">XBox One</button>
+                                            <button class="button" data-filter=".windows">Windows</button>
+                                            <button class="button" data-filter=".playstation">PS4</button>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+
+                        {{!-- <div class="form-group-genre"></div>
+                        <div class="form-group-genre"></div>
+                        <div class="form-group-genre"></div>
+                        <div class="form-group-genre"></div> --}}
+                    </ul>
+                </div>
+                {{!-- <div class="platform-dropdown-container">Platform Dropdown</div> --}}
+            </div>
+        </div>
+        <div class="products-view-container">
+            <div class="sort-container">
+                <div class="sort-text">Sort by</div>
+                <div class="sort-options">
+                    {{!-- <select class="filters-select sort-group sort-by-option-group">
+                        <option value="*" data-sort-by="original-order">Show All</option>
+                        <option value="releaseDate" data-sort-by="date">Release Date</option>
+                        <option value="alphabetical" data-sort-by="name">Name</option>
+                        <option value="lowestPrice"  data-sort-by="price">Lowest Price</option>
+                        <option value="highestPrice" data-sort-by="price">Highest Price</option>
+
+
+                    </select>
+                      <i class="fas fa-sort-down"></i> --}}
+                    <span class="dropdown-el">
+                        <input type="radio" name="sortType" value="*" data-sort-by="original-order" checked="checked"
+                            id="sort-relevance"><label for="sort-relevance">Relevance</label>
+                        <input type="radio" name="sortType" value="releaseDate" data-sort-by="date"
+                            id="sort-date"><label for="sort-date">Release Date</label>
+                        <input type="radio" name="sortType" value="alphabetical" data-sort-by="name"
+                            id="sort-name"><label for="sort-name">Name</label>
+                        <input type="radio" name="sortType" value="lowestPrice" data-sort-by="price"
+                            id="sort-low"><label for="sort-low">Lowest Price</label>
+                        <input type="radio" name="sortType" value="highestPrice" data-sort-by="price"
+                            id="sort-high"><label for="sort-high">Highest Price</label>
+
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="products-view">
+                <div class="grid-sizer"></div>
+
+                {{# each shopProducts}}
+                {{# each this}}
+                <div class="shop-product-card {{this.genreTag}}  {{this.platformTag}}" id="shop-product-card"
+                    data-price="{{this.price}}" data-date="{{this.releaseDate}}" style="display: block;">
+
+
+                    <div class="thumbnail-container">
+                        <img src="{{this.imagePath}}" alt="{{this.title}}">
+                    </div>
+                    <div class="content-container">
+                        <div class="content-header">
+                            <div class="content-title">
+                                <h4 class="header-text name" id="shop-name">{{this.title}}</h4>
+                                <p class="date" style="display: none;">{{this.releaseDate}}</p>
+                            </div>
+                        </div>
+                        <div class="content-middle" id="content-middle"
+                            data-category="{{this.genreTag}} {{this.platformTag}}">
+                            {{!-- <div class="content-genre">
+                                <p class="product-genre">{{this.genreTag}}</p>
+                            </div> --}}
+                            {{!-- <div class="content-platform">
+                                <p class="platform-text">{{this.platformTag}}</p>
+                            </div> --}}
+                            <div class="content-price-container">
+                                <div class="content-price">
+                                    <p>$<span class="price">{{this.price}}</span></p>
+                                    {{#if oldPrice}}
+                                    <p class="old">$<span class="old-price">{{oldPrice}}</span></p>
+                                    {{/if}}
+                                </div>
+                            </div>
+                            <div class="content-buttons-container">
+                                <div class="content-fav">
+                                    <div class="add-to-fav"><a href="/add-to-fav/{{this._id}}" class="fav-button"
+                                            game_id="{{this._id}}"><i class="far fa-star"></i></a></div>
+                                </div>
+                                <div class="buy-button"><a href="/add-to-cart/{{this._id}}" class="add-to-cart"
+                                        game_id="{{this._id}}"><i class="fas fa-cart-arrow-down"></i></a></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    {{#if discount}}
+                    <div class="discount-container">
+                        <p class="discount">-{{discount}}%</p>
+                    </div>
+                    {{/if}}
+
+
+                </div>
+                {{/each}}
+                {{/each}}
+
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.0/js/ion.rangeSlider.min.js"></script>
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/isotope-cells-by-row@1.1.4/cells-by-row.min.js"></script>
+<script src="javascripts/shop/filter.js"></script>
+
+{{!-- <script src="javascripts/client.js"></script> --}}
+<script src="javascripts/redirect.js"></script>

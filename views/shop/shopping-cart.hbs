@@ -1,0 +1,106 @@
+{{# if products}}
+<div class="shopping-cart-container">
+    <div class="cart-header-container">
+        <h2 class="cart-header">Your Cart</h2>
+    </div>
+
+    <div class="shopping-cart-content">
+        <div class="shopping-cart">
+
+            {{# each products}}
+            <div class="order-info">
+                <div class="order-content">
+                    <div class="order-header">
+                        <div class="order-title">
+                            <p class="title">{{this.item.title}}</p>
+                        </div>
+
+                    </div>
+                    <div class="order-quantity-container">
+                        {{!-- <div class="order-action">
+
+                        <label for="act" class="order-label">Action</label>
+                        <input type="checkbox" id="act" name="act" class="order-checkbox">
+                        <ul class="option-list">
+                            <li class="option"><a href="/reduce/{{this.item._id}}">Reduce By One</a></li> --}}
+                        {{!-- <li class="option"><a href="/remove/{{this.item._id}}">Remove All</a></li> --}}
+                        {{!-- <li class="option"><a href="/increment/{{this.item._id}}">Increment By One</a></li>
+                        </ul>
+                    </div> --}}
+                        <div class="order-action-container">
+                            <div class="order-decrement"><span class="minus"><a class="decrement"
+                                        game_id="{{this.item._id}}" href="/decrement/{{this.item._id}}"><i
+                                            class="fas fa-minus-circle"></i></a></span></div>
+                            <div class="order-quantity">
+                                <span id="totalQty">{{this.qty}}</span>
+                            </div>
+                            <div class="order-increment"><span class="plus"><a class="increment"
+                                        game_id="{{this.item._id}}" href="/increment/{{this.item._id}}"><i
+                                            class="fas fa-plus-circle"></i></a></span></div>
+                        </div>
+
+                    </div>
+                    <div class="order-price">
+
+                        <span class="price">$ <span id="amount" class="amount">{{this.price}}</span></span>
+                    </div>
+                    <div class="order-removal">
+                        <div class="remove-all">
+                            <span><a class="remove-item"  game_id="{{this.item._id}}" href="/remove/{{this.item._id}}"><i class="fas fa-trash"></i></a></li></span>
+                        </div>
+                    </div>
+                </div>
+
+                {{!-- <div class="order-content">
+
+           
+
+        </div> --}}
+
+
+            </div>
+            {{/each}}
+        </div>
+
+
+        <div class="order-checkout-container">
+            <div class="order-summary">
+                <div class="order-text-container">
+                    <div class="order-text">
+                        <p>Order Summary</p>
+                    </div>
+                </div>
+                <div class="total-price-container">
+                    <div class="total-price">
+                        <div class="total">
+                           
+                            <span class="total-text">Total:&nbsp;</span><span class="total-money">$ <span class="total-amount">{{totalPrice}}</span></span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="checkout-button-container">
+                    <div class="checkout-button">
+                        <a href="/checkout" type="button" class="checkout-link">Checkout</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>
+{{ else }}
+<div class="cart-info">
+    <h2>No items in cart</h2>
+    <a href="/shop">Start shopping</a>
+   
+</div>
+{{/if}}
+
+
+{{!-- <script src="javascripts/client.js"></script> --}}
+{{!-- <script src="javascripts/fonpm rmatter.js"></script> --}}

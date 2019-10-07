@@ -1,0 +1,310 @@
+<head>
+    <link rel="stylesheet" href="stylesheets/swiper.min.css">
+</head>
+<section id="home">
+    <div class="message">
+        <div class="success" style="color: green; background: white; display: {{#if noMessages}}none{{/if}}">
+            {{ successMsg }}
+        </div>
+    </div>
+
+
+    <div class="slideshow">
+        <div class="slideshow-inner">
+
+            <div class="slides">
+                {{#each homeProducts}}
+
+                <div class="slide">
+
+                    {{#each this}}
+                    <div class="slide-content">
+                        <div class="caption">
+                            <div class="title">{{ this.title }}</div>
+
+                            <a href="#" class="btn-index">
+                                <span class="btn-inner">Learn More</span>
+
+
+                            </a>
+
+                        </div>
+                    </div>
+
+                    <div class="image-container">
+                        <img src="{{ this.imagePath }}" alt="{{ this.title }}" class="image" />
+                    </div>
+                    {{/each }}
+                </div>
+
+                {{/each}}
+
+
+
+
+
+            </div>
+
+            <div class="pagination">
+                <div class="item is-active">
+                    <span class="icon">1</span>
+                </div>
+                <div class="item">
+                    <span class="icon">2</span>
+                </div>
+                <div class="item">
+                    <span class="icon">3</span>
+                </div>
+                <div class="item">
+                    <span class="icon">4</span>
+                </div>
+            </div>
+            <div class="arrows">
+                <div class="arrow prev">
+                    <span class="svg svg-arrow-left">
+                        <svg version="1.1" id="svg4-Layer_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="26px"
+                            viewBox="0 0 14 26" enable-background="new 0 0 14 26" xml:space="preserve">
+                            <path
+                                d="M13,26c-0.256,0-0.512-0.098-0.707-0.293l-12-12c-0.391-0.391-0.391-1.023,0-1.414l12-12c0.391-0.391,1.023-0.391,1.414,0s0.391,1.023,0,1.414L2.414,13l11.293,11.293c0.391,0.391,0.391,1.023,0,1.414C13.512,25.902,13.256,26,13,26z" />
+                        </svg>
+                        <span class="alt sr-only"></span>
+                    </span>
+                </div>
+                <div class="arrow next">
+                    <span class="svg svg-arrow-right">
+                        <svg version="1.1" id="svg5-Layer_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="14px" height="26px"
+                            viewBox="0 0 14 26" enable-background="new 0 0 14 26" xml:space="preserve">
+                            <path
+                                d="M1,0c0.256,0,0.512,0.098,0.707,0.293l12,12c0.391,0.391,0.391,1.023,0,1.414l-12,12c-0.391,0.391-1.023,0.391-1.414,0s-0.391-1.023,0-1.414L11.586,13L0.293,1.707c-0.391-0.391-0.391-1.023,0-1.414C0.488,0.098,0.744,0,1,0z" />
+                        </svg>
+                        <span class="alt sr-only"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</section>
+<section id="special-offers">
+
+    <div class="offer-header">
+        <h3>Special Offers</h3>
+    </div>
+
+
+
+    <div class="carousel" id="special-carousel" data-flickity='{ "wrapAround": true }'>
+
+        {{# each specialProducts}}
+
+        <div class="carousel-cell">
+
+            {{# each this}}
+            <div class="thumbnail-container">
+                <div class="discount">
+                    <span>-{{this.discount}}%</span>
+                </div>
+
+                <div class="image-container">
+                    <img src="{{ this.imagePath }}" style="width: 100%; height: auto; object-fit: cover;"
+                        alt="{{this.title}}">
+                </div>
+            </div>
+            <div class="content-container">
+                <div class="content-header">
+                    <div class="content-title">
+                        <h4 class="header-text">{{this.title}}</h4>
+                    </div>
+
+                    <div class="price">
+                        <div class="old-price"><span class="currency">$</span>&nbsp;{{this.oldPrice}}</div>
+                        <div class="new-price"><span class="currency">$</span>&nbsp;{{this.price}}</div>
+
+                    </div>
+
+                </div>
+                <div class="content-middle">
+                    <div class="info">
+
+                        <div class="genre">
+                            <div class="genre-header">
+                                <p>Genre</p>
+                            </div>
+                            <div class="genre-content">
+                                <p class="genre-text">{{this.genre}}</p>
+                            </div>
+                        </div>
+                        <div class="platform">
+                            <div class="platform-header">
+                                <p>Platform</p>
+                            </div>
+                            <div class="platform-flags">
+                                <div class="xbox-flag flag"><i class="fab fa-{{this.platform.[0]}}"></i></div>
+                                <div class="ps4-flag flag"><i class="fab fa-{{this.platform.[2]}}"></i></div>
+                                <div class="pc-flag flag"><i class="fab fa-{{this.platform.[1]}}"></i></div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="content-button">
+                        <div class="add-to-fav"><a href="/add-to-fav/{{this._id}}" class="fav-button"
+                                game_id="{{this._id}}"><i class="far fa-star"></i></a></div>
+                        <div class="buy-button"><a href="/add-to-cart/{{this._id}}" class="add-to-cart"
+                                game_id="{{this._id}}"><i class="fas fa-cart-arrow-down"></i></a></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            {{/each}}
+
+        </div>
+        {{/each}}
+
+
+    </div>
+
+
+
+
+
+</section>
+<section id="game-trends">
+
+
+    <div class="tab">
+
+
+        <ul class="tabs">
+            <li class="tab-headers"><a class="tab-element" href="#"><span class="element-text">New and
+                        Trending</span></a></li>
+            <li class="tab-headers"><a class="tab-element" href="#"><span class="element-text">Top Selling</span></a>
+            </li>
+            <li class="tab-headers"><a class="tab-element" href="#">
+                    <span class="element-text">Coming Soon</span></a></li>
+        </ul>
+
+        <div class="tab-content">
+
+
+            <div class="tabs-item">
+
+                {{# each newProducts}}
+                <div class="tabs-item-content">
+                    {{#each this}}
+                    <div class="content-image">
+                        <img class="first-image" src="{{ this.imagePath }}">
+                    </div>
+                    <div class="content-text">
+                        <h4 class="text-name">{{  this.title }}</h4>
+                        <div class="platform">
+                            {{# each this.platform}}
+                            <i class="fab fa-{{ this }}"></i>
+
+                            {{/each}}
+                        </div>
+                        <p class="text-genre">{{ this.genre }}</p>
+                    </div>
+                    <div class="content-price">
+
+                        <p class="price">${{this.price}}</p>
+                    </div>
+                    {{/each}}
+                </div>
+                {{/each}}
+
+
+
+            </div>
+            <div class="tabs-item">
+                <div class="content-container">
+                    {{# each topProducts}}
+                    <div class="tabs-item-content">
+                        {{# each this}}
+                        <div class="content-image">
+                            <img class="first-image" src="{{this.imagePath}}">
+                        </div>
+                        <div class="content-text">
+                            <h4 class="text-name">{{this.title}}</h4>
+                            <div class="platform">
+                                {{# each this.platform}}
+                                <i class="fab fa-{{ this }}"></i>
+
+                                {{/each}}
+                            </div>
+                            <p class="text-genre">{{ this.genre }}</p>
+                        </div>
+                        <div class="content-price">
+                            {{#if oldPrice}}
+                            <p class="top-old-price">$<span class="old-amount">{{oldPrice}}</span></p>
+                            {{/if}}
+                            {{#if discount}}
+                            <p class="top-discount">-{{discount}}%</p>
+                            {{/if}}
+
+                            <p class="price">${{this.price}}</p>
+                        </div>
+                        {{/each}}
+                    </div>
+                    {{/each}}
+                </div>
+
+
+
+
+            </div>
+
+            <div class="tabs-item">
+                <div class="content-container">
+                    {{# each soonProducts}}
+                    <div class="tabs-item-content">
+                        {{# each this}}
+                        <div class="content-image">
+                            <img class="first-image" src="{{this.imagePath}}">
+                        </div>
+                        <div class="content-text">
+                            <h4 class="text-name">{{  this.title }}</h4>
+                            <div class="platform">
+                                {{# each this.platform}}
+                                <i class="fab fa-{{ this }}"></i>
+
+                                {{/each}}
+                            </div>
+                            <p class="text-genre">{{ this.genre }}</p>
+                        </div>
+
+                        {{/each}}
+                    </div>
+                    {{/each}}
+                </div>
+
+
+
+
+            </div>
+        </div>
+</section>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/2.0.5/flickity.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="javascripts/home/slider.js"></script>
+<script src="javascripts/redirect.js"></script>
+<script src="javascripts/home/game-tabs.js"></script>
+{{!-- <script src="javascripts/messages.js"></script>
+<script src="javascripts/client.js"></script> --}}

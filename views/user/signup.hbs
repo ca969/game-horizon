@@ -1,0 +1,85 @@
+<div class="signup-main-container">
+      <div class="signup-sub-container">
+        <div class="signup-header">
+            <h1>Sign Up</h1>
+        </div>
+
+        {{# if hasErrors}}
+        <div class="error-messages">
+            {{# each messages}}
+            <p>{{this}}</p>
+            {{/each}}
+        </div>
+        {{/if}}
+
+
+        <div class="signup-form-container">
+           
+            <form action="/user/signup" method="post" class="signup-form">
+                <div class="form-group">
+                  
+                    <input type="text" name="email" id="email" required>
+                      <label for="email">Email</label>
+                    <span></span>
+                </div>
+                <div class="form-group">
+                  
+                    <input type="password" name="password" id="password" required>
+                     <label for="password">Password</label>
+                    <span></span>
+                </div>
+                <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+                <button type="submit" class="signup-button">Sign Up</button>
+            </form>
+        </div>
+        {{!-- <form action="/user/login" method="post" class="login-form">
+                {{!-- <div class="form-group"> --}}
+                    {{!-- <label for="email">Email</label> --}}
+                    {{!-- <input type="text" name="email" id="email">
+                    <span data-placeholder="Email"></span> --}}
+                {{!-- </div> --}}
+                {{!-- <div class="form-group"> --}}
+                    {{!-- <label for="password">Password</label> --}}
+                    {{!-- <input type="password" name="password" id="password">
+                    <span data-placeholder="Password"></span> --}}
+                {{!-- </div> --}}
+                {{!-- <input type="hidden" name="_csrf" value="{{ csrfToken }}"> --}}
+                {{!-- <button type="submit" class="login-button">Login</button> --}}
+            {{!-- </form> --}} 
+        <div class="login-link">
+            <p>Already have an account? <a href="/user/login">Login</a> instead.</p>
+        </div>
+    </div>
+
+    {{!-- <div class="signup-header">
+ <h1>Sign Up</h1>
+    </div>
+   
+    {{# if hasErrors}}
+    <div class="error-messages">
+        {{# each messages}}
+        <p>{{this}}</p>
+        {{/each}}
+    </div>
+    {{/if}}
+    <div class="signup-form-container">
+        <form action="/user/signup" method="post" class="signup-form">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" >
+            </div>
+            <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+            <button type="submit" class="signup-btn">Sign Up</button>
+           
+        </form>
+    </div>
+
+     <div class="login-link">
+        <p>Don't have an account? <a href="/user/login">Login</a> instead.</p>
+    </div> --}}
+</div>

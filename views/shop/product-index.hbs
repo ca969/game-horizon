@@ -1,0 +1,84 @@
+<section id="product-index-container">
+    {{#each productInfo}}
+    <div class="product-index">
+        <div class="image-column">
+            <div class="thumbnail-container">
+                <img class="index-image" src="{{this.imagePath}}" alt="{{this.title}}">
+            </div>
+        </div>
+        <div class="content-column">
+            <div class="title-container">
+                <p class="title">{{this.title}}</p>
+            </div>
+            <div class="price-container">
+                <p class="price">$<span class="amount">{{this.price}}</span></p>
+                {{#if oldPrice}}
+                <p class="old-price">$<span class="old-amount">{{oldPrice}}</span></p>
+                {{/if}}
+                {{#if discount}}
+                <p class="discount-container">-{{discount}}%</p>
+                {{/if}}
+
+            </div>
+            <div class="platform-container">
+                <div class="platform">
+                    {{# each this.platform}}
+                    <i class="fab fa-{{ this }}"></i>
+
+                    {{/each}}
+                </div>
+            </div>
+            <div class="button-container">
+                <div class="quantity-container">
+                    <div class="quantity">
+                        <a href="#" class="quantity__minus"><span>-</span></a>
+                        <input name="quantity" type="text"
+                            oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                            class="quantity__input" value="1">
+                        <a href="#" class="quantity__plus"><span>+</span></a>
+                    </div>
+                </div>
+
+                <div class="add-fav-container">
+                    <div class="add-to-cart-button">
+                        <button class="buy-button" id="add-multiple-to-cart" type="button" game_id="{{this._id}}"><i
+                                class="fas fa-cart-arrow-down"></i>Add To Cart</button>
+
+                        {{!-- onclick="location.href='/add-multiple-to-cart/{{this._id}}'" --}}
+                    </div>
+                    <div class="add-to-fav-button">
+                        {{!-- <button type="button" id="add-to-fav" class="fav-link-container" ><a href="/add-to-fav/{{this._id}}" class="fav-button"  game_id="{{this._id}}"><i class="far fa-star"></i></a></button> --}}
+                        <a href="/add-to-fav/{{this._id}}" class="fav-button" game_id="{{this._id}}"><i
+                                class="far fa-star"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+          
+            <div class="info-container">
+                <div class="date-container">
+                    <p class="date-header">Release Date</p>
+                    <p class="date-text">{{this.releaseDate}}</p>
+                </div>
+                <div class="developer-container">
+                    <p class="developer-header">Developer</p>
+                    <p class="developer-text">{{this.developer}}</p>
+                </div>
+                <div class="genre-container">
+                    <p class="genre-header">Genre</p>
+                    <p class="genre-text">{{this.genre}}</p>
+                </div>
+            </div>
+            {{!-- <h2>{{this.genre}}</h2>
+            <h2>{{this.price}}</h2> --}}
+        </div>
+    </div>
+    {{/each}}
+</section>
+
+<script src="javascripts/shop/counter.js"></script>
+
+{{!-- <script src="javascripts/client.js"></script> --}}
+<script src="javascripts/redirect.js"></script>
+<script src="javascripts/product_index/product-index.js"></script>
