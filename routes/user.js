@@ -26,7 +26,7 @@ router.get("/profile", isLoggedIn, function(req, res, next) {
   // Compare logged in user with the user from database
   var orderArray = [];
   var favoriteArray = [];
-  db.orders.find({ user: req.user }, function(err, orders) {
+  Order.find({ user: req.user }, function(err, orders) {
     if (err) {
       return res.write('Error');
     } 
@@ -45,7 +45,7 @@ router.get("/profile", isLoggedIn, function(req, res, next) {
     console.log(orderArray)
     
   });
-  db.libraries.find({user: req.user}, function(err, libraries) {
+  Library.find({user: req.user}, function(err, libraries) {
     if (err) {
       return res.write('Error');
     }
