@@ -22,7 +22,7 @@ var products = [
     }),
 
     new Product({
-      imagePath: "images/home-page-thumbnails/god-of-war.png",
+      imagePath: "images/home-page-thumbnails/god-of-war.jpg",
       title: "God of War",
       price: 50,
       genre: "Action, Adventure",
@@ -44,7 +44,7 @@ var products = [
       developer: "CD Projekt"
     }),
     new Product({
-      imagePath: "images/home-page-thumbnails/forza-horizon-4.png",
+      imagePath: "images/home-page-thumbnails/forza-horizon-4.jpg",
       title: "Forza Horizon 4",
       price: 60,
       genre: "Racing, Simulation",
@@ -221,7 +221,7 @@ var products = [
       developer: "The Creative Assembly"
     }),
     new Product({
-      imagePath: "images/game-tabs/new-and-trending/ace-combat.png",
+      imagePath: "images/game-tabs/new-and-trending/ace-combat.jpg",
       title: "Ace Combat 7 Skies Unknown",
       price: 40,
       genre: "Action, Simulation",
@@ -302,7 +302,7 @@ var products = [
       developer: "Rockstar Games"
     }),
     new Product({
-      imagePath: "images/game-tabs/top-sellers/r6-siege.png",
+      imagePath: "images/game-tabs/top-sellers/r6-siege.jpg",
       title: "Tom Clancy's Rainbow Six Siege",
       price: 30,
       genre: "FPS",
@@ -493,7 +493,7 @@ var products = [
       developer: "Insomniac Games"
     }),
     new Product({
-      imagePath: "images/shop/cuphead.png",
+      imagePath: "images/shop/cuphead.jpg",
       title: "Cuphead",
       price: 16,
       genre: "Action, Indie",
