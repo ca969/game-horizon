@@ -493,7 +493,7 @@ router.post("/checkout", isLoggedIn, function(req, res, next) {
           completed: true
         });
         order.save(function(err, result) {
-          req.flash("success", "Successfully bought product!");
+          // req.flash("success", "Successfully bought product!");
           req.session.cart = null;
 
           res.redirect("/shopping-completed");
