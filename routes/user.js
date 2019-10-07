@@ -8,6 +8,12 @@ var Cart = require("../models/cart");
 var Order = require('../models/order');
 var Favorite = require("../models/favorite");
 var Library = require("../models/library");
+var mongoose = require("mongoose");
+mongoose.connect(process.env.MONGODB_URI, {
+  useNewUrlParser: true
+});
+
+var db = mongoose.connection;
 
 
 var csrfProtection = csrf();
@@ -19,7 +25,7 @@ router.get("/profile", isLoggedIn, function(req, res, next) {
   // Compare logged in user with the user from database
   var orderArray = [];
   var favoriteArray = [];
-  Order.find({ user: req.user }, function(err, orders) {
+  db.orders.find({ user: req.user }, function(err, orders) {
     if (err) {
       return res.write('Error');
     } 
@@ -38,7 +44,7 @@ router.get("/profile", isLoggedIn, function(req, res, next) {
     console.log(orderArray)
     
   });
-  Library.find({user: req.user}, function(err, libraries) {
+  db.libraries.find({user: req.user}, function(err, libraries) {
     if (err) {
       return res.write('Error');
     }

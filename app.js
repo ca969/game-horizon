@@ -27,9 +27,11 @@ var app = express();
 //   useNewUrlParser: true
 // });
 
-mongoose.connect(process.env.MONGODB_URI, {
+ mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true
 });
+
+var db = mongoose.connection;
 
 // Load passport.js
 require("./config/passport");
