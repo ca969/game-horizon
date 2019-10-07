@@ -25,13 +25,9 @@
 // // Load passport.js
 // require("./config/passport");
 
-
-
 // // view engine setup
 // app.engine(".hbs", expressHbs({ defaultLayout: "layout", extname: ".hbs" }));
 // app.set("view engine", ".hbs");
-
-
 
 // app.use(logger("dev"));
 // app.use(express.json());
@@ -39,14 +35,14 @@
 // // app.use(validator());
 // app.use(cookieParser());
 // app.use(
-//   session({ 
-//     secret: "secret", 
+//   session({
+//     secret: "secret",
 //     resave: false,
 //     saveUninitialized: false,
 //     // Use existing database connection for session
 //     store: new MongoStore({ mongooseConnection: mongoose.connection}),
 //     // Set the cookie expire time ( in miliseconds )
-//     cookie: { maxAge: 180*60*1000 } 
+//     cookie: { maxAge: 180*60*1000 }
 //   })
 // );
 
@@ -83,7 +79,6 @@
 
 // module.exports = app;
 
-
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
@@ -102,7 +97,6 @@ var indexRouter = require("./routes/index");
 var userRoutes = require("./routes/user");
 
 var app = express();
-var port = process.env.PORT || 3000; 
 
 // Connect to database
 mongoose.connect("mongodb://localhost:27017/video-game-shop", {
@@ -122,24 +116,24 @@ app.use(express.urlencoded({ extended: false }));
 // app.use(validator());
 app.use(cookieParser());
 app.use(
-  session({ 
-    secret: "mysupersecret", 
+  session({
+    secret: "mysupersecret",
     resave: false,
     saveUninitialized: false,
     // Use existing database connection for session
-    store: new MongoStore({ mongooseConnection: mongoose.connection}),
+    store: new MongoStore({ mongooseConnection: mongoose.connection }),
     // Set the cookie expire time ( in miliseconds )
-    cookie: { maxAge: 180*60*1000 } 
+    cookie: { maxAge: 180 * 60 * 1000 }
   })
 );
 
 app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
-app.use("/shopping-cart",express.static(path.join(__dirname, "public")));
+app.use("/shopping-cart", express.static(path.join(__dirname, "public")));
 // app.use("/shop/",express.static(path.join(__dirname, "public")));
-app.use("/shop",express.static(path.join(__dirname, "public")));
-app.use("/user",express.static(path.join(__dirname, "public")));
+app.use("/shop", express.static(path.join(__dirname, "public")));
+app.use("/user", express.static(path.join(__dirname, "public")));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use(function(req, res, next) {
@@ -169,6 +163,8 @@ app.use(function(err, req, res, next) {
 });
 
 
-app.listen(port);
 
 module.exports = app;
+
+
+app.listen(process.env.PORT || 3000);
