@@ -95,7 +95,10 @@ var MongoStore = require("connect-mongo")(session);
 
 var indexRouter = require("./routes/index");
 var userRoutes = require("./routes/user");
-var mongoURI = require("./config/keys")(keys.mongoURI);
+
+var keys = require("./config/keys");
+
+// console.log(mongoURI)
 
 var app = express();
 
@@ -104,7 +107,7 @@ var app = express();
 //   useNewUrlParser: true
 // });
 
-mongoose.connect(mongoURI, {
+mongoose.connect(keys.mongoURI, {
   useNewUrlParser: true
 });
 
@@ -172,4 +175,4 @@ app.use(function(err, req, res, next) {
 module.exports = app;
 
 
-app.listen(process.env.PORT || 3000);
+// app.listen(process.env.PORT || 3000);

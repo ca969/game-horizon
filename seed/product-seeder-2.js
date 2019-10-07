@@ -1,8 +1,9 @@
 var Product = require("../models/product");
 
 var mongoose = require("mongoose");
+var keys = require("../config/keys");
 
-mongoose.connect("mongodb://localhost:27017/video-game-shop", {
+mongoose.connect(keys.mongoURI, {
   useNewUrlParser: true
 });
 
