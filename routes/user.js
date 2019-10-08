@@ -20,12 +20,12 @@ var Library = require("../models/library");
 var csrfProtection = csrf();
 router.use(csrfProtection);
 
-var orderArray = [];
+
 /*  VIEWS FOR LOGGED IN USERS  */
 /* GET profile page. */
 router.get("/profile", isLoggedIn, function(req, res, next) {
   // Compare logged in user with the user from database
-
+  var orderArray = [];
   var favoriteArray = [];
   Order.find({ user: req.user }, function(err, orders) {
     if (err) {
@@ -39,9 +39,13 @@ router.get("/profile", isLoggedIn, function(req, res, next) {
       order.items = cart.generateArray();
       // console.log(order)
     });
-    orders.forEach(function(item) {
-      orderArray.push(item);
+
+    orderArray = orders.map(function (item) {
+      return item;
     });
+    // orders.forEach(function(item) {
+    //   orderArray.push(item);
+    // });
    
     // console.log(orderArray)
     
