@@ -38,33 +38,33 @@ router.get("/profile", isLoggedIn, function(req, res, next) {
       order.items = cart.generateArray();
       // console.log(order)
     });
-    orders.forEach(function(item) {
-      orderArray.push(item);
-    });
-
-    console.log(orderArray)
+    // orders.forEach(function(item) {
+    //   orderArray.push(item);
+    // });
+    res.render('user/profile', {orders: orders});
+    // console.log(orderArray)
     
   });
-  Library.find({user: req.user}, function(err, libraries) {
-    if (err) {
-      return res.write('Error');
-    }
-    console.log(libraries)
-    var favorite;
-    libraries.forEach(function(library) {
-      // console.log(library.favorite.items)
-      favorite = new Favorite(library.favorite)
-      library.favorite.items.forEach(function(each) {
-        // favoriteArray.push(each.element.item);
-        favoriteArray.push(each);
-      })
-      library.items = favorite.generateArray();
-      // console.log(library.favorite.items[0].element.item);
-    })
-    console.log(favoriteArray);
-  });
+  // Library.find({user: req.user}, function(err, libraries) {
+  //   if (err) {
+  //     return res.write('Error');
+  //   }
+  //   console.log(libraries)
+  //   var favorite;
+  //   libraries.forEach(function(library) {
+  //     // console.log(library.favorite.items)
+  //     favorite = new Favorite(library.favorite)
+  //     library.favorite.items.forEach(function(each) {
+  //       // favoriteArray.push(each.element.item);
+  //       favoriteArray.push(each);
+  //     })
+  //     library.items = favorite.generateArray();
+  //     // console.log(library.favorite.items[0].element.item);
+  //   })
+  //   console.log(favoriteArray);
+  // });
  
-  res.render('user/profile', {orders: orderArray, favorites: favoriteArray});
+  
 });
 
 /* LOGOUT */
