@@ -50,32 +50,34 @@ router.get("/profile", isLoggedIn, function(req, res, next) {
     
   });
 
+ 
+
+ 
+
+ 
+  Library.find({user: req.user}, function(err, libraries) {
+    if (err) {
+      return res.write('Error');
+    }
+    console.log(libraries)
+    var favorite;
+    libraries.forEach(function(library) {
+      // console.log(library.favorite.items)
+      favorite = new Favorite(library.favorite)
+      library.favorite.items.forEach(function(each) {
+        // favoriteArray.push(each.element.item);
+        favoriteArray.push(each);
+      })
+      library.items = favorite.generateArray();
+      // console.log(library.favorite.items[0].element.item);
+    })
+    console.log(favoriteArray);
+  });
+ 
+
   setTimeout(function() {
-    res.render('user/profile', {orders: orderArray});
+    res.render('user/profile', {orders: orderArray, favorites: favoriteArray});
   }, 3000);
-
- 
-
- 
-  // Library.find({user: req.user}, function(err, libraries) {
-  //   if (err) {
-  //     return res.write('Error');
-  //   }
-  //   console.log(libraries)
-  //   var favorite;
-  //   libraries.forEach(function(library) {
-  //     // console.log(library.favorite.items)
-  //     favorite = new Favorite(library.favorite)
-  //     library.favorite.items.forEach(function(each) {
-  //       // favoriteArray.push(each.element.item);
-  //       favoriteArray.push(each);
-  //     })
-  //     library.items = favorite.generateArray();
-  //     // console.log(library.favorite.items[0].element.item);
-  //   })
-  //   console.log(favoriteArray);
-  // });
- 
   
 });
 
