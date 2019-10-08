@@ -27,7 +27,12 @@ var app = express();
 //   useNewUrlParser: true
 // });
 
- mongoose.connect(process.env.MONGODB_URI, {
+//  mongoose.connect(process.env.MONGODB_URI, {
+//   useNewUrlParser: true
+// });
+
+
+ mongoose.connect("mongodb+srv://ceyhun456:ceyhun456@gamehorizon-qbkr1.mongodb.net/test?retryWrites=true&w=majority", {
   useNewUrlParser: true
 });
 
