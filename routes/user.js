@@ -26,25 +26,25 @@ router.get("/profile", isLoggedIn, function(req, res, next) {
   // Compare logged in user with the user from database
   var orderArray = [];
   var favoriteArray = [];
-  // Order.find({ user: req.user }, function(err, orders) {
-  //   if (err) {
-  //     return res.write('Error');
-  //   } 
-  //   var cart;
-  //   orders.forEach(function(order) {
-  //     cart = new Cart(order.cart);
-  //     // Return an array of the items in the cart
-  //     // And store them in the order.items
-  //     order.items = cart.generateArray();
-  //     // console.log(order)
-  //   });
-  //   orders.forEach(function(item) {
-  //     orderArray.push(item);
-  //   });
+  Order.find({ user: req.user }, function(err, orders) {
+    if (err) {
+      return res.write('Error');
+    } 
+    var cart;
+    orders.forEach(function(order) {
+      cart = new Cart(order.cart);
+      // Return an array of the items in the cart
+      // And store them in the order.items
+      order.items = cart.generateArray();
+      // console.log(order)
+    });
+    orders.forEach(function(item) {
+      orderArray.push(item);
+    });
 
-  //   console.log(orderArray)
+    console.log(orderArray)
     
-  // });
+  });
   Library.find({user: req.user}, function(err, libraries) {
     if (err) {
       return res.write('Error');
@@ -62,10 +62,9 @@ router.get("/profile", isLoggedIn, function(req, res, next) {
       // console.log(library.favorite.items[0].element.item);
     })
     console.log(favoriteArray);
-    res.render('user/profile', {orders: orderArray, favorites: favoriteArray});
   });
  
- 
+  res.render('user/profile', {orders: orderArray, favorites: favoriteArray});
 });
 
 /* LOGOUT */
