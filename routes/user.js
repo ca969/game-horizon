@@ -41,10 +41,12 @@ router.get("/profile", isLoggedIn, function(req, res, next) {
     // orders.forEach(function(item) {
     //   orderArray.push(item);
     // });
-    res.render('user/profile', {orders: orders});
+   
     // console.log(orderArray)
     
   });
+
+  res.render('user/profile', {orders: orders});
   // Library.find({user: req.user}, function(err, libraries) {
   //   if (err) {
   //     return res.write('Error');
