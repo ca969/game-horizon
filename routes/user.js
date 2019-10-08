@@ -38,15 +38,15 @@ router.get("/profile", isLoggedIn, function(req, res, next) {
       order.items = cart.generateArray();
       // console.log(order)
     });
-    // orders.forEach(function(item) {
-    //   orderArray.push(item);
-    // });
+    orders.forEach(function(item) {
+      orderArray.push(item);
+    });
    
     // console.log(orderArray)
     
   });
 
-  res.render('user/profile', {orders: orders});
+  res.render('user/profile', {orders: orderArray});
   // Library.find({user: req.user}, function(err, libraries) {
   //   if (err) {
   //     return res.write('Error');
