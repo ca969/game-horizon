@@ -45,10 +45,16 @@ router.get("/profile", isLoggedIn, function(req, res, next) {
       orderArray.push(item);
     });
    
-    res.render('user/profile', {orders: orderArray});
+    
     // console.log(orderArray)
     
   });
+
+  setTimeout(function() {
+    res.render('user/profile', {orders: orderArray});
+  }, 3000);
+
+ 
 
  
   // Library.find({user: req.user}, function(err, libraries) {
