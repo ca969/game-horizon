@@ -40,18 +40,17 @@ router.get("/profile", isLoggedIn, function(req, res, next) {
       // console.log(order)
     });
 
-    orderArray = orders.map(function (item) {
-      return item;
-    });
-    // orders.forEach(function(item) {
-    //   orderArray.push(item);
-    // });
    
+    orders.forEach(function(item) {
+      orderArray.push(item);
+    });
+   
+    res.render('user/profile', {orders: orderArray});
     // console.log(orderArray)
     
   });
 
-  res.render('user/profile', {orders: orderArray});
+ 
   // Library.find({user: req.user}, function(err, libraries) {
   //   if (err) {
   //     return res.write('Error');
