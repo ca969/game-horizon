@@ -81,6 +81,8 @@ router.get("/shop/:name", function(req, res, next) {
   Product.find({ title: `${productName}` }, function(err, product) {
     if (err) {
       return res.redirect("/");
+    } else if (product.title !== productName) {
+      return res.send("wrong");
     }
 
     var productArray = [];
