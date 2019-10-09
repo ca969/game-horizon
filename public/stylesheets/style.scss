@@ -103,6 +103,14 @@ body {
   font-family: sans-serif;
   overflow-x: hidden;
 
+  .error-container {
+    font-family: $font;
+
+    .redirect-home {
+      text-decoration: none;
+    }
+  }
+
   #loading {
     width: 100%;
     height: 100%;
