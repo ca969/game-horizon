@@ -100,9 +100,8 @@ app.use(function(err, req, res, next) {
 });
 
 app.get('*', function(req, res){
-  res.send('what???', 404);
+  res.sendFile(path.join(__dirname + '/404.html'));
 });
-
 
 
 module.exports = app;

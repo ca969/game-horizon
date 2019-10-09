@@ -85,9 +85,7 @@ router.get("/shop/:name", function(req, res, next) {
       return res.redirect("/shop");
     }
     
-    // else if (product.title !== productName) {
-    //   return res.send("wrong");
-    // }
+ 
 
     var productArray = [];
     var newestProduct = product.pop();
