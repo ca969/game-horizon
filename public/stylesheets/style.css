@@ -39,9 +39,9 @@ body {
   font-family: sans-serif;
 }
 
-body .loading {
-  width: 5000px;
-  height: 5000px;
+body #loading {
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
   position: fixed;
@@ -52,7 +52,7 @@ body .loading {
   text-align: center;
 }
 
-body .loading #loading-image {
+body #loading #loading-image {
   position: absolute;
   top: 100px;
   left: 240px;

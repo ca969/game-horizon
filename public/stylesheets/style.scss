@@ -123,9 +123,9 @@ $font-family-secondary: "Roboto Slab", serif;
 body {
   font-family: sans-serif;
 
-  .loading {
-    width: 5000px;
-    height: 5000px;
+  #loading {
+    width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
     position: fixed;
