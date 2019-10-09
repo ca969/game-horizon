@@ -97,28 +97,7 @@ $ipad-pro: 1024px;
 $font-family-primary: "Montserrat", sans-serif;
 $font-family-secondary: "Roboto Slab", serif;
 
-// body {
-//   background-color: #000;
-//   #loading {
-//     width: 100%;
-//     height: 100%;
-//     top: 0;
-//     left: 0;
-//     position: fixed;
-//     display: block;
-//     opacity: 0.7;
-//     background-color: #fff;
-//     z-index: 99;
-//     text-align: center;
-//   }
 
-//   #loading-image {
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     z-index: 100;
-//   }
-// }
 
 body {
   font-family: sans-serif;
@@ -207,21 +186,22 @@ body {
   }
   .main-header {
     display: grid;
-    // grid-template-columns: 5% repeat(3, 1fr) 5%;
-    // grid-template-columns: 1fr 2fr 2fr 1fr;
-
-    // background: $black;
+  
+    
     background: transparent;
     color: $white;
     height: 56px;
-    // padding: 10px;
+   
+    
+
     transition: 0.3s ease-in-out;
     &.black {
       background: $full-black;
     }
 
     @include normal-desktop {
-      // height: 12vmin;
+     
+      
       height: 56px;
       padding: 0;
       grid-template-rows: 1fr;
@@ -253,7 +233,8 @@ body {
           display: flex;
           justify-content: center;
           align-items: center;
-          // height: 12vmin;
+        
+          
           height: 56px;
           font-size: 3.1vmin;
         }
@@ -353,14 +334,12 @@ body {
           width: 70%;
         }
       }
-
-      //
+                                                                                                                                                                                                                                                               
 
       .navigation {
         display: none;
-        // transition: opacity 2.0s ease-in;
-        // transition: height 1s ease;
-        // overflow: hidden;
+      
+        
 
         background: $black;
 
@@ -391,12 +370,8 @@ body {
           height: 56px;
 
           @include desktop {
-            // position: absolute;
-            // left: 25%;
-            // top: -1%;
-            // // height: 100%;
-            // width: 43%;
-            // height: 56px;
+         
+            
             width: 95%;
           }
           .search-bar {
@@ -430,7 +405,8 @@ body {
                 border-radius: 5px;
                 outline: solid #000 0;
                 padding: 0.5em;
-                // transition:all 0.5s ease-in;
+             
+                
                 width: 100%;
                 z-index: 1;
 
@@ -445,14 +421,8 @@ body {
                 
                 }
 
-                // @include desktop {
-                //   height: 34%;
-                // }
-
-                // &::placeholder {
-                //   font-size: 2.2vmin;
-                //   line-height: 3;
-                // }
+               
+                
               }
               .search-button {
                 position: absolute;
@@ -481,12 +451,14 @@ body {
 
         .result-container {
           display: none;
-          // display: block;
+         
+          
           background: rgba($full-black, 0.8);
           border-radius: 5px;
           position: fixed;
           width: 100%;
-          // height: 100%;
+         
+          
           height: 76vh;
           left: 0;
           top: 44%;
@@ -518,7 +490,7 @@ body {
             top: 10%;
            width: 78%;
            margin: 0 11%;
-          //  padding: 0 30px;
+         
           }
 
           a {
@@ -632,7 +604,7 @@ body {
                 .sub-menu-item {
                   position: relative;
                   display: block;
-                  // background: #e3e3e3;
+                 
                   transition: 0.2s ease-in;
 
                   &:hover {
@@ -648,14 +620,11 @@ body {
                       &:hover {
                         color: $white;
                         text-align: center;
-                        // font-weight: bold;
+                      
                         opacity: 1;
 
-                        // i {
-                        //   display: block;
-                        //   margin-right: 5px;
-                        //   font-size: 18px;
-                        // }
+                       
+                        
                       }
 
                       i {
@@ -724,15 +693,7 @@ body {
             }
           }
 
-          // .hamburger {
-          //   font-size: 5vmin;
-          //   display: block;
-          //   color: $green;
-
-          //   @include desktop {
-          //     display: none;
-          //   }
-          // }
+         
         }
 
         .account-container {
@@ -743,16 +704,13 @@ body {
             font-size: 2vmin;
           }
           .profile {
-            // padding: 10px;
+         
             display: flex;
 
             justify-content: flex-end;
             align-items: center;
             font-size: 5vmin;
-            // @include desktop {
-            //   display: grid;
-            //   grid-template-columns: 1fr 2fr;
-            // }
+           
 
             @include tablet {
               font-size: 3vmin;
@@ -775,7 +733,7 @@ body {
               font-size: 19px;
               @include desktop {
                 display: flex;
-                // flex-direction: column;
+               
                 align-items: center;
                 height: 56px;
                 width: 100%;
@@ -783,7 +741,7 @@ body {
               }
 
               @include large-desktop {
-                // width: 65%;
+                
                 width: 80%;
               }
               .account-link {
@@ -797,8 +755,7 @@ body {
                 margin-right: 3px;
 
                 @include desktop {
-                  // font-size: 2vmin;
-                  // height: 56px;
+                
                 }
 
                 @include large-desktop {
@@ -827,10 +784,10 @@ body {
                 cursor: pointer;
                 text-decoration: none;
                 color: $white;
-                // font-size: 3vmin;
+                
                 background: $green;
                 border-radius: 5px;
-                // margin: 10px;
+              
                 padding: 8px;
                 width: 100%;
                 height: 71%;
@@ -842,8 +799,8 @@ body {
                   height: 40px;
                   border-radius: 5px;
                   width: 100%;
-                  // height: 100%;
-                  // padding: 8px;
+                 
+                  
                 }
 
                 @include large-desktop {
@@ -892,7 +849,7 @@ body {
               align-items: center;
               width: 100%;
               height: 100%;
-              // background: $green;
+             
               border-radius: 5px;
               border: 1px solid $white;
 
@@ -916,7 +873,8 @@ body {
               }
 
               .fa-shopping-cart {
-                // padding: 20px;
+              
+                
                 font-size: 5vmin;
                 padding-right: 15px;
                 @include tablet {
@@ -977,9 +935,8 @@ body {
                 @include tablet {
                   font-size: 19px;
                 }
-                // @include desktop {
-                //   font-size: 16px;
-                // }
+              
+                
 
                 @include ipadpro {
                   display: none;
@@ -1001,207 +958,7 @@ body {
   }
 }
 
-// .sub-header {
-//   // display: grid;
-//   // grid-template-columns:  5% repeat(4, 1fr) 5%;
-//   background: rgba(15, 15, 15, 1);
-//   opacity: 0.7;
-//   height: 10vmin;
-//   font-size: 5vmin;
 
-//   @include desktop {
-//     height: 7vmin;
-//   }
-
-//   .sub-menu {
-//     display: grid;
-//     grid-template-columns: 5% repeat(4, 1fr) 5%;
-//     height: 100%;
-//     width: 100%;
-//     align-items: center;
-//     position: relative;
-//     color: $white;
-
-//     @include desktop {
-//       font-size: 3.5vmin;
-//     }
-
-//     input[type="radio"]:checked + label {
-//       color: #00ff00;
-//       border-top: 5px solid #00ff00;
-//     }
-
-//     input[type="radio"] + label {
-//       height: 100%;
-//       display: flex;
-//       align-items: center;
-//     }
-
-//     .home {
-//       grid-column: 2 / 3;
-//       margin: 0 auto;
-//       list-style-type: none;
-
-//       height: 100%;
-
-//       a {
-//         text-decoration: none;
-//         // color: #66ff00;
-//         // color: #00ff00;
-//         color: $white;
-//         font-weight: bold;
-//         height: 100%;
-
-//         .nav-menu-toggle {
-//           display: none;
-//         }
-//       }
-//     }
-
-//     .games {
-//       grid-column: 3 / 4;
-//       margin: 0 auto;
-//       list-style-type: none;
-//       height: 100%;
-
-//       .nav-menu-toggle {
-//         display: none;
-//       }
-
-//       .games-label {
-//         height: 100%;
-//       }
-
-//       .games-menu {
-//         opacity: 0;
-//         position: absolute;
-//         left: 0;
-//         top: 10vmin;
-//         height: 100%;
-//         width: 100%;
-//         display: flex;
-//         align-items: center;
-//         background: $black;
-//         font-size: 4vmin;
-
-//         @include desktop {
-//           top: 7vmin;
-//           font-size: 3vmin;
-//         }
-
-//         a {
-//           text-decoration: none;
-//           color: $white;
-//           height: 100%;
-//           .nav-item-toggle {
-//             display: none;
-//           }
-
-//           input[type="radio"]:checked + label {
-//             color: #00ff00;
-//             border-top: 5px solid #00ff00;
-//           }
-
-//           input[type="radio"] + label {
-//             height: 100%;
-//             display: flex;
-//             align-items: center;
-//           }
-//         }
-//       }
-
-//       .nav-menu-toggle:checked ~ nav {
-//         transform: scale(1, 1);
-//         display: flex;
-//         justify-content: space-around;
-//         z-index: 100;
-//         transition: opacity 250ms ease-in-out 250ms;
-//         opacity: 1;
-//       }
-//     }
-
-//     .console {
-//       grid-column: 4 / 5;
-//       margin: 0 auto;
-//       list-style-type: none;
-//       height: 100%;
-
-//       .nav-menu-toggle {
-//         display: none;
-//       }
-
-//       .console-label {
-//         height: 100%;
-//       }
-
-//       .console-menu {
-//         opacity: 0;
-//         position: absolute;
-//         left: 0;
-//         top: 10vmin;
-//         height: 100%;
-//         width: 100%;
-//         display: flex;
-//         align-items: center;
-//         background: $black;
-//         font-size: 4vmin;
-
-//         @include desktop {
-//           top: 7vmin;
-//           font-size: 3vmin;
-//         }
-
-//         a {
-//           text-decoration: none;
-//           color: $white;
-//           height: 100%;
-
-//           .nav-item-toggle {
-//             display: none;
-//           }
-
-//           input[type="radio"]:checked + label {
-//             color: #00ff00;
-//             border-top: 5px solid #00ff00;
-//           }
-
-//           input[type="radio"] + label {
-//             height: 100%;
-//             display: flex;
-//             align-items: center;
-//           }
-//         }
-//       }
-
-//       .nav-menu-toggle:checked ~ nav {
-//         transform: scale(1, 1);
-//         display: flex;
-//         justify-content: space-around;
-//         z-index: 100;
-//         transition: opacity 250ms ease-in-out 250ms;
-//         opacity: 1;
-//       }
-//     }
-
-//     .shop {
-//       grid-column: 5 / 6;
-//       margin: 0 auto;
-//       list-style-type: none;
-//       height: 100%;
-
-//       a {
-//         text-decoration: none;
-//         color: $white;
-//         height: 100%;
-
-//         .nav-menu-toggle {
-//           display: none;
-//         }
-//       }
-//     }
-//   }
-// }
-// }
 
 // HOME PAGE
 
@@ -1219,7 +976,7 @@ section#home {
     position: relative;
     background: transparent;
     border: 1px solid #e1e1e1;
-    // font: 12px/1.2 "Oswald", sans-serif;
+    
     letter-spacing: 0.4em;
     font-size: 3vmin;
     text-align: center;
@@ -1334,7 +1091,8 @@ section#home {
         align-items: flex-end;
         font-family: $font;
         .caption {
-          // padding: 0 100px;
+         
+          
           margin-bottom: 18%;
           @include ipadpro {
             margin-bottom: 18%;
@@ -1665,9 +1423,8 @@ section#special-offers {
   background: #000;
   display: grid;
   grid-template-rows: 0.3fr 1fr;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
+ 
+  
 
   @include desktop {
     min-height: 950px;
@@ -1707,11 +1464,11 @@ section#special-offers {
 
   .carousel {
     background: #000;
-    // background: red;
+  
 
     .flickity-viewport {
       height: 100% !important;
-      // height: 1050px !important;
+   
 
       .carousel-cell {
         width: 90%;
@@ -1751,7 +1508,8 @@ section#special-offers {
           content: none;
         }
 
-        // position: relative;
+     
+
 
         .thumbnail-container {
           position: relative;
@@ -1783,12 +1541,13 @@ section#special-offers {
               border-top-left-radius: 5%;
               border-top-right-radius: 5%;
               position: absolute;
-              // object-fit: contain;
+           
+              
               left: 0;
               top: 0;
 
-              // width: 100%;
-              // display: none;
+             
+              
             }
           }
         }
@@ -1808,7 +1567,8 @@ section#special-offers {
             .content-title {
               display: flex;
               justify-content: flex-start;
-              // padding-top: 20px;
+           
+              
 
               @include tablet {
                 padding-top: 0;
@@ -1865,29 +1625,7 @@ section#special-offers {
                 }
               }
             }
-            // .content-fav {
-            //   display: flex;
-            //   justify-content: center;
-            //   align-items: flex-start;
-            //   padding-top: 20px;
-
-            //   @include tablet {
-            //     padding-top: 0;
-            //   }
-            //   .add-to-fav {
-            //     display: flex;
-            //     align-items: flex-start;
-            //     a {
-            //       text-decoration: none;
-            //       color: $vivid-green;
-            //       font-size: 8vmin;
-
-            //       @include tablet {
-            //         font-size: 4vmin;
-            //       }
-            //     }
-            //   }
-            // }
+            
           }
 
           .content-middle {
@@ -2085,35 +1823,11 @@ section#special-offers {
               }
             }
 
-            // .price {
-            //   display: flex;
-            //   flex-direction: column;
-            //   align-items: center;
-            //   font-family: $game-price;
-            //   .old-price {
-            //     font-size: 5vmin;
-            //     color: rgba(255, 255, 255, 0.5);
-            //     text-decoration: line-through;
-
-            //     @include tablet {
-            //       font-size: 2vmin;
-            //     }
-            //   }
-
-            //   .new-price {
-            //     font-size: 7vmin;
-            //     color: $white;
-
-            //     @include tablet {
-            //       font-size: 3vmin;
-            //     }
-            //   }
-            // }
+           
 
             .content-button {
               display: grid;
-              // justify-content: center;
-              // align-items: flex-start;
+              
               grid-template-rows: 1fr 1fr;
               padding-top: 20px;
 
@@ -2174,39 +1888,7 @@ section#special-offers {
             }
           }
 
-          // .content-footer {
-          //   height: 27%;
-          //   display: grid;
-          //   grid-template-columns: 1fr;
-          //   justify-items: center;
-          //   align-items: center;
-
-          //   .buy-button {
-          //     width: 100%;
-          //     height: 100%;
-          //     border-radius: 0px 0px 29px 29px;
-          //     background: $vivid-green;
-
-          //     display: flex;
-          //     justify-content: center;
-          //     align-items: center;
-
-          //     .add-to-cart {
-          //       border-bottom-left-radius: 5%;
-          //       border-bottom-right-radius: 5%;
-          //       font-size: 5vmin;
-          //       color: $black;
-          //       text-decoration: none;
-          //       text-transform: uppercase;
-          //       font-weight: 900;
-          //       font-family: $font;
-
-          //       @include tablet {
-          //         font-size: 3vmin;
-          //       }
-          //     }
-          //   }
-          // }
+         
         }
       }
     }
@@ -2260,8 +1942,7 @@ section#special-offers {
 
     .flickity-page-dots {
       margin-left: 26%;
-      // width: 48%;
-      // bottom: 5%;
+    
       display: flex;
       justify-content: space-around;
       margin-left: 16%;
@@ -2340,10 +2021,10 @@ section#game-trends {
     font-weight: 300;
     color: #888;
     -webkit-font-smoothing: antialiased;
-    // height: 1000px;
+    
 
     @include normal-desktop {
-      // width: 65%;
+     
       width: 95%;
       border-radius: 5px;
       padding-top: 0;
@@ -2415,9 +2096,7 @@ section#game-trends {
           font-size: 2.5vmin;
         }
 
-        // .element-text {
-        //   display: none;
-        // }
+       
       }
     }
 
@@ -2702,9 +2381,7 @@ section#game-trends {
     p {
       font-size: 4vmin;
 
-      // @include tablet {
-      //   font-size: 3vmin;
-      // }
+     
 
       @include desktop {
         font-size: 3vmin;
@@ -2756,7 +2433,7 @@ section#game-trends {
     }
 
     .login-header {
-      // margin-bottom: 60px;
+    
       height: 10%;
       width: 100%;
       padding: 10px;
@@ -2785,7 +2462,7 @@ section#game-trends {
     }
 
     .error-messages {
-      // margin-top: 5%;
+     
       position: absolute;
       top: 19%;
 
@@ -2815,10 +2492,7 @@ section#game-trends {
     }
 
     .login-form-container {
-      // width: 100%;
-      // height: 40%;
-      // height: 72%;
-      // width: 95%;
+     
       width: 100%;
       height: 68%;
       overflow: hidden;
@@ -2830,9 +2504,7 @@ section#game-trends {
       @include ipadpro {
         width: 80%;
       }
-      // @include desktop {
-      //   width: 40%;
-      // }
+      
       .login-form {
         width: 100%;
         height: 100%;
@@ -2865,16 +2537,14 @@ section#game-trends {
           }
 
           input {
-            // width: 86%;
-            // height: 12vmin;
-            // margin: 15px;
+           
             font-size: 15px;
             color: $white;
             border: none;
             width: 100%;
             outline: none;
             background: none;
-            // padding: 0 5px;
+          
             height: 40px;
             letter-spacing: 1px;
 
@@ -2890,22 +2560,11 @@ section#game-trends {
               font-size: 17px;
             }
 
-            // @include tablet {
-            //   height: 8vmin;
-            // }
+            @include large-desktop {
+              font-size: 27px;
+            }
 
-            // @include desktop {
-            //   height: 6vmin;
-            // }
-
-            // &:focus + span {
-            //   top: -5px;
-            // }
-
-            // &.focus + span {
-            //   width: 100%;
-            // }
-
+            
             &:focus ~ label,
             &:valid ~ label {
               @include tablet {
@@ -2914,6 +2573,10 @@ section#game-trends {
 
               @include normal-desktop {
                 top: -20px;
+              }
+
+              @include large-desktop {
+                top: -30px;
               }
 
               top: -15px;
@@ -2959,7 +2622,7 @@ section#game-trends {
             }
 
             @include large-desktop {
-              font-size: 18px;
+              font-size: 27px;
             }
           }
 
@@ -2971,49 +2634,19 @@ section#game-trends {
             height: 2px;
             background: linear-gradient(120deg, #4b4b4b, $active-green);
             transition: 0.5s;
-            // &:after {
-            //   content: "";
-            //   background: blue;
-            //   width: 50px;
-            //   height: 50px;
-            //   color: $white;
-            //   // position: absolute;
-
-            //   // width: 0%;
-            //   // left: 0%;
-            //   // bottom: -4%;
-            //   // height: 5px;
-            //   // background: linear-gradient(120deg, #4b4b4b, #3ae374);
-            //   // // background: red;
-            //   // transition: 0.5s;
-            // }
+         
           }
 
-          // span {
-          //  color: $white;
-          //   &:before {
-          //     content: "Username";
-          //     position: absolute;
-          //     top: 50%;
-          //     left: 5px;
-          //     font-size: 50px;
-          //     color: $white;
-          //     transform: translateY(-50%);
-          //     z-index: -1;
-          //     transition: 0.5s;
-          //   }
-
-          // }
+       
         }
         .login-button {
           padding: 20px;
           font-size: 5vmin;
-          // margin: 15px;
-          // margin-top: 6vmin;
+         
           display: block;
           width: 90%;
           color: $white;
-          // background: $black;
+          
           text-transform: uppercase;
           border: none;
           background: linear-gradient(120deg, #4b4b4b, $vivid-green, #4b4b4b);
@@ -3059,15 +2692,10 @@ section#game-trends {
       @include normal-desktop {
         margin-bottom: 30px;
       }
-      // @include desktop {
-      //   width: 34%;
-      // }
+     
       p {
         font-size: 4vmin;
 
-        // @include tablet {
-        //   font-size: 3vmin;
-        // }
 
         @include tablet {
           font-size: 2.5vmin;
@@ -3085,9 +2713,7 @@ section#game-trends {
           font-size: 20px;
         }
 
-        // @include desktop {
-        //   font-size: 3vmin;
-        // }
+     
         a {
           text-decoration: none;
           color: $vivid-green;
@@ -3134,7 +2760,7 @@ section#game-trends {
     }
 
     .signup-header {
-      // margin-bottom: 60px;
+     
       height: 10%;
       width: 100%;
       padding: 10px;
@@ -3163,7 +2789,7 @@ section#game-trends {
     }
 
     .error-messages {
-      // margin-top: 5%;
+    
       position: absolute;
       top: 19%;
 
@@ -3193,10 +2819,7 @@ section#game-trends {
     }
 
     .signup-form-container {
-      // width: 100%;
-      // height: 40%;
-      // height: 72%;
-      // width: 95%;
+     
       width: 100%;
       height: 68%;
       overflow: hidden;
@@ -3208,9 +2831,7 @@ section#game-trends {
       @include ipadpro {
         width: 80%;
       }
-      // @include desktop {
-      //   width: 40%;
-      // }
+    
       .signup-form {
         width: 100%;
         height: 100%;
@@ -3243,16 +2864,14 @@ section#game-trends {
           }
 
           input {
-            // width: 86%;
-            // height: 12vmin;
-            // margin: 15px;
+           
             font-size: 15px;
             color: $white;
             border: none;
             width: 100%;
             outline: none;
             background: none;
-            // padding: 0 5px;
+           
             height: 40px;
             letter-spacing: 1px;
 
@@ -3268,21 +2887,7 @@ section#game-trends {
               font-size: 17px;
             }
 
-            // @include tablet {
-            //   height: 8vmin;
-            // }
-
-            // @include desktop {
-            //   height: 6vmin;
-            // }
-
-            // &:focus + span {
-            //   top: -5px;
-            // }
-
-            // &.focus + span {
-            //   width: 100%;
-            // }
+            
 
             &:focus ~ label,
             &:valid ~ label {
@@ -3349,49 +2954,19 @@ section#game-trends {
             height: 2px;
             background: linear-gradient(120deg, #4b4b4b, $active-green);
             transition: 0.5s;
-            // &:after {
-            //   content: "";
-            //   background: blue;
-            //   width: 50px;
-            //   height: 50px;
-            //   color: $white;
-            //   // position: absolute;
-
-            //   // width: 0%;
-            //   // left: 0%;
-            //   // bottom: -4%;
-            //   // height: 5px;
-            //   // background: linear-gradient(120deg, #4b4b4b, #3ae374);
-            //   // // background: red;
-            //   // transition: 0.5s;
-            // }
+           
           }
 
-          // span {
-          //  color: $white;
-          //   &:before {
-          //     content: "Username";
-          //     position: absolute;
-          //     top: 50%;
-          //     left: 5px;
-          //     font-size: 50px;
-          //     color: $white;
-          //     transform: translateY(-50%);
-          //     z-index: -1;
-          //     transition: 0.5s;
-          //   }
-
-          // }
+         
         }
         .signup-button {
           padding: 20px;
           font-size: 5vmin;
-          // margin: 15px;
-          // margin-top: 6vmin;
+        
           display: block;
           width: 90%;
           color: $white;
-          // background: $black;
+        
           text-transform: uppercase;
           border: none;
           background: linear-gradient(120deg, #4b4b4b, $vivid-green, #4b4b4b);
@@ -3437,15 +3012,11 @@ section#game-trends {
       @include normal-desktop {
         margin-bottom: 30px;
       }
-      // @include desktop {
-      //   width: 34%;
-      // }
+    
       p {
         font-size: 4vmin;
 
-        // @include tablet {
-        //   font-size: 3vmin;
-        // }
+      
 
         @include tablet {
           font-size: 2.5vmin;
@@ -3463,9 +3034,7 @@ section#game-trends {
           font-size: 18px;
         }
 
-        // @include desktop {
-        //   font-size: 3vmin;
-        // }
+      
         a {
           text-decoration: none;
           color: $vivid-green;
@@ -3571,16 +3140,12 @@ section#game-trends {
         border-radius: 10px;
         box-shadow: 0px 7px 10px rgba(black, 0.5);
 
-        // @include desktop {
-        //   width: 89%;
-        //   height: 20%;
-        // }
+       
 
         .order-content {
           display: grid;
           grid-template-columns: 1fr 1fr 1fr 0.5fr;
-          // grid-column-start: 1;
-          // grid-column-end: 5;
+         
 
           .order-header {
             .order-title {
@@ -3759,8 +3324,7 @@ section#game-trends {
       .order-summary {
         width: 97%;
         height: 94%;
-        // padding: 20px;
-        // margin: 10px;
+      
         display: grid;
         grid-template-rows: 1fr 1fr 1fr;
         font-weight: bold;
@@ -3835,9 +3399,7 @@ section#game-trends {
                 font-family: $game-price;
                 font-size: 5.5vmin;
 
-                // @include tablet {
-                //   font-size: 5vmin;
-                // }
+             
 
                 @include tablet {
                   font-size: 4.5vmin;
@@ -3922,10 +3484,9 @@ section#game-trends {
 .checkout-container {
   height: 100vh;
 
-  // align-items: center;
+ 
   font-family: $font;
-  // display: grid;
-  // grid-template-rows: 0.25fr 1fr;
+ 
   display: flex;
   flex-direction: column;
 
@@ -4017,13 +3578,11 @@ section#game-trends {
           .form-input {
             display: flex;
             flex-direction: column;
-            // justify-content: space-between;
+          
             padding: 10px;
             font-size: 5vmin;
 
-            // @include normal-desktop {
-            //   justify-content: center;
-            // }
+           
             @include tablet {
               padding: 19px;
             }
@@ -4099,13 +3658,11 @@ section#game-trends {
           .form-input {
             display: flex;
             flex-direction: column;
-            // justify-content: space-between;
+          
             padding: 10px;
             font-size: 5vmin;
 
-            // &:first-child {
-            //   padding-top: 0;
-            // }
+          
 
             @include tablet {
               padding: 19px;
@@ -4125,15 +3682,7 @@ section#game-trends {
               }
             }
 
-            // label {
-            //   font-size: 5vmin;
-            //   margin-bottom: 7px;
-
-            //   @include tablet {
-            //     font-size: 3vmin;
-            //   }
-            // }
-
+           
             .form-control {
               height: 8vmin;
               padding: 10px;
@@ -4173,14 +3722,12 @@ section#game-trends {
         }
 
         .card-input {
-          // width: 95%;
-          // margin: 0 auto;
-          // height: 100%;
+         
           width: 100%;
           padding: 10px;
           margin: 0 auto;
           height: 100%;
-          // margin-bottom: 5vmin;
+       
 
           @include tablet {
             width: 96%;
@@ -4300,22 +3847,22 @@ section#shop-main-container {
   }
 
   .shop-container {
-    // background: transparent;
+  
     height: 100vh;
     width: 100%;
     overflow: scroll;
     overflow-x: hidden;
 
-    // display: grid;
-    // grid-template-rows: 0.5fr 1fr;
+    
     position: relative;
     @include normal-desktop {
       height: 90vh;
-      // width: 83vw;
+      
       width: 89vw;
       background: transparent;
       display: grid;
-      // grid-template-columns: 0.35fr 2fr;
+    
+      
       grid-template-columns: 1fr 5fr;
     }
 
@@ -4369,7 +3916,7 @@ section#shop-main-container {
         display: none;
       }
       #open-filter {
-        // padding: 5px 10px;
+      
         font-size: 18px;
         color: $white;
 
@@ -4392,16 +3939,15 @@ section#shop-main-container {
     .filter-list-container {
       position: fixed;
       bottom: -100%;
-      // width: 100%;
+     
       width: 98%;
       left: 1%;
       z-index: 100;
-      // display: flex;
+     
       background: $black;
       border: 1px solid $discount-green;
       box-shadow: 0px 7px 10px rgba(black, 0.5);
-      // align-items: flex-end;
-      // display: none;
+    
       transition: 0.5s;
 
       @include tablet {
@@ -4435,7 +3981,7 @@ section#shop-main-container {
           width: 100%;
           height: 83%;
 
-          // background: $black;
+       
           background: transparent;
 
           display: flex;
@@ -4456,7 +4002,7 @@ section#shop-main-container {
           @include ipadpro {
             width: 100%;
             height: 35%;
-            // margin-top: 73px;
+         
             margin-bottom: 10px;
           }
 
@@ -4488,8 +4034,7 @@ section#shop-main-container {
             }
           }
           span {
-            // height: 50%;
-            // background: red;
+          
             @include tablet {
               font-size: 20px;
             }
@@ -4718,9 +4263,7 @@ section#shop-main-container {
 
                     @include normal-desktop {
                       display: flex;
-                      // flex-direction: column;
-                      // justify-content: center;
-                      // align-items: center;
+                    
                       width: 100%;
                       flex-wrap: wrap;
                       background: transparent;
@@ -4732,7 +4275,7 @@ section#shop-main-container {
                       border: none;
                       cursor: pointer;
 
-                      // text-transform: uppercase;
+                     
                       background: $black;
                       color: $white;
                       font-family: $game-price;
@@ -4742,23 +4285,21 @@ section#shop-main-container {
 
                       padding: 5px;
                       margin: 10px;
-                      // padding: 10px;
+                     
 
                       @include tablet {
                         font-size: 20px;
                       }
 
-                      // @include normal-desktop {
-                      //   font-size: 16px;
-                      // }
+                   
 
                       @include normal-desktop {
-                        // width: 50%;
+                        
                         width: 33%;
                         font-size: 13px;
                         margin: 0;
                         background: $full-black;
-                        // padding: 5px 0 2px 10px;
+                        
 
                         &:first-child {
                           width: 100%;
@@ -4768,14 +4309,10 @@ section#shop-main-container {
 
                       @include large-desktop {
                         font-size: 18px;
-                        // padding-left: 13px;
+                       
                         padding-bottom: 5px;
                       }
-                      // &:hover {
-                      //   background-color: ccc;
-                      //   text-shadow: 0 1px hsla(0, 0%, 100%, 0.5);
-                      //   color: #222;
-                      // }
+                    
                       &:active,
                       &.is-checked {
                         background-color: $vivid-green;
@@ -4830,17 +4367,14 @@ section#shop-main-container {
       background: transparent; /* make scrollbar transparent */
     }
     .products-view-container {
-      // overflow: scroll;
+     
       padding-top: 40%;
       overflow: scroll;
       overflow-x: hidden;
-      // overflow: hidden;
+    
       color: $black;
 
-      // ::-webkit-scrollbar {
-      //   width: 0px;
-      //   background: transparent; /* make scrollbar transparent */
-      // }
+    
 
       @include tablet {
         padding-top: 14%;
@@ -4871,9 +4405,7 @@ section#shop-main-container {
           margin-left: 4%;
           font-size: 16px;
         }
-        // @include desktop {
-        //   width: 25%;
-        // }
+      
 
         @include large-desktop {
           margin-left: 6.5%;
@@ -4923,7 +4455,7 @@ section#shop-main-container {
             border: 0.06em solid transparent;
             border-radius: 1em;
             background-color: $black;
-            // border: 1px solid $vivid-green;
+          
             transition: $timing all ease-in-out;
 
             @include tablet {
@@ -5024,12 +4556,8 @@ section#shop-main-container {
         width: 100% !important;
         height: 100%;
         display: flex;
-        // overflow-y: scroll;
-        // display: grid;
-        // grid-template-columns: 1fr 1fr 1fr;
-        // grid-template-rows: 1fr 1fr 1fr;
-        // justify-items: center;
-        // align-items: center;
+      
+        
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
@@ -5050,8 +4578,8 @@ section#shop-main-container {
           background: $white;
           cursor: pointer;
           overflow: hidden;
-          // width: 34vmin;
-          // height: 39vmin;
+         
+          
 
           background: $black;
           color: $white;
@@ -5067,9 +4595,8 @@ section#shop-main-container {
             height: 39vmin;
           }
 
-          // @include ipadpro {
-
-          // }
+         
+          
 
           @include ipadpro {
             margin: 22px;
@@ -5093,18 +4620,14 @@ section#shop-main-container {
 
           .thumbnail-container {
             width: 100%;
-            // height: 70%;
+           
+            
             height: 49%;
             position: relative;
             margin-bottom: 15px;
 
-            // @include desktop {
-            //   height: 57%;
-            // }
-
-            // @include ipadpro {
-            //   margin-bottom: 0;
-            // }
+          
+            
 
             @include large-desktop {
               height: 55%;
@@ -5116,16 +4639,15 @@ section#shop-main-container {
               max-width: 100%;
               height: auto;
 
-              // @include large-desktop {
-              //   left: -6%;
-              //   width: 108%;
-              // }
+             
+              
             }
           }
 
           .content-container {
             display: grid;
-            // grid-template-rows: 0.4fr 0.1fr;
+          
+            
 
             height: 44%;
             grid-template-rows: 1fr 2fr;
@@ -5326,16 +4848,15 @@ section#product-index-container {
         }
 
         img {
-          // margin: auto;
+        
+          
           position: absolute;
           left: 0;
           max-width: 100%;
           height: auto;
           border-radius: 10px 10px 0px 0px;
-          //  object-fit: contain;
-          //  width: auto;
-          //  height: 100%;
-          // display: none;
+         
+          
 
           @include normal-desktop {
             position: absolute;
@@ -5345,14 +4866,8 @@ section#product-index-container {
             border-radius: 10px 0px 0px 10px;
             box-shadow: 0px 7px 10px rgba(black, 0.5);
           }
-          @include large-desktop {
-            // position: absolute;
-            // width: 100%;
-            // top: 50%;
-            // -ms-transform: translateY(-50%);
-            // -webkit-transform: translateY(-50%);
-            // transform: translateY(-50%);
-          }
+        
+          
         }
       }
     }
@@ -5368,12 +4883,8 @@ section#product-index-container {
       @include ipadpro {
         padding: 15px;
       }
-      // @include desktop {
-      //   display: grid;
-      //   grid-template-rows: 0.8fr 0.5fr 0.5fr 1fr;
-
-      //   padding: 35px;
-      // }
+    
+      
 
       @include normal-desktop {
         background: $black;
@@ -6080,13 +5591,8 @@ section#product-index-container {
       }
     }
   }
-  // h1 {
-  //   color: $white;
-  // }
-
-  // h2 {
-  //   color: $white;
-  // }
+ 
+  
 }
 
 // SHOPPING COMPLETED
@@ -6251,7 +5757,8 @@ section#shopping-completed {
           border: 1px solid transparent;
 
           &:hover {
-            // box-shadow: 0px 7px 10px rgba($vivid-green, 0.5);
+          
+            
 
             .shop-text {
               padding-left: 10%;
@@ -6329,8 +5836,8 @@ section#profile {
   .profile-content {
     display: flex;
     flex-direction: column;
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
+  
+    
 
     @include normal-desktop {
       display: grid;

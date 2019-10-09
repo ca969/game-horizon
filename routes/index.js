@@ -81,9 +81,13 @@ router.get("/shop/:name", function(req, res, next) {
   Product.find({ title: `${productName}` }, function(err, product) {
     if (err) {
       return res.redirect("/");
-    } else if (product.title !== productName) {
-      return res.send("wrong");
+    } else if (product.length < 1) {
+      return res.redirect("/shop");
     }
+    
+    // else if (product.title !== productName) {
+    //   return res.send("wrong");
+    // }
 
     var productArray = [];
     var newestProduct = product.pop();

@@ -3176,6 +3176,12 @@ section#game-trends .tab-content .tabs-item:first-child {
   }
 }
 
+@media (min-width: 1600px) {
+  .login-main-container .login-sub-container .login-form-container .login-form .form-group input {
+    font-size: 27px;
+  }
+}
+
 .login-main-container .login-sub-container .login-form-container .login-form .form-group input:focus ~ label,
 .login-main-container .login-sub-container .login-form-container .login-form .form-group input:valid ~ label {
   top: -15px;
@@ -3194,6 +3200,13 @@ section#game-trends .tab-content .tabs-item:first-child {
   .login-main-container .login-sub-container .login-form-container .login-form .form-group input:focus ~ label,
   .login-main-container .login-sub-container .login-form-container .login-form .form-group input:valid ~ label {
     top: -20px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .login-main-container .login-sub-container .login-form-container .login-form .form-group input:focus ~ label,
+  .login-main-container .login-sub-container .login-form-container .login-form .form-group input:valid ~ label {
+    top: -30px;
   }
 }
 
@@ -3242,7 +3255,7 @@ section#game-trends .tab-content .tabs-item:first-child {
 
 @media (min-width: 1600px) {
   .login-main-container .login-sub-container .login-form-container .login-form .form-group label {
-    font-size: 18px;
+    font-size: 27px;
   }
 }
 
