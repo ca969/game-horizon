@@ -40,14 +40,6 @@ body {
   overflow-x: hidden;
 }
 
-body .error-container {
-  font-family: "Raleway", sans-serif;
-}
-
-body .error-container .redirect-home {
-  text-decoration: none;
-}
-
 body #loading {
   width: 100%;
   height: 100%;
