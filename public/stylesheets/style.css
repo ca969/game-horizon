@@ -40,6 +40,12 @@ body {
   overflow-x: hidden;
 }
 
+@media (min-width: 1224px) {
+  body .error-container {
+    font-size: 2.5rem !important;
+  }
+}
+
 body #loading {
   width: 100%;
   height: 100%;
