@@ -37,6 +37,7 @@
 
 body {
   font-family: sans-serif;
+  overflow-x: hidden;
 }
 
 body #loading {
@@ -47,7 +48,7 @@ body #loading {
   position: fixed;
   display: block;
   opacity: 1;
-  background-color: #0f0f0f;
+  background-color: #000;
   z-index: 999999;
   text-align: center;
 }
