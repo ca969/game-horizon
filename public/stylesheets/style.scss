@@ -123,6 +123,12 @@ $font-family-secondary: "Roboto Slab", serif;
 body {
   font-family: sans-serif;
 
+  .loading {
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999999;
+  }
+
   .display-message {
     font-family: $font;
     transform: translate3d(100%, 0, 0);
