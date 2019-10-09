@@ -130,8 +130,8 @@ body {
     left: 0;
     position: fixed;
     display: block;
-    opacity: 0.7;
-    background-color: #fff;
+    opacity: 1;
+    background-color: $full-black;
     z-index: 999999;
     text-align: center;
     #loading-image {

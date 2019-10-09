@@ -46,8 +46,8 @@ body #loading {
   left: 0;
   position: fixed;
   display: block;
-  opacity: 0.7;
-  background-color: #fff;
+  opacity: 1;
+  background-color: #000;
   z-index: 999999;
   text-align: center;
 }
