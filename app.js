@@ -100,7 +100,7 @@ app.use(function(err, req, res, next) {
 });
 
 app.get('*', function(req, res){
-  res.sendFile(path.join(__dirname + 'public/404.html'));
+  return res.send(path.join(__dirname + 'public/404.html'));
 });
 
 
