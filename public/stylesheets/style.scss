@@ -2415,7 +2415,7 @@ section#game-trends {
   .login-sub-container {
     // height: 100%;
     height: 500px;
-    
+
     // height: 72%;
     width: 95%;
     display: flex;
@@ -2430,6 +2430,7 @@ section#game-trends {
 
     @include tablet {
       width: 68%;
+      
     }
 
     @include normal-desktop {
