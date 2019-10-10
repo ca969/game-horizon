@@ -42,11 +42,7 @@ class UI {
       div.style.border = "2px solid #22ef0b";
       div.style.background = "#0a0a0a";
      
-      // // Icon Styling
-      // icon.style.color = "#f28a02";
-      // icon.classList.add("fas");
-      // icon.classList.remove("far");
-      // Change link href
+     
     } else if (message === "Item already added to favorites") {
       div.innerHTML = `${message}`;
       div.style.color = "#ff0015";
@@ -177,18 +173,6 @@ class UI {
     var searchRow = document.querySelector(".search-row");
     resultContainer.innerHTML = "";
 
-    // var resultLink = document.createElement("div");
-    // resultLink.style.width = "90%";
-    // resultLink.style.height = "100px";
-    // resultLink.style.position = "fixed";
-    // resultLink.style.background = "red";
-    // resultLink.style.top = "30%";
-    // resultLink.style.right = "0";
-    // resultLink.style.zIndex = "5000";
-
-    // if (result) {
-
-    // }
     if (message) {
       resultContainer.innerHTML = `<p>${message}</p>`;
     }

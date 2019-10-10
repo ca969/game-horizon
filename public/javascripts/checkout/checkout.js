@@ -33,7 +33,7 @@ function eventListeners() {
 // VALIDATION FUNCTION
 function Validate() {
 
-  if (!(/^[a-zA-Z]+$/.test(firstName.value))) {
+  if (!(/^[A-Za-z\u00C0-\u017F]+$/.test(firstName.value))) {
    
     firstName.style.border = "2px solid red";
     firstNameError.style.color = "red";
@@ -42,7 +42,8 @@ function Validate() {
     firstName.focus();
     return false;
   }
-  else if (!(/^[a-zA-Z]+$/.test(surname.value))) {
+  // /^[a-zA-Z]+$/
+  else if (!(/^[A-Za-z\u00C0-\u017F]+$/.test(surname.value))) {
     surname.style.border = "2px solid red";
     surnameError.style.color = "red";
     surnameError.style.paddingLeft = "10px";
@@ -60,7 +61,7 @@ function Validate() {
     return false;
   }
 
-  else if (!(/^[a-zA-Z]+$/.test(cardHolder.value))) {
+  else if (!(/^[A-Za-z\u00C0-\u017F]+$/.test(cardHolder.value))) {
     cardHolder.style.border = "2px solid red";
     cardHolderError.style.color = "red";
     cardHolderError.style.paddingLeft = "10px";
@@ -71,7 +72,7 @@ function Validate() {
 }
 
 function firstNameVerify() {
-  if ((/^[a-zA-Z]+$/.test(firstName.value))) {
+  if ((/^[A-Za-z\u00C0-\u017F]+$/.test(firstName.value))) {
    
     firstName.style.border = "2px solid lime";
     firstNameError.innerHTML = "";
@@ -80,7 +81,7 @@ function firstNameVerify() {
 }
 
 function surnameVerify() {
-  if ((/^[a-zA-Z]+$/.test(surname.value))) {
+  if ((/^[A-Za-z\u00C0-\u017F]+$/.test(surname.value))) {
     surname.style.border = "2px solid lime";
     surnameError.innerHTML = "";
     return true;
@@ -96,7 +97,7 @@ function addressVerify() {
 }
 
 function cardHolderVerify() {
-  if ((/^[a-zA-Z]+$/.test(cardHolder.value))) {
+  if ((/^[A-Za-z\u00C0-\u017F]+$/.test(cardHolder.value))) {
     cardHolder.style.border = "2px solid lime";
     cardHolderError.innerHTML = "";
     return true;

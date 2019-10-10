@@ -21,6 +21,4 @@ $(window).resize(function() {
   }
 });
 
-// $(document).ready(function() {
-//   $(".nav-list").appendTo("body");
-// });
+

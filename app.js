@@ -22,18 +22,18 @@ var userRoutes = require("./routes/user");
 var app = express();
 
 // Connect to database
-// mongoose.connect("mongodb://localhost:27017/video-game-shop", {
-//   useNewUrlParser: true
-// });
+mongoose.connect("mongodb://localhost:27017/video-game-shop", {
+  useNewUrlParser: true
+});
 
 //  mongoose.connect(process.env.MONGODB_URI, {
 //   useNewUrlParser: true
 // });
 
 
- mongoose.connect("mongodb+srv://ceyhun456:ceyhun456@gamehorizon-qbkr1.mongodb.net/test?retryWrites=true&w=majority", {
-  useNewUrlParser: true
-});
+//  mongoose.connect("mongodb+srv://ceyhun456:ceyhun456@gamehorizon-qbkr1.mongodb.net/test?retryWrites=true&w=majority", {
+//   useNewUrlParser: true
+// });
 
 // var db = mongoose.connection;
 
