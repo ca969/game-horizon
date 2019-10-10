@@ -542,6 +542,8 @@ body {
           @include desktop {
             height: 56px;
           }
+
+          
           .nav-list {
             display: flex;
             align-items: center;
@@ -2889,6 +2891,10 @@ section#game-trends {
               font-size: 17px;
             }
 
+            @include large-desktop {
+              font-size: 27px;
+            }
+
             
 
             &:focus ~ label,
@@ -2901,6 +2907,9 @@ section#game-trends {
                 top: -20px;
               }
 
+              @include large-desktop {
+                top: -30px;
+              }
               top: -15px;
               left: 0;
               color: $active-green;
@@ -2944,7 +2953,7 @@ section#game-trends {
             }
 
             @include large-desktop {
-              font-size: 18px;
+              font-size: 27px;
             }
           }
 
@@ -5907,6 +5916,11 @@ section#profile {
                     @include normal-desktop {
                       font-size: 23px;
                     }
+
+                    
+                    @include large-desktop {
+                      font-size: 33px;
+                    }
                   }
                   .qty {
                     display: flex;
@@ -5923,6 +5937,9 @@ section#profile {
 
                     @include normal-desktop {
                       font-size: 23px;
+                    }
+                    @include large-desktop {
+                      font-size: 33px;
                     }
 
                     span {
@@ -5948,6 +5965,10 @@ section#profile {
 
                     @include normal-desktop {
                       font-size: 23px;
+                    }
+
+                    @include large-desktop {
+                      font-size: 33px;
                     }
                     .amount {
                       font-family: $game-price;
@@ -5975,6 +5996,10 @@ section#profile {
 
             @include normal-desktop {
               font-size: 25px;
+            }
+
+            @include large-desktop {
+              font-size: 35px;
             }
 
             p {

@@ -3612,6 +3612,12 @@ section#game-trends .tab-content .tabs-item:first-child {
   }
 }
 
+@media (min-width: 1600px) {
+  .signup-main-container .signup-sub-container .signup-form-container .signup-form .form-group input {
+    font-size: 27px;
+  }
+}
+
 .signup-main-container .signup-sub-container .signup-form-container .signup-form .form-group input:focus ~ label,
 .signup-main-container .signup-sub-container .signup-form-container .signup-form .form-group input:valid ~ label {
   top: -15px;
@@ -3630,6 +3636,13 @@ section#game-trends .tab-content .tabs-item:first-child {
   .signup-main-container .signup-sub-container .signup-form-container .signup-form .form-group input:focus ~ label,
   .signup-main-container .signup-sub-container .signup-form-container .signup-form .form-group input:valid ~ label {
     top: -20px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .signup-main-container .signup-sub-container .signup-form-container .signup-form .form-group input:focus ~ label,
+  .signup-main-container .signup-sub-container .signup-form-container .signup-form .form-group input:valid ~ label {
+    top: -30px;
   }
 }
 
@@ -3678,7 +3691,7 @@ section#game-trends .tab-content .tabs-item:first-child {
 
 @media (min-width: 1600px) {
   .signup-main-container .signup-sub-container .signup-form-container .signup-form .form-group label {
-    font-size: 18px;
+    font-size: 27px;
   }
 }
 
@@ -7671,6 +7684,12 @@ section#profile .profile-content .profile-orders-container .profile-orders .orde
   }
 }
 
+@media (min-width: 1600px) {
+  section#profile .profile-content .profile-orders-container .profile-orders .order-history .order-elements .order-list .list-item .item-title-qty .title {
+    font-size: 33px;
+  }
+}
+
 section#profile .profile-content .profile-orders-container .profile-orders .order-history .order-elements .order-list .list-item .item-title-qty .qty {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7698,6 +7717,12 @@ section#profile .profile-content .profile-orders-container .profile-orders .orde
 @media (min-width: 1224px) {
   section#profile .profile-content .profile-orders-container .profile-orders .order-history .order-elements .order-list .list-item .item-title-qty .qty {
     font-size: 23px;
+  }
+}
+
+@media (min-width: 1600px) {
+  section#profile .profile-content .profile-orders-container .profile-orders .order-history .order-elements .order-list .list-item .item-title-qty .qty {
+    font-size: 33px;
   }
 }
 
@@ -7736,6 +7761,12 @@ section#profile .profile-content .profile-orders-container .profile-orders .orde
   }
 }
 
+@media (min-width: 1600px) {
+  section#profile .profile-content .profile-orders-container .profile-orders .order-history .order-elements .order-list .list-item .item-price .money {
+    font-size: 33px;
+  }
+}
+
 section#profile .profile-content .profile-orders-container .profile-orders .order-history .order-elements .order-list .list-item .item-price .money .amount {
   font-family: "Oxygen", sans-serif;
 }
@@ -7763,6 +7794,12 @@ section#profile .profile-content .profile-orders-container .profile-orders .orde
 @media (min-width: 1224px) {
   section#profile .profile-content .profile-orders-container .profile-orders .order-history .order-total-price {
     font-size: 25px;
+  }
+}
+
+@media (min-width: 1600px) {
+  section#profile .profile-content .profile-orders-container .profile-orders .order-history .order-total-price {
+    font-size: 35px;
   }
 }
 

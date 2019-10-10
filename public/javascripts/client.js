@@ -17,17 +17,17 @@ $("#search-input").on("change keyup",function(e) {
     ui.displaySearchResult(null, "No Match Found")
   } 
   else {
-    console.log(item_name);
+   
     $.ajax({
       type: "GET",
       url: "/search/" + item_name,
       data: $("#search_input").serialize(),
       success: function(res) {
         ui.displaySearchResult(res.result, null);
-        console.log(res.result);
+       
       },
       error: function(xhr) {
-        console.log(xhr.responseJSON.message);
+      
         ui.displaySearchResult(null, xhr.responseJSON.message);
       }
     });
@@ -65,8 +65,7 @@ $(".add-to-cart").on("click", function() {
 $("#add-multiple-to-cart").on("click", function() {
   var game_id = $(this).attr("game_id");
   var count = parseInt($(".quantity__input").val());
-  console.log(typeof count);
-  console.log("Multiple");
+ 
   $.ajax({
     type: "GET",
     url: "/add-multiple-to-cart/" + game_id + "/" + count,
@@ -86,12 +85,7 @@ $("#add-multiple-to-cart").on("click", function() {
 // ADD TO FAVORITES
 $(".fav-button").on("click", function() {
   var game_id = $(this).attr("game_id");
-  console.log(
-    $(this)
-      .parent()
-      .closest(".carousel-cell")
-      .index()
-  );
+ 
   var index = $(this)
     .parent()
     .closest(".carousel-cell")
@@ -121,13 +115,13 @@ $(".remove-fav").on("click", function() {
   .closest(".list-item")
   .index();
 
-  console.log(index)
+ 
   $.ajax({
     type: "POST",
     url: "/remove-fav/" + index + "/" + game_id,
     data: $(".remove-fav").serialize(),
     success: function(res) {
-      console.log(res.message);
+     
       ui.displayMessage(res.message, index);
     },
     error: function(xhr) {
@@ -145,9 +139,7 @@ $(".decrement").on("click", function() {
     .parent()
     .closest(".order-info")
     .index();
-  // var count = $(this).parent().closest(".order-action-container").children(".order-quantity").children(":first").text();
-  // var amount =  $(this).parent().closest(".order-content").find(".amount").text();
-  console.log(index);
+
   $.ajax({
     type: "GET",
     url: "/decrement/" + game_id,
@@ -170,9 +162,7 @@ $(".increment").on("click", function() {
     .parent()
     .closest(".order-info")
     .index();
-  // var count = $(this).parent().closest(".order-action-container").children(".order-quantity").children(":first").text();
-  // var amount =  $(this).parent().closest(".order-content").find(".amount").text();
-  console.log(index);
+ 
   $.ajax({
     type: "GET",
     url: "/increment/" + game_id,
@@ -196,7 +186,7 @@ $(".remove-item").on("click", function() {
     .closest(".order-info")
     .index();
 
-  console.log(index);
+ 
   $.ajax({
     type: "GET",
     url: "/remove/" + game_id,
@@ -221,19 +211,7 @@ $(".checkout-button").on("click", function() {
     ui.displayMessage(message);
   } else {
     window.location.href = "/checkout";
-    // $.ajax({
-    //   type: "GET",
-    //   url: "/checkout/",
-    //   data: $(".checkout-button").serialize(),
-    //   success: function(res) {
-    //     // ui.orderController(res.message, index);
-    //     console.log(res.message);
-    //   },
-    //   error: function(xhr) {
-    //     // ui.displayMessage(xhr.responseJSON.message);
-    //     console.log(xhr.responseJSON.message)
-    //   }
-    // });
+  
   }
 
  

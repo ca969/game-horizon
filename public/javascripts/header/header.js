@@ -9,10 +9,7 @@ var resultBox = document.querySelector(".result-container");
 var clicked;
 
 
-// searchBox.addEventListener("focus", function() {
 
-//   resultBox.style.display = "flex";
-// });
 
 document.addEventListener("click", function(e) {
   if (e.target.className === "result-container" || e.target.className === "game-search-item" ||e.target.className === "search-input") {
@@ -20,7 +17,7 @@ document.addEventListener("click", function(e) {
   } else {
     resultBox.style.display = "none";
   }
-  console.log(e.target.className);
+ 
   // resultBox.style.display = "none;"
 })
 

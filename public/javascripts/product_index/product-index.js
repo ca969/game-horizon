@@ -14,6 +14,3 @@ if (indexImage.src.includes("coming")) {
     indexPrice.style.fontSize = "35px";
 }
 
-console.log(indexImage.src);
-console.log(indexImage.src.includes("coming"));
-console.log(typeof indexImage.src);

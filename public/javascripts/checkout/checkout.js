@@ -2,9 +2,9 @@
 
 // GETTING ALL INPUT TEXT OBJECTS
 var firstName = document.querySelector("#name");
-console.log(firstName);
+
 var surname = document.querySelector("#surname");
-console.log(surname);
+
 var address = document.querySelector("#address");
 var cardHolder = document.querySelector("#card-holder-name");
 
@@ -34,7 +34,7 @@ function eventListeners() {
 function Validate() {
 
   if (!(/^[a-zA-Z]+$/.test(firstName.value))) {
-    console.log(firstName.value)
+   
     firstName.style.border = "2px solid red";
     firstNameError.style.color = "red";
     firstNameError.style.paddingLeft = "10px";
@@ -72,7 +72,7 @@ function Validate() {
 
 function firstNameVerify() {
   if ((/^[a-zA-Z]+$/.test(firstName.value))) {
-    console.log(firstNameError.innerHTML);
+   
     firstName.style.border = "2px solid lime";
     firstNameError.innerHTML = "";
     return true;
@@ -159,7 +159,7 @@ function stripeTokenHandler(token) {
   hiddenInput.setAttribute('name', 'stripeToken');
   hiddenInput.setAttribute('value', token.id);
   form.appendChild(hiddenInput);
-  console.log(token, token.id);
+ 
   // Submit the form
   form.submit();
 }

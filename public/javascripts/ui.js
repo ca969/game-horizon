@@ -22,7 +22,7 @@ setTimeout(function() {
         }
        
     });
-    console.log(oldPrice);
+   
 }, 500);
 
 

@@ -9,6 +9,3 @@ $(".form-group input").on("focus", function() {
   });
 }); 
 
-//   $('.lecture').each(function(i){
-//     $(this).width($(this).data('views'));
-// });

@@ -68,7 +68,7 @@ router.get("/shop", function(req, res, next) {
     for (var j = 0; j < 50; j += shopProductChunkSize) {
       shopProductChunks.push(docs.slice(j, j + shopProductChunkSize));
     }
-    console.log(shopProductChunks);
+    
     res.render("shop/shop", { shopProducts: shopProductChunks });
   });
 });
@@ -76,7 +76,7 @@ router.get("/shop", function(req, res, next) {
 /* GET product index.  */
 router.get("/shop/:name", function(req, res, next) {
   var productName = req.params.name;
-  console.log(productName);
+ 
 
   Product.find({ title: `${productName}` }, function(err, product) {
     if (err) {
@@ -91,8 +91,7 @@ router.get("/shop/:name", function(req, res, next) {
     var newestProduct = product.pop();
     productArray.push(newestProduct);
 
-    console.log(newestProduct);
-    console.log(productArray);
+   
     res.render("shop/product-index", { productInfo: productArray });
    
   });
@@ -103,7 +102,7 @@ router.get("/shop/:name", function(req, res, next) {
 router.get("/search/:item_name", function(req,res,next) {
   var itemName = req.params.item_name;
 
-  console.log(itemName)
+ 
 
   Product.find({ title: { $regex : ".*"+ itemName +".*", $options:'i' }}, function(err, result) {
     if (err) {
@@ -127,9 +126,7 @@ router.get("/add-to-fav/:id", isFavLoggedIn, function(req, res, next) {
       return res.redirect("/");
     } else {
       Library.findOne({ user: req.user._id }, function(err, docs) {
-        console.log("-----------DOCS------------");
-        console.log(docs);
-        console.log("-----------------------");
+     
 
         if (!docs) {
           favorite.add(product, product.id);
@@ -142,7 +139,7 @@ router.get("/add-to-fav/:id", isFavLoggedIn, function(req, res, next) {
           });
           library.save();
           res.status(200).json({ message: "Item added to favorites" });
-          console.log("success");
+        
 
          
         } else {
@@ -153,7 +150,7 @@ router.get("/add-to-fav/:id", isFavLoggedIn, function(req, res, next) {
             var inventory = single._id;
             var incoming = productId;
 
-            console.log(JSON.stringify(inventory) === JSON.stringify(incoming));
+           
             if (JSON.stringify(inventory) === JSON.stringify(incoming)) {
               matched = true;
             }
@@ -245,7 +242,7 @@ router.get("/add-to-cart/:id", function(req, res, next) {
     }
     cart.add(product, product.id);
     req.session.cart = cart;
-    console.log(req.session.cart);
+  
     return res.status(200).json({ message: "Item added to cart" });
     // res.status(200).json({ message: "success" });
   });
@@ -256,7 +253,7 @@ router.get("/add-multiple-to-cart/:id/:count", function(req, res, next) {
   var productId = req.params.id;
   var productCount = parseInt(req.params.count);
   var cart1 = new Cart(req.session.cart ? req.session.cart : {});
-  console.log(productCount);
+ 
 
   Product.findById(productId, function(err, product) {
     if (err) {
@@ -268,7 +265,7 @@ router.get("/add-multiple-to-cart/:id/:count", function(req, res, next) {
     }
     cart1.addMultiple(product, product.id, productCount);
     req.session.cart = cart1;
-    console.log(req.session.cart);
+    
 
     return res
       .status(200)
@@ -302,9 +299,9 @@ router.get("/increment/:id", function(req, res, next) {
   var cart4 = new Cart(req.session.cart ? req.session.cart : {});
 
   cart4.incrementByOne(productId);
-  console.log(cart4);
+ 
   req.session.cart = cart4;
-  console.log(req.session.cart);
+ 
   return res.status(200).json({ message: "Succesfully incremented" });
 });
 
@@ -314,7 +311,7 @@ router.get("/shopping-cart", function(req, res, next) {
     return res.render("shop/shopping-cart", { products: null });
   }
   var cart5 = new Cart(req.session.cart);
-  console.log(req.session.cart);
+ 
   res.render("shop/shopping-cart", {
     products: cart5.generateArray(),
     totalPrice: cart5.totalPrice
@@ -330,9 +327,7 @@ router.get("/checkout", isLoggedIn, function(req, res, next) {
 
   var cart6 = new Cart(req.session.cart);
   var errMsg = req.flash("error")[0];
-  console.log(req.session.cart);
-  console.log(cart6.totalPrice);
-
+ 
   res.render("shop/checkout", {
     total: cart6.totalPrice,
     errMsg: errMsg,

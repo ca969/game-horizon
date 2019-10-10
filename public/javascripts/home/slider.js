@@ -237,12 +237,10 @@ if ($(".main-content .slideshow").length > 1) {
 
 var intViewportWidth = window.innerWidth;
 var specialSlides = document.getElementById("special-carousel");
-console.log(specialSlides);
+
 
 var x = specialSlides.getAttribute("data-flickity");
 
-console.log(intViewportWidth);
-console.log(x);
 
 window.addEventListener("resize", checkWidth);
 

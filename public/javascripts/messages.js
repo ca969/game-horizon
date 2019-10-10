@@ -12,9 +12,7 @@ class UI {
     var counter = Number(this.cartCounter.textContent);
     // var amount = Number(this.amount.textContent);
     var div = document.createElement("div");
-    console.log(counter);
-
-    console.log(message);
+  
 
     div.className = "display-message";
     div.style.fontSize = "1rem";
@@ -101,12 +99,12 @@ class UI {
 
   orderController(message, index) {
     var count = document.querySelectorAll("#totalQty")[index].textContent;
-    console.log(count);
+   
     var amount = document.querySelectorAll("#amount")[index].textContent;
-    console.log(amount);
+   
     // Calculate price of single item
     var price = Number(amount) / Number(count);
-    console.log(price);
+   
     // Cart counter
     var counter = Number(this.cartCounter.textContent);
     // Get total item price
@@ -175,7 +173,7 @@ class UI {
 
   displaySearchResult(result, message) {
     var resultContainer = this.resultContainer;
-    console.log(resultContainer);
+   
     var searchRow = document.querySelector(".search-row");
     resultContainer.innerHTML = "";
 
@@ -198,11 +196,10 @@ class UI {
    else if (result.length === 0) {
       resultContainer.innerHTML = `<p>No Match Found</p>`;
     } else {
-      console.log(result);
+    
 
       for (var games of result) {
-        // console.log(games.title);
-        // console.log(games.imagePath);
+      
         var gameLink = document.createElement("a");
         var gameImage = document.createElement("img");
         var gameTitle = document.createElement("p");
@@ -228,22 +225,6 @@ class UI {
       }
     }
 
-    // console.log(link);
-
-    // console.log(gameInfo);
-    // var resultLink = document.createElement("a");
-    // resultLink.textContent =  gameInfo;
-
-    // resultLink.style.width = "90%";
-    // resultLink.style.height = "100px";
-    // resultLink.style.position = "fixed";
-    // resultLink.style.background = "red";
-    // resultLink.style.top = "10%";
-    // resultLink.style.right = "0";
-    // resultLink.style.zIndex = "5000";
-    // console.log(result);
-    // var games = document.createElement("p");
-    // games.innerHTML = result;
-    // document.body.appendChild(resultLink);
+ 
   }
 }
