@@ -11,14 +11,10 @@ for (let i = 0; i < productCard.length; i++) {
   });
 }
 
-
-if (tabsCard.length !== 0) {
-  for (let j = 0; j < 20; j++) {
-    tabsCard[j].addEventListener("click", function(e) {
-     fromtTabsToIndex(j);
-    });
-  }
-  
+for (let j = 0; j < 20; j++) {
+  tabsCard[j].addEventListener("click", function(e) {
+   fromtTabsToIndex(j);
+  });
 }
 
 for (let z = 0; z < homeSlides.length; z++) {
@@ -51,15 +47,11 @@ function fromHomeToIndex(z) {
 // REDIRECT TO PRODUCT INDEX PAGE
 var addMultiple = document.querySelector("#add-multiple-to-cart");
 
-console.log(addMultiple);
-
-if (addMultiple) {
-  addMultiple.addEventListener("click", function(e) {
-    buyMultiple();
-  });
-}
 
 
+addMultiple.addEventListener("click", function(e) {
+  buyMultiple();
+});
 
 function buyMultiple() {
   var game_id = $("#add-multiple-to-cart").attr("game_id");
