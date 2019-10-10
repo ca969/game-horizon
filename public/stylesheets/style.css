@@ -2982,12 +2982,14 @@ section#game-trends .tab-content .tabs-item:first-child {
 @media (min-width: 768px) {
   .login-main-container .login-sub-container {
     width: 68%;
+    height: 750px;
   }
 }
 
 @media (min-width: 1224px) {
   .login-main-container .login-sub-container {
     width: 35%;
+    height: 500px;
   }
 }
 

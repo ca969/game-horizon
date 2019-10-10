@@ -2430,11 +2430,12 @@ section#game-trends {
 
     @include tablet {
       width: 68%;
-      
+      height: 750px;
     }
 
     @include normal-desktop {
       width: 35%;
+      height: 500px;
     }
 
     @include large-desktop {
