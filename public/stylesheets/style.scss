@@ -2413,7 +2413,8 @@ section#game-trends {
   background: $full-black;
 
   .login-sub-container {
-    height: 72%;
+    height: 100%;
+    // height: 72%;
     width: 95%;
     display: flex;
     flex-direction: column;
