@@ -36,7 +36,7 @@
 
 
 
-  {{!-- {{> footer}} --}}
+  {{> footer}}
   <script src="javascripts/messages.js"></script>
   <script src="javascripts/client.js"></script>
 
@@ -46,7 +46,14 @@
 
   <script src="javascripts/loader.js"></script>
 
-
+<script>
+  $(function() {
+    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    $("html").css({"width":w,"height":h});
+    $("body").css({"width":w,"height":h});
+});
+</script>
 
  
 </body>
