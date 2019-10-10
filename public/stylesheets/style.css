@@ -4506,6 +4506,22 @@ section#game-trends .tab-content .tabs-item:first-child {
   }
 }
 
+.checkout-container .checkout-header .test-number {
+  font-size: 0.85rem;
+}
+
+@media (min-width: 768px) {
+  .checkout-container .checkout-header .test-number {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .checkout-container .checkout-header .test-number {
+    font-size: 1.6rem;
+  }
+}
+
 @media (min-width: 768px) {
   .checkout-container #charge-error {
     font-size: 25px !important;

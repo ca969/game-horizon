@@ -373,7 +373,7 @@ router.post("/checkout", isLoggedIn, function(req, res, next) {
       {
         amount: cart.totalPrice.toFixed(2) * 100,
         currency: "usd",
-        description: "Test2 Charge",
+        description: "Game Horizon Deployed Charge",
         source: token
       },
       function(err, charge) {

@@ -3517,6 +3517,7 @@ section#game-trends {
       @include tablet {
         font-size: 7vmin;
       }
+   
     }
 
     .total {
@@ -3524,6 +3525,17 @@ section#game-trends {
 
       @include tablet {
         font-size: 3vmin;
+      }
+    }
+
+    .test-number {
+      font-size: 0.85rem;
+      @include tablet {
+        font-size: 1.4rem;
+      }
+
+      @include ipadpro {
+        font-size: 1.6rem;
       }
     }
   }
